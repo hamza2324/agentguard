@@ -13,11 +13,12 @@ import httpx
 from agentguard.models import Execution
 
 
-def validate_endpoint(url: str, allowlist: set[str]):
+def validate_endpoint(url: str, allowlist: set[str], allow_loopback=False):
     parsed = urlsplit(url)
+    local = allow_loopback and parsed.hostname in {"127.0.0.1", "localhost", "::1"}
     if (
         url not in allowlist
-        or parsed.scheme != "https"
+        or (parsed.scheme != "https" and not (local and parsed.scheme == "http"))
         or not parsed.hostname
         or parsed.username
         or parsed.password
@@ -25,12 +26,13 @@ def validate_endpoint(url: str, allowlist: set[str]):
     ):
         raise ValueError("Endpoint must be an explicitly allowed HTTPS URL")
     for entry in socket.getaddrinfo(parsed.hostname, parsed.port or 443, type=socket.SOCK_STREAM):
-        if not ipaddress.ip_address(entry[4][0]).is_global:
+        address = ipaddress.ip_address(entry[4][0])
+        if not address.is_global and not (local and address.is_loopback):
             raise ValueError("Private, loopback and reserved destinations are forbidden")
 
 
-async def invoke(url, allowlist, message, context, transport=None):
-    validate_endpoint(url, allowlist)
+async def invoke(url, allowlist, message, context, transport=None, allow_loopback=False):
+    validate_endpoint(url, allowlist, allow_loopback=allow_loopback)
     async with httpx.AsyncClient(
         timeout=10, follow_redirects=False, trust_env=False, transport=transport
     ) as client:

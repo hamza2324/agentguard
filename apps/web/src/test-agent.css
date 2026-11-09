@@ -1,0 +1,817 @@
+.test-agent-page {
+  padding-bottom: 40px;
+}
+.assessment-title {
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: center;
+}
+.assessment-title h1 {
+  font-size: clamp(32px, 4vw, 53px);
+  letter-spacing: -2px;
+  line-height: 1.08;
+}
+.assessment-title p {
+  max-width: 600px;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 17px 0 20px;
+}
+.assessment-title > button {
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 15px;
+}
+.assessment-intro {
+  display: flex;
+  gap: 13px;
+  padding: 15px 18px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 7px;
+  margin: 5px 0 28px;
+}
+.assessment-intro svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.assessment-intro p {
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+.assessment-intro b {
+  color: var(--text);
+}
+.assessment-stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  gap: 10px;
+}
+.assessment-stepper li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--muted);
+  padding: 12px 0;
+  border-bottom: 2px solid var(--border);
+}
+.assessment-stepper li > span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font:
+    10px "JetBrains Mono",
+    monospace;
+  flex-shrink: 0;
+}
+.assessment-stepper li.current {
+  border-bottom-color: var(--accent);
+  color: var(--text);
+  font-weight: 600;
+}
+.assessment-stepper li.current > span {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+.assessment-stepper li.complete > span {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.assessment-form .panel-head {
+  padding: 24px 25px;
+  border-bottom: 1px solid var(--border);
+}
+.assessment-form h2 {
+  font-size: 21px;
+  letter-spacing: -0.6px;
+}
+.assessment-step-label {
+  display: block;
+  color: var(--accent);
+  font:
+    9px "JetBrains Mono",
+    monospace;
+  letter-spacing: 1px;
+  margin-bottom: 9px;
+}
+.assessment-form-body {
+  padding: 25px;
+}
+.assessment-fields {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 20px;
+}
+.assessment-fields.two {
+  grid-template-columns: 1fr 1fr;
+}
+.assessment-form .field {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  min-width: 0;
+}
+.assessment-form .field small {
+  font-size: 10px;
+  line-height: 1.7;
+}
+.assessment-form .field input,
+.assessment-form .field select {
+  padding: 11px;
+  font-size: 12px;
+}
+.assessment-form .field textarea {
+  font:
+    11px/1.8 "JetBrains Mono",
+    monospace;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 12px;
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+}
+.assessment-modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 10px 0 25px;
+}
+.assessment-modes > button {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+.assessment-modes > button.chosen {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, var(--panel));
+}
+.assessment-modes svg {
+  color: var(--accent);
+}
+.assessment-modes b {
+  font-size: 14px;
+  font-weight: 550;
+}
+.assessment-modes span {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.assessment-help {
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  margin: 15px 0 20px;
+  background: var(--bg);
+}
+.assessment-help > summary {
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 500;
+}
+.assessment-help[open] > summary {
+  margin-bottom: 20px;
+}
+.assessment-help p {
+  font-size: 11px;
+  line-height: 1.8;
+}
+.assessment-help a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.assessment-help .field:last-child {
+  margin-bottom: 0;
+}
+.assessment-help-copy {
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0 0 24px;
+  max-width: 750px;
+}
+.assessment-case {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background: var(--panel);
+}
+.assessment-case-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.assessment-case-top button {
+  padding: 6px;
+}
+.assessment-case h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+.assessment-case > p {
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+.assessment-case .assessment-help {
+  margin-bottom: 0;
+}
+.assessment-example {
+  padding: 13px 15px;
+  background: color-mix(in srgb, var(--accent) 7%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  border-radius: 5px;
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--accent);
+  margin-bottom: 25px;
+}
+.assessment-template {
+  margin-left: 12px;
+}
+.assessment-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+.assessment-actions > span {
+  flex: 1;
+}
+.assessment-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  padding: 12px 18px;
+}
+.assessment-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 14px;
+  color: var(--red);
+  background: color-mix(in srgb, var(--red) 6%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--red) 25%, var(--border));
+  border-radius: 6px;
+}
+.assessment-error svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.assessment-error pre {
+  color: var(--red);
+  font-size: 10px;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  max-height: 220px;
+  overflow: auto;
+}
+.assessment-local-status {
+  display: flex;
+  gap: 14px;
+  margin: 0 0 25px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+.assessment-local-status svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.assessment-local-status b {
+  font-size: 13px;
+}
+.assessment-local-status p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 8px 0 0;
+  max-width: 650px;
+}
+.assessment-review {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+.assessment-review small {
+  display: block;
+  font:
+    8px "JetBrains Mono",
+    monospace;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.assessment-review b {
+  font-size: 12px;
+  font-weight: 500;
+}
+.assessment-approval {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.8;
+  padding: 15px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin: 22px 0 15px;
+}
+.assessment-approval input {
+  margin-top: 4px;
+  accent-color: var(--accent);
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.assessment-report {
+  scroll-margin-top: 30px;
+  padding-top: 40px;
+}
+.assessment-report-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+.assessment-report-title h2 {
+  font-size: 28px;
+  letter-spacing: -0.8px;
+}
+.assessment-report-title p {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+.assessment-export {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.assessment-export button {
+  font-size: 10px;
+  padding: 8px 11px;
+}
+.assessment-verdict {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  margin-bottom: 25px;
+  background: var(--panel);
+}
+.assessment-verdict.attention {
+  border-color: color-mix(in srgb, var(--red) 40%, var(--border));
+  background: color-mix(in srgb, var(--red) 5%, var(--panel));
+}
+.assessment-verdict.attention > span {
+  color: var(--red);
+}
+.assessment-verdict.clear > span {
+  color: var(--accent);
+}
+.assessment-verdict h3 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 550;
+  letter-spacing: -0.7px;
+}
+.assessment-verdict p {
+  font-size: 12px;
+  margin: 10px 0;
+}
+.assessment-verdict small {
+  font-size: 10px;
+  line-height: 1.8;
+  display: block;
+}
+.assessment-report .panel-head h3 {
+  font-size: 16px;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+.assessment-report td {
+  font-size: 11px;
+  white-space: normal;
+  line-height: 1.8;
+  cursor: auto;
+}
+.assessment-report tr {
+  cursor: auto;
+}
+.assessment-report th {
+  white-space: nowrap;
+}
+.assessment-metric-note {
+  font-size: 10px;
+  padding: 0 22px 10px;
+  line-height: 1.8;
+}
+.assessment-performance {
+  margin: 24px 0;
+}
+.assessment-performance > p {
+  font-size: 11px;
+  padding: 0 22px;
+  margin: 0 0 20px;
+}
+.assessment-performance > div:not(.panel-head) {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 22px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+}
+.assessment-performance b {
+  font-weight: 500;
+}
+.assessment-performance small {
+  font-size: 10px;
+}
+.assessment-findings-title {
+  font-size: 19px;
+  letter-spacing: -0.5px;
+  margin: 32px 0 20px;
+}
+.assessment-finding {
+  margin-bottom: 14px;
+}
+.assessment-finding > summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 20px;
+  font-size: 12px;
+  list-style: none;
+}
+.assessment-finding > summary:before {
+  content: "+";
+  font:
+    16px "JetBrains Mono",
+    monospace;
+  color: var(--muted);
+}
+.assessment-finding[open] > summary:before {
+  content: "−";
+}
+.assessment-finding > summary > span {
+  text-transform: capitalize;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.assessment-finding > summary > b {
+  font-weight: 500;
+}
+.assessment-finding > summary > code {
+  margin-left: auto;
+}
+.assessment-finding[open] > summary {
+  border-bottom: 1px solid var(--border);
+}
+.assessment-finding-body {
+  padding: 22px;
+}
+.assessment-finding-body > p {
+  font-size: 12px;
+  margin: 0 0 15px;
+}
+.assessment-finding h4 {
+  font-size: 11px;
+  font-weight: 500;
+}
+.assessment-finding .assertions {
+  margin: 15px 0 22px;
+}
+.assessment-finding .assessment-next-step {
+  border-left: 2px solid var(--accent);
+  padding: 12px 15px;
+  background: var(--bg);
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 15px 0 25px;
+}
+.assessment-trace {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  padding: 14px;
+  min-width: 0;
+}
+.assessment-trace summary {
+  font-size: 11px;
+  cursor: pointer;
+}
+.assessment-trace blockquote {
+  margin: 18px 0 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.assessment-trace pre {
+  font-size: 9px;
+  padding: 10px;
+  max-height: 450px;
+  overflow: auto;
+}
+.assessment-limitations {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 25px;
+  background: var(--panel);
+}
+.assessment-limitations h3 {
+  margin: 0 0 17px;
+  font-size: 15px;
+}
+.assessment-limitations li,
+.assessment-limitations p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.assessment-limitations ul {
+  padding-left: 17px;
+}
+.assessment-limitations p {
+  margin-bottom: 0;
+}
+@media (max-width: 1000px) {
+  .assessment-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+  .assessment-title > button {
+    margin: 0 0 25px;
+  }
+  .assessment-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .assessment-fields > .field:first-child {
+    grid-column: 1/-1;
+  }
+  .assessment-fields.two > .field:first-child {
+    grid-column: auto;
+  }
+  .assessment-stepper li {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .assessment-report-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .assessment-performance > div:not(.panel-head) {
+    font-size: 10px;
+    gap: 8px;
+  }
+}
+@media (max-width: 650px) {
+  .assessment-stepper {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+  }
+  .assessment-stepper li {
+    font-size: 10px;
+    padding: 10px 0;
+  }
+  .assessment-title h1 {
+    font-size: 35px;
+  }
+  .assessment-title p {
+    font-size: 12px;
+  }
+  .assessment-form .panel-head {
+    padding: 20px 16px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .assessment-form h2 {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+  .assessment-form-body {
+    padding: 18px 15px;
+  }
+  .assessment-fields,
+  .assessment-fields.two {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .assessment-fields > .field:first-child {
+    grid-column: auto;
+  }
+  .assessment-modes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .assessment-modes > button {
+    padding: 18px;
+    gap: 8px;
+  }
+  .assessment-case {
+    padding: 15px;
+  }
+  .assessment-form .field textarea {
+    font-size: 10px;
+  }
+  .assessment-case .assessment-help {
+    padding: 12px;
+  }
+  .assessment-help-copy {
+    font-size: 11px;
+  }
+  .assessment-help {
+    padding: 14px;
+  }
+  .assessment-template {
+    margin: 12px 0 0;
+    display: flex;
+  }
+  .assessment-review {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 17px;
+  }
+  .assessment-intro {
+    padding: 14px;
+    gap: 10px;
+  }
+  .assessment-intro p {
+    font-size: 11px;
+  }
+  .assessment-verdict {
+    padding: 18px;
+    gap: 12px;
+  }
+  .assessment-verdict h3 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .assessment-verdict p {
+    font-size: 11px;
+  }
+  .assessment-verdict small {
+    font-size: 9px;
+  }
+  .assessment-report-title h2 {
+    font-size: 25px;
+  }
+  .assessment-performance > div:not(.panel-head) {
+    grid-template-columns: 1fr 1fr;
+    padding: 15px;
+    gap: 10px;
+  }
+  .assessment-performance > p {
+    padding: 0 15px;
+    font-size: 10px;
+  }
+  .assessment-finding > summary {
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .assessment-finding > summary > b {
+    flex-basis: 70%;
+  }
+  .assessment-finding > summary > code {
+    margin-left: 23px;
+    font-size: 9px;
+  }
+  .assessment-finding-body {
+    padding: 16px;
+  }
+  .assessment-finding .assertions p {
+    font-size: 9px;
+  }
+  .assessment-limitations {
+    padding: 17px;
+  }
+  .assessment-limitations li,
+  .assessment-limitations p {
+    font-size: 10px;
+  }
+  .assessment-primary {
+    font-size: 11px;
+    padding: 11px 12px;
+  }
+  .assessment-report td {
+    white-space: nowrap;
+    font-size: 10px;
+  }
+  .assessment-report .panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .assessment-form .pill {
+    font-size: 8px;
+  }
+}
+@media print {
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+  .shell > aside,
+  .main > header,
+  .assessment-title,
+  .assessment-intro,
+  .assessment-stepper,
+  .assessment-form,
+  .assessment-export,
+  .test-agent-page > .eyebrow {
+    display: none !important;
+  }
+  .shell,
+  .main {
+    display: block !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  main,
+  .test-agent-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  .assessment-report {
+    padding: 0 !important;
+    --bg: #fff;
+    --panel: #fff;
+    --panel2: #f5f5f5;
+    --text: #111;
+    --muted: #444;
+    --border: #ccc;
+    --accent: #136638;
+    --red: #9e281b;
+    print-color-adjust: exact;
+  }
+  .assessment-verdict,
+  .assessment-limitations,
+  .assessment-finding,
+  .assessment-report .panel {
+    break-inside: avoid;
+  }
+  .assessment-report .metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .assessment-report .table-scroll {
+    overflow: visible;
+  }
+  .assessment-report pre {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .assessment-report h2 {
+    font-size: 24px;
+  }
+  .assessment-report details > * {
+    display: block !important;
+  }
+  .assessment-report .assessment-fields.two {
+    grid-template-columns: 1fr 1fr;
+  }
+  .assessment-report code {
+    color: #333;
+  }
+}

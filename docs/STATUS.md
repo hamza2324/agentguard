@@ -2,10 +2,10 @@
 
 Implemented and tested locally on 2026-11-09. This document distinguishes local verification from unavailable hosted verification.
 
-- Python: 19 tests pass, covering assertion faults, independently labeled agent regressions, repeated outcomes, comparison thresholds/resolutions, connector validation/timeouts, missing traces, API jobs/persistence, execution exceptions and the approved failure-to-test workflow.
+- Python: 31 tests pass, covering assertion faults, independently labeled agent regressions, repeated outcomes, comparison thresholds/resolutions, connector validation/timeouts, missing traces, API jobs/persistence, execution exceptions and the approved failure-to-test workflow.
 - Benchmark: baseline 31/31; candidate 20/31; 11 observed regressions. Unchanged baseline control exits zero; candidate regression gate exits one as expected.
 - TypeScript production build and ESLint pass.
-- Browser suite: 14 passed, 2 intentionally skipped duplicate mobile integrations. Desktop/mobile Chromium cover snapshots, filters, trace navigation, report downloads, themes and loading errors. A desktop browser test starts the real FastAPI server, executes the candidate and saves an approved failure-to-test review. Another verifies JS/CSS, generated data and hash navigation under an actual `/agentguard/` URL prefix.
+- Browser suite: 22 passed, 2 intentionally skipped duplicate mobile integrations. Desktop/mobile Chromium cover snapshots, filters, trace navigation, report downloads, themes and loading errors. A desktop browser test starts the real FastAPI server, executes the candidate and saves an approved failure-to-test review. Another verifies JS/CSS, generated data and hash navigation under an actual `/agentguard/` URL prefix.
 - npm dependency audit: zero reported vulnerabilities after patched minimatch override.
 - Python dependency audit: pip-audit reported no known vulnerabilities in the installed project environment.
 - Public snapshot schema and comparison validation implemented.
@@ -25,3 +25,5 @@ The larger master brief is not fully implemented: multi-user projects/configurat
 Homepage redesign: narrative hero, real baseline/candidate example, workflow explanation, setup section, and explanatory Ask AgentGuard guide. Playground supports transparent static replay plus fresh local support requests. Backend input validation and desktop/mobile request execution are tested.
 
 The prior assumption that a separate GitHub CLI login was required was corrected: the existing Git credential helper successfully authenticated GitHub operations.
+
+User-agent assessment update: four-step private browser import and approved local HTTP execution now generate quality/performance reports. Browser scoring matches Python on all 31 reference scenarios. Focused desktop/mobile assessment tests pass, including actual HTTP adapter execution and report download. Full local suite: 31 Python tests passed; 22 desktop/mobile browser tests passed with 2 intentionally skipped duplicate integrations. Production build, TypeScript, ESLint, Ruff, snapshot validation and npm audit pass. Updated hosted workflow results are verified after publication.

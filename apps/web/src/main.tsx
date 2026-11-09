@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ShieldCheck,
@@ -19,12 +19,16 @@ import {
   X,
   Home,
   FlaskConical,
+  FileCheck2,
 } from "lucide-react";
 import { reportSchema, runSchema, type Report, type Result } from "./schema";
 import "./style.css";
 import "./welcome.css";
 import { Welcome } from "./Welcome";
 import { Playground } from "./Playground";
+const TestAgent = lazy(() =>
+  import("./TestAgent").then((module) => ({ default: module.TestAgent })),
+);
 
 function download(name: string, value: unknown) {
   const url = URL.createObjectURL(
@@ -40,6 +44,7 @@ const pct = (n: number | null | undefined) =>
   n == null ? "Unavailable" : `${(n * 100).toFixed(1)}%`;
 const pages = [
   ["home", "Home", Home],
+  ["test-agent", "Test your agent", FileCheck2],
   ["playground", "Try the agent", FlaskConical],
   ["overview", "Overview", LayoutDashboard],
   ["comparison", "Version comparison", GitCompareArrows],
@@ -317,7 +322,15 @@ function App() {
           </span>
         </header>
         <main>
-          {page === "playground" ? (
+          {page === "test-agent" ? (
+            <Suspense
+              fallback={
+                <p role="status">Loading the agent assessment workspace…</p>
+              }
+            >
+              <TestAgent published={report} />
+            </Suspense>
+          ) : page === "playground" ? (
             <Playground report={report} />
           ) : (
             <>

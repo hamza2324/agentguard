@@ -1,4 +1,4 @@
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -24,6 +24,7 @@ class Scenario(Model):
     evidence: list[str] = Field(default_factory=list)
     output_schema: dict[str, Any] | None = None
     tags: list[str] = Field(default_factory=list)
+    required_response: list[Annotated[str, Field(min_length=1)]] = Field(default_factory=list)
 
 
 class Dataset(Model):

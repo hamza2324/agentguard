@@ -10,6 +10,19 @@ A reproducible evaluation lab for tool-using agents. Execute a real reference ag
 
 **[Open the live website ?](https://hamza2324.github.io/agentguard/)** ? [Source code](https://github.com/hamza2324/agentguard). The public site includes a product introduction, a real before/after example, a support-agent playground and an explanatory product guide. Hosted workflow status is recorded in [verification status](docs/STATUS.md).
 
+## Test your own agent
+
+**[Start a release assessment](https://hamza2324.github.io/agentguard/#test-agent)**. Name your baseline and candidate, define test inputs and expected behavior, supply real execution evidence, then review a regression report. The flow explains each field and offers a worked example.
+
+- On the public site, paste or upload execution JSON. Scoring happens privately in your browser; it does not execute a remote agent.
+- Locally, connect two explicitly approved HTTP endpoints and execute the same scenarios against both. A real adapter example is included.
+- Reports cover changed outcomes, task/state and response assertions, tools/arguments, forbidden actions, evidence, output schema, latency, available token usage and optional documented cost estimates.
+- Download JSON evidence, readable Markdown, rerunnable inputs, or use Print / Save as PDF. Missing measurements stay unavailable.
+
+Follow the [complete setup and adapter guide](docs/TEST_YOUR_AGENT.md). A prompt or URL alone is insufficient: you must define expected behavior and provide both versions. No report certifies general production readiness.
+
+![Example of a user-authored regression report](assets/screenshots/user-report-chromium.png)
+
 ## See the regression
 
 The baseline support agent passes **31/31** scenarios. The deliberately changed candidate passes **20/31**. AgentGuard identifies **11 scenario regressions** caused by a widened refund window, skipped escalation, and incorrect ticket tool selection. Those numbers are computed from executed Python, not written into the dashboard. See [benchmark conditions and limitations](docs/BENCHMARKS.md).
@@ -125,7 +138,7 @@ The local workflow requires a stored failed run, human review of input and asser
 
 The Python HTTP connector validates an [open JSON contract](docs/API.md), requires exact operator-provisioned HTTPS allowlists, rejects private/reserved destinations and redirects, and uses bounded timeouts. Missing tool traces remain unavailable. It does not retry side-effecting requests automatically.
 
-Use `connector.invoke(...)` to obtain an `Execution`, then `engine.evaluate(scenario, execution)` to score it. `engine.run(..., executor=...)` accepts a synchronous adapter for full batch execution. Remote connectors are not exposed as arbitrary URL execution endpoints in the UI. Production hosting needs egress controls against DNS rebinding and an approved redaction/export process for external traces.
+Use the guided **Test your agent** flow for imported observations or approved local HTTP endpoints. For library integrations, use `connector.invoke(...)` to obtain an `Execution`, then `engine.evaluate(scenario, execution)` to score it. `engine.run(..., executor=...)` accepts a synchronous adapter for full batch execution. Remote connectors are not exposed as arbitrary URL execution endpoints in the UI. Production hosting needs egress controls against DNS rebinding and an approved redaction/export process for external traces.
 
 ## Architecture and technology
 
@@ -173,7 +186,7 @@ npm.cmd test
 npm.cmd audit --audit-level=moderate
 ```
 
-Verified locally: **19 Python tests; 14 browser tests passed, 2 duplicate mobile integrations intentionally skipped**. Browser checks include the real backend and a repository-subpath server. TypeScript build, ESLint, Ruff and snapshot integrity validation pass. npm audit reported zero vulnerabilities after updating development tooling and overriding the affected minimatch dependency to its patched release; pip-audit reported no known Python vulnerabilities. See [validation status](docs/STATUS.md). Hosted CI, deterministic evaluation and GitHub Pages deployment also succeeded on main; see [workflow runs](https://github.com/hamza2324/agentguard/actions).
+Verified locally: **31 Python tests; 22 browser tests passed, 2 duplicate mobile integrations intentionally skipped**. Browser checks include the real backend and a repository-subpath server. TypeScript build, ESLint, Ruff and snapshot integrity validation pass. npm audit reported zero vulnerabilities after updating development tooling and overriding the affected minimatch dependency to its patched release; pip-audit reported no known Python vulnerabilities. See [validation status](docs/STATUS.md). Hosted CI, deterministic evaluation and GitHub Pages deployment also succeeded on main; see [workflow runs](https://github.com/hamza2324/agentguard/actions).
 
 ## Deployment
 
@@ -183,7 +196,7 @@ Three least-privilege, SHA-pinned workflows validate changes, publish evaluation
 
 Implemented: deterministic vertical slice, reference agent, datasets, assertions, traces, comparison gate, snapshot explorer, local execution jobs, reviewed failure-to-test, report exports, workflow definitions and automated tests.
 
-Deferred: authenticated multi-user hosting, durable/resumable jobs, project/configuration CRUD, normalized relational models and Alembic migrations, optional calibrated LLM judge, OTLP export, external-agent orchestration UI, advanced dataset editing UI and repeated stochastic experiments. No production adoption, enterprise readiness or general model accuracy claim is made.
+Deferred: authenticated multi-user hosting, durable/resumable jobs, project/configuration CRUD, normalized relational models and Alembic migrations, optional calibrated LLM judge, OTLP export, hosted multi-tenant agent orchestration, advanced dataset editing UI and repeated stochastic experiments. No production adoption, enterprise readiness or general model accuracy claim is made.
 
 The initial API is for loopback use. Public export is restricted to the bundled synthetic reference data. See [security policy](SECURITY.md), [contribution guide](CONTRIBUTING.md), [changelog](CHANGELOG.md), and [MIT license](LICENSE).
 

@@ -3,9 +3,11 @@
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
 import logging
+import os
 from pathlib import Path
 from threading import BoundedSemaphore
 from typing import Literal
+from time import perf_counter
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -15,6 +17,8 @@ from agentguard.engine import compare, load_dataset, run
 from agentguard.agent import build_agent
 from agentguard.models import Dataset, Execution, Model, Run, Scenario
 from agentguard.storage import database, listing, save
+from agentguard.assessment import Assessment, AssessmentOptions, Observation, assess
+from agentguard.connector import invoke, validate_endpoint
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -28,6 +32,16 @@ class PlaygroundRequest(Model):
     input: str = Field(min_length=1, max_length=10000)
     version: Literal["baseline", "candidate"]
     context: dict[str, str] = Field(default_factory=dict)
+
+
+class LiveAssessmentRequest(Model):
+    agent_name: str = Field(min_length=1, max_length=120)
+    baseline_version: str = Field(min_length=1, max_length=80)
+    candidate_version: str = Field(min_length=1, max_length=80)
+    baseline_endpoint: str = Field(max_length=2000)
+    candidate_endpoint: str = Field(max_length=2000)
+    scenarios: list[Scenario] = Field(min_length=1, max_length=10)
+    options: AssessmentOptions = Field(default_factory=AssessmentOptions)
 
 
 class ComparisonRequest(Model):
@@ -104,6 +118,86 @@ def create_app(url=None):
     @app.get("/datasets")
     def datasets():
         return listing(engine, "dataset")
+
+    @app.get("/assessments/{identifier}")
+    def assessment_report(identifier: str):
+        return get("assessment", identifier)
+
+    @app.post("/assessments", status_code=201)
+    def imported_assessment(request: Assessment):
+        report = assess(request)
+        save(engine, "assessment", report, report["id"])
+        return report
+
+    @app.post("/assessments/live", status_code=201)
+    async def live_assessment(request: LiveAssessmentRequest):
+        allowed = {
+            u.strip() for u in os.getenv("AGENTGUARD_ALLOWED_ENDPOINTS", "").split(",") if u.strip()
+        }
+        allow_local = os.getenv("AGENTGUARD_ALLOW_LOOPBACK", "0") == "1"
+        try:
+            for endpoint in [request.baseline_endpoint, request.candidate_endpoint]:
+                validate_endpoint(endpoint, allowed, allow_loopback=allow_local)
+            # Validate assertions and schemas before contacting either endpoint.
+            empty = {"response": "", "state": {}}
+            Assessment(
+                agent_name=request.agent_name,
+                baseline_version=request.baseline_version,
+                candidate_version=request.candidate_version,
+                options=request.options,
+                cases=[
+                    {"scenario": s, "baseline": empty, "candidate": empty}
+                    for s in request.scenarios
+                ],
+            )
+        except ValueError as error:
+            raise HTTPException(
+                422, "Review assertions and provision exact endpoint allowlists on the local server"
+            ) from error
+        if not capacity.acquire(blocking=False):
+            raise HTTPException(429, "Evaluation capacity is full")
+        try:
+            cases = []
+            for scenario in request.scenarios:
+                versions = {}
+                for version, endpoint in [
+                    ("baseline", request.baseline_endpoint),
+                    ("candidate", request.candidate_endpoint),
+                ]:
+                    started = perf_counter()
+                    try:
+                        execution = await invoke(
+                            endpoint,
+                            allowed,
+                            scenario.input,
+                            scenario.context,
+                            allow_loopback=allow_local,
+                        )
+                        observed = execution.model_dump(exclude={"cost"})
+                        observed["duration_ms"] = (perf_counter() - started) * 1000
+                        versions[version] = Observation.model_validate(observed)
+                    except Exception as error:
+                        versions[version] = Observation(
+                            response="",
+                            state={},
+                            duration_ms=(perf_counter() - started) * 1000,
+                            error=f"Agent request failed ({type(error).__name__})",
+                        )
+                cases.append({"scenario": scenario, **versions})
+            report = assess(
+                Assessment(
+                    agent_name=request.agent_name,
+                    baseline_version=request.baseline_version,
+                    candidate_version=request.candidate_version,
+                    cases=cases,
+                    options=request.options,
+                ),
+                mode="fresh HTTP execution / local Python backend; round-trip latency",
+            )
+            save(engine, "assessment", report, report["id"])
+            return report
+        finally:
+            capacity.release()
 
     @app.post("/datasets", status_code=201)
     def import_dataset(dataset: Dataset):

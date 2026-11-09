@@ -1,7 +1,7 @@
 import { z } from "zod";
 const record = z.record(z.string(), z.unknown());
 export const scenarioSchema = z.object({
-  id: z.string(),
+  id: z.string().min(1),
   title: z.string(),
   category: z.string(),
   input: z.string(),
@@ -12,6 +12,7 @@ export const scenarioSchema = z.object({
   evidence: z.array(z.string()),
   output_schema: record.nullable().optional(),
   tags: z.array(z.string()),
+  required_response: z.array(z.string().min(1)).default([]),
 });
 const score = z.object({
   evaluator: z.string(),

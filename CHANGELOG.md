@@ -1,5 +1,13 @@
 # Changelog
 
+## User agent release assessment — 2026-11-09
+
+- Added a guided four-step flow for agent versions, expected behavior, imported execution evidence or approved local HTTP endpoints, and regression reports.
+- Added state/response/tool/evidence/schema checks, configurable quality and performance gates, measurement coverage and documented flat-rate cost estimation.
+- Added JSON, Markdown, rerunnable input and print/PDF report exports.
+- Added a runnable HTTP adapter example, setup guide, endpoint allowlists and explicit loopback opt-in.
+- Added Python assessment tests, browser/Python scoring parity checks, and browser tests covering custom input through report export and actual HTTP agent execution.
+
 ## 0.1.0 — 2026-11-09
 
 - Local deterministic LangGraph support agent and deliberately regressed candidate.

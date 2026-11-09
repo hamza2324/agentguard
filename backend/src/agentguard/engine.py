@@ -5,10 +5,21 @@ from statistics import mean
 from time import perf_counter
 from uuid import uuid4
 
-from jsonschema import ValidationError, validate
+from jsonschema import Draft7Validator, ValidationError
 
 from agentguard.agent import build_agent
 from agentguard.models import Dataset, Execution, Result, Run, Score
+
+
+def json_equal(left, right):
+    """JSON structural equality; booleans must not equal numeric zero/one."""
+    if isinstance(left, bool) or isinstance(right, bool):
+        return type(left) is type(right) and left == right
+    if isinstance(left, dict) and isinstance(right, dict):
+        return left.keys() == right.keys() and all(json_equal(left[k], right[k]) for k in left)
+    if isinstance(left, list) and isinstance(right, list):
+        return len(left) == len(right) and all(json_equal(a, b) for a, b in zip(left, right))
+    return left == right
 
 
 def evaluate(scenario, execution):
@@ -23,9 +34,18 @@ def evaluate(scenario, execution):
     missing = {
         k: v
         for k, v in scenario.expected_state.items()
-        if k not in execution.state or execution.state[k] != v
+        if k not in execution.state or not json_equal(execution.state[k], v)
     }
     add("task_completion", not missing, f"Expected state differences: {missing}")
+    if scenario.required_response:
+        missing_phrases = [
+            phrase for phrase in scenario.required_response if phrase not in execution.response
+        ]
+        add(
+            "response_requirements",
+            not missing_phrases,
+            f"Missing required response text: {missing_phrases}",
+        )
     if calls is None:
         for name in ["tool_choice", "tool_arguments", "forbidden_actions"]:
             add(name, None, "Agent did not supply tool traces")
@@ -39,7 +59,10 @@ def evaluate(scenario, execution):
             for a in scenario.required_tools
             if not any(
                 c.tool == a.tool
-                and all(k in c.arguments and c.arguments[k] == v for k, v in a.arguments.items())
+                and all(
+                    k in c.arguments and json_equal(c.arguments[k], v)
+                    for k, v in a.arguments.items()
+                )
                 for c in calls
             )
         ]
@@ -50,7 +73,7 @@ def evaluate(scenario, execution):
     add("required_evidence", not missing_evidence, f"Missing evidence: {missing_evidence}")
     if scenario.output_schema:
         try:
-            validate(execution.state, scenario.output_schema)
+            Draft7Validator(scenario.output_schema).validate(execution.state)
             add("output_schema", True, "State matches JSON schema")
         except ValidationError as error:
             add("output_schema", False, error.message)

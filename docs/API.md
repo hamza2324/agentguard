@@ -11,6 +11,9 @@ Open `http://127.0.0.1:8000/docs` for generated contracts. All routes are local-
 | Route | Behavior |
 | --- | --- |
 | GET /health | Local mode and readiness |
+| POST /assessments | Score and persist an imported user baseline/candidate package |
+| POST /assessments/live | Execute up to 10 scenarios against two operator-allowlisted endpoints and produce a report |
+| GET /assessments/{id} | Retrieve a locally persisted user regression report |
 | POST /playground | Fresh input, version and optional context; returns actual execution without asserting pass/fail |
 | GET /agents | Included agent and supported versions |
 | GET, POST /datasets | List / validate and import a versioned dataset; use a new ID to clone |
@@ -29,6 +32,8 @@ Invoke-RestMethod "http://127.0.0.1:8000/jobs/$($job.job_id)"
 Failure-to-test POST requires `run_id`, failed `scenario_id`, `note`, `approved: true`, and a full `scenario` matching the dataset contract. It returns `dataset_id`; pass this ID to POST /runs for a subsequent evaluation. The test `test_api_persistence_and_reviewed_failure_to_runnable_test` demonstrates the entire contract. In the UI this workflow appears only for failed runs executed by the connected local backend; published run IDs are not stored in your local database.
 
 ## HTTP connector contract
+
+For the guided frontend, input package, metrics and local HTTP walkthrough, see [Test your agent](TEST_YOUR_AGENT.md). Public browser imports are evaluated locally without contacting this API; local live mode calls the allowlisted assessment route.
 
 The connector is a Python library, not a public URL execution route. Provision a trusted exact HTTPS endpoint and allowlist in operator code, then call `agentguard.connector.invoke`.
 

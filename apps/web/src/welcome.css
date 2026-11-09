@@ -1349,3 +1349,12 @@
 :root[data-theme="dark"] .landing .hero-experiment {
   box-shadow: 8px 12px 0 #303b2c;
 }
+
+.guide-own-agent {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  color: var(--ink);
+  margin-top: 14px;
+}

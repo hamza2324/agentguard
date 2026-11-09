@@ -25,6 +25,9 @@ export function AskGuide({ report }: { report: Report }) {
     if (/cost|paid|api key|free|llm|model/.test(q))
       response =
         "No API key is needed. The reference agent uses LangGraph, local rules and synthetic support tools. Token usage and cost are unavailable because no model is called. This benchmark demonstrates regression testing, not general LLM intelligence.";
+    else if (/my agent|own agent|upload|report|deploy/.test(q))
+      response =
+        "Open Test your agent. Name both versions, define test inputs and expected behavior, then paste execution data or connect approved endpoints through the local backend. Review the assertions and thresholds to generate a report with findings, metrics, evidence and JSON, Markdown or PDF exports. Public imports stay in your browser.";
     else if (/run|live|backend|start|install/.test(q))
       response =
         "The public site explores saved Python-generated results. To execute a fresh request, start the FastAPI backend locally, open the local frontend, and use Try the agent. To reproduce the complete benchmark, run: uv run python scripts/generate_demo.py. The README has the setup commands.";
@@ -91,6 +94,9 @@ export function AskGuide({ report }: { report: Report }) {
           Answers cover this demo and its documented workflow. No remote model
           is called.
         </small>
+        <a className="guide-own-agent" href="#test-agent">
+          Ready to test your own agent? <ArrowRight size={13} />
+        </a>
       </div>
     </section>
   );
@@ -120,6 +126,7 @@ export function Welcome({
           AgentGuard<span>OPEN SOURCE</span>
         </a>
         <div className="landing-links">
+          <a href="#test-agent">Test your agent</a>
           <a
             href="#home"
             onClick={(e) => {
@@ -140,8 +147,8 @@ export function Welcome({
           <button aria-label="Toggle color theme" onClick={toggleTheme}>
             {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
           </button>
-          <a className="landing-nav-cta" href="#overview">
-            Open the lab <ArrowRight size={14} />
+          <a className="landing-nav-cta" href="#test-agent">
+            Test your agent <ArrowRight size={14} />
           </a>
         </div>
       </nav>
@@ -165,9 +172,9 @@ export function Welcome({
               exactly where things went wrong.
             </p>
             <div className="hero-actions">
-              <a className="primary-cta" href="#playground">
+              <a className="primary-cta" href="#test-agent">
                 <Play size={16} />
-                Try the agent
+                Test your agent
                 <ArrowUpRight size={16} />
               </a>
               <a className="secondary-cta" href="#comparison">
