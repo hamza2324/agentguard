@@ -4,7 +4,7 @@
   "provenance": {
     "python": "3.12.10",
     "platform": "Windows-10-10.0.19045-SP0",
-    "commit": "uncommitted",
+    "commit": "de43ddcd9138abba92b1d7cb57132a7b63acfd34",
     "command": "uv run python scripts/generate_demo.py",
     "agent": "Rule-driven LangGraph support agent; no model API",
     "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245"
@@ -865,12 +865,12 @@
   "runs": [
     {
       "schema_version": "1",
-      "id": "bef4dd244a734e9e97b3f32524682ede",
+      "id": "f90dfaf2dbb9494eb7220d968a1b0882",
       "version": "baseline",
       "dataset_id": "support-operations",
       "dataset_version": 1,
       "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245",
-      "created_at": "2026-11-09T06:34:19.869066+00:00",
+      "created_at": "2026-11-09T07:56:35.352126+00:00",
       "results": [
         {
           "scenario": {
@@ -909,7 +909,7 @@
             ],
             "spans": [
               {
-                "id": "c43ae90644e9426cb23fcdcb49764434",
+                "id": "e65ca745bc544579ad08ba15313de6ab",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -919,10 +919,10 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.012800002878066152
+                "duration_ms": 0.013500000932253897
               }
             ],
-            "duration_ms": 0.1238999975612387,
+            "duration_ms": 0.13649999891640618,
             "tokens": null,
             "cost": null,
             "error": null
@@ -993,7 +993,7 @@
             ],
             "spans": [
               {
-                "id": "7033aea2783147ba937821777846f405",
+                "id": "6421a99104fd4ef5baa4c463dca9270c",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -1003,10 +1003,10 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.008600000001024455
+                "duration_ms": 0.010000003385357559
               }
             ],
-            "duration_ms": 0.0318000020342879,
+            "duration_ms": 0.037500001781154424,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1077,7 +1077,7 @@
             ],
             "spans": [
               {
-                "id": "8f275e3521304ca3831b00bbd102b460",
+                "id": "63cf8e1cb35c4dfd9733709fc3ddf7db",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -1087,10 +1087,10 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.007700000423938036
+                "duration_ms": 0.008800001523923129
               }
             ],
-            "duration_ms": 0.02649999805726111,
+            "duration_ms": 0.028899994504172355,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1161,7 +1161,7 @@
             ],
             "spans": [
               {
-                "id": "0da29285ad3f4e75be98bb24c6c869e5",
+                "id": "0f95d13511074cc4a48bc917a2fb0b83",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A103"
@@ -1171,10 +1171,10 @@
                   "age_days": 1,
                   "damaged": false
                 },
-                "duration_ms": 0.008499999239575118
+                "duration_ms": 0.009199997293762863
               }
             ],
-            "duration_ms": 0.026900001103058457,
+            "duration_ms": 0.02890000178012997,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1245,7 +1245,7 @@
             ],
             "spans": [
               {
-                "id": "bb0768aee7154c6c84199d0090175fc7",
+                "id": "3e5364787c514833b0e1f3ee14776442",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A104"
@@ -1255,10 +1255,10 @@
                   "age_days": 30,
                   "damaged": false
                 },
-                "duration_ms": 0.008000002708286047
+                "duration_ms": 0.00839999847812578
               }
             ],
-            "duration_ms": 0.026599998818710446,
+            "duration_ms": 0.02729999687289819,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1329,7 +1329,7 @@
             ],
             "spans": [
               {
-                "id": "0cfa974e2a1446cbbc78411155527f6c",
+                "id": "926f14d5ccc54dcf88c097aeb551cf15",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A105"
@@ -1339,10 +1339,10 @@
                   "age_days": 31,
                   "damaged": false
                 },
-                "duration_ms": 0.009700001101009548
+                "duration_ms": 0.009000003046821803
               }
             ],
-            "duration_ms": 0.03869999636663124,
+            "duration_ms": 0.030200004403013736,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1413,7 +1413,7 @@
             ],
             "spans": [
               {
-                "id": "fc034ceff5214d179f186c596271769f",
+                "id": "f8f8b4a5174d4591b54e21b8d9a66b34",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A106"
@@ -1423,10 +1423,10 @@
                   "age_days": 0,
                   "damaged": true
                 },
-                "duration_ms": 0.009099996532313526
+                "duration_ms": 0.008199996955227107
               }
             ],
-            "duration_ms": 0.02970000059576705,
+            "duration_ms": 0.027000001864507794,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1503,7 +1503,7 @@
             ],
             "spans": [
               {
-                "id": "3d21f94a38714e03b64a12f616dd4574",
+                "id": "eebf5f8985974ef2911f5cb71d8be16f",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -1513,20 +1513,20 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.008199996955227107
+                "duration_ms": 0.007999995432328433
               },
               {
-                "id": "bdd4856227234220af561957d39ac778",
+                "id": "c82674411fcd46fa858a390e490c8380",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0044000043999403715
+                "duration_ms": 0.004900000931229442
               }
             ],
-            "duration_ms": 0.03800000558840111,
+            "duration_ms": 0.03809999907389283,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1603,7 +1603,7 @@
             ],
             "spans": [
               {
-                "id": "78595c3671324b7a8c23cea7ce60a683",
+                "id": "85f44cfc39c54d12bb8d23b41ed4db41",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -1613,20 +1613,20 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.008499999239575118
+                "duration_ms": 0.008199996955227107
               },
               {
-                "id": "4e8123692e904c9dbea393d0d28c34e8",
+                "id": "6c5a02fc81514d448dc6db2e0b072a3a",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.005400004738476127
+                "duration_ms": 0.00549999822396785
               }
             ],
-            "duration_ms": 0.0411000000895001,
+            "duration_ms": 0.03850000211969018,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1703,7 +1703,7 @@
             ],
             "spans": [
               {
-                "id": "4e3d9584a31b45c89e5f570640a7c6b7",
+                "id": "2b841078bbac41ff95299d25e2b2f59d",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -1713,20 +1713,20 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.009399998816661537
+                "duration_ms": 0.007800001185387373
               },
               {
-                "id": "23226c3bc01d4162859312dec6de1ad7",
+                "id": "ab54c53264ce46c3a137438d68e3569d",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.005399997462518513
+                "duration_ms": 0.004499997885432094
               }
             ],
-            "duration_ms": 0.04400000034365803,
+            "duration_ms": 0.03669999568955973,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1803,7 +1803,7 @@
             ],
             "spans": [
               {
-                "id": "9f1e5c36fa354ebba42eabfbb1e46d27",
+                "id": "584b73e385034b48bc91f3d474eedbba",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A103"
@@ -1813,20 +1813,20 @@
                   "age_days": 1,
                   "damaged": false
                 },
-                "duration_ms": 0.008999995770864189
+                "duration_ms": 0.008600000001024455
               },
               {
-                "id": "a7002b785ab24362ae49f6981eb242d4",
+                "id": "dd8ea1b803d246208aa12c92a342ad4b",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.005200003215577453
+                "duration_ms": 0.004699999408330768
               }
             ],
-            "duration_ms": 0.04310000076657161,
+            "duration_ms": 0.03989999822806567,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1903,7 +1903,7 @@
             ],
             "spans": [
               {
-                "id": "ece2faf67a924faf88f78fc25e97a87f",
+                "id": "8e96d9e1d3ff4d5d865a917aaca6812d",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A104"
@@ -1913,20 +1913,20 @@
                   "age_days": 30,
                   "damaged": false
                 },
-                "duration_ms": 0.009099996532313526
+                "duration_ms": 0.007799993909429759
               },
               {
-                "id": "5ce218c27796453d90a3baebf444f456",
+                "id": "014ea4a8143f428eb6fc14ad57fe7335",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.005199995939619839
+                "duration_ms": 0.005000001692678779
               }
             ],
-            "duration_ms": 0.0427999984822236,
+            "duration_ms": 0.0368999972124584,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2003,7 +2003,7 @@
             ],
             "spans": [
               {
-                "id": "b2d5b87b775749e3a4b57b707d2ed71e",
+                "id": "fe5ff52fec5b47daa5c589961262747f",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A105"
@@ -2013,20 +2013,20 @@
                   "age_days": 31,
                   "damaged": false
                 },
-                "duration_ms": 0.010099996870849282
+                "duration_ms": 0.007800001185387373
               },
               {
-                "id": "de088739279140a98ce0bbe40708e913",
+                "id": "72c83cdd356d4bac9cbdc8cf64a35b37",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.005100002454128116
+                "duration_ms": 0.0046000059228390455
               }
             ],
-            "duration_ms": 0.04389999958220869,
+            "duration_ms": 0.03659999492811039,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2103,7 +2103,7 @@
             ],
             "spans": [
               {
-                "id": "36ffe9522e084958aaa7a13cb0140b29",
+                "id": "1daa773855c7458f87cd9b65fe2edef4",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A106"
@@ -2113,20 +2113,20 @@
                   "age_days": 0,
                   "damaged": true
                 },
-                "duration_ms": 0.012299999070819467
+                "duration_ms": 0.007599999662488699
               },
               {
-                "id": "ea4985bf5d0b4e92860242eaf0ef6ab7",
+                "id": "3237d8f583a74b86aa4505c312625d81",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.00530000397702679
+                "duration_ms": 0.0044000043999403715
               }
             ],
-            "duration_ms": 0.048000001697801054,
+            "duration_ms": 0.03819999983534217,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2196,7 +2196,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "4bdd6037ad144a6aaf800669ce203161",
+                "id": "bdcb9e53442f4d36a944560caaa4f22e",
                 "tool": "escalate",
                 "arguments": {
                   "reason": "urgent"
@@ -2205,10 +2205,10 @@
                   "escalated": true,
                   "queue": "urgent"
                 },
-                "duration_ms": 0.008900002285372466
+                "duration_ms": 0.007999995432328433
               }
             ],
-            "duration_ms": 0.030700000934302807,
+            "duration_ms": 0.026299996534362435,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2278,7 +2278,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "ddcdad27b06b4d6fa32692589eaa9d00",
+                "id": "b1a07754ecb743cd92eb2dd23345250f",
                 "tool": "escalate",
                 "arguments": {
                   "reason": "urgent"
@@ -2287,10 +2287,10 @@
                   "escalated": true,
                   "queue": "urgent"
                 },
-                "duration_ms": 0.008600000001024455
+                "duration_ms": 0.007399998139590025
               }
             ],
-            "duration_ms": 0.02890000178012997,
+            "duration_ms": 0.02469999890308827,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2360,7 +2360,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "4acb24c266d0468e86085fdb98dedad3",
+                "id": "448cad025cde4e42834727948190086e",
                 "tool": "escalate",
                 "arguments": {
                   "reason": "urgent"
@@ -2369,10 +2369,10 @@
                   "escalated": true,
                   "queue": "urgent"
                 },
-                "duration_ms": 0.008800001523923129
+                "duration_ms": 0.007399998139590025
               }
             ],
-            "duration_ms": 0.0318000020342879,
+            "duration_ms": 0.024300003133248538,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2442,7 +2442,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "7a74a151a07f41639498122f05d04444",
+                "id": "5f9539b1f92247dcac15be53f386fecf",
                 "tool": "escalate",
                 "arguments": {
                   "reason": "urgent"
@@ -2451,10 +2451,10 @@
                   "escalated": true,
                   "queue": "urgent"
                 },
-                "duration_ms": 0.008499999239575118
+                "duration_ms": 0.007299997378140688
               }
             ],
-            "duration_ms": 0.03199999628122896,
+            "duration_ms": 0.026900001103058457,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2523,7 +2523,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "98bd22956feb4753b842e9e941ca9120",
+                "id": "642bf368a66b4c82b371d2446b6f142a",
                 "tool": "create_ticket",
                 "arguments": {
                   "kind": "support"
@@ -2532,10 +2532,10 @@
                   "ticket": "mock-ticket",
                   "kind": "support"
                 },
-                "duration_ms": 0.01049999991664663
+                "duration_ms": 0.008299997716676444
               }
             ],
-            "duration_ms": 0.03139999898849055,
+            "duration_ms": 0.0259000007645227,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2604,7 +2604,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "aa6d5e7cbf43466ea4b582bae8ce35b4",
+                "id": "8ee0c1319c1d45cf9f6238d23c28963f",
                 "tool": "create_ticket",
                 "arguments": {
                   "kind": "support"
@@ -2613,10 +2613,10 @@
                   "ticket": "mock-ticket",
                   "kind": "support"
                 },
-                "duration_ms": 0.009099996532313526
+                "duration_ms": 0.007700000423938036
               }
             ],
-            "duration_ms": 0.030499999411404133,
+            "duration_ms": 0.025499997718725353,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2685,7 +2685,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "48bf83394c8e4e4a8e5925fa00d11dca",
+                "id": "1a906dc03b83405b8952186d923f34c2",
                 "tool": "create_ticket",
                 "arguments": {
                   "kind": "invoice"
@@ -2694,10 +2694,10 @@
                   "ticket": "mock-ticket",
                   "kind": "invoice"
                 },
-                "duration_ms": 0.008800001523923129
+                "duration_ms": 0.007399998139590025
               }
             ],
-            "duration_ms": 0.02939999831141904,
+            "duration_ms": 0.024599998141638935,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2766,7 +2766,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "64aad99304a749a08ccae566d977030a",
+                "id": "d72d59a06bb247d39b908f7717e407b9",
                 "tool": "create_ticket",
                 "arguments": {
                   "kind": "support"
@@ -2775,10 +2775,10 @@
                   "ticket": "mock-ticket",
                   "kind": "support"
                 },
-                "duration_ms": 0.008900002285372466
+                "duration_ms": 0.008700000762473792
               }
             ],
-            "duration_ms": 0.03489999653538689,
+            "duration_ms": 0.033700001949910074,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2840,7 +2840,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.009000003046821803,
+            "duration_ms": 0.01030000566970557,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2902,7 +2902,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.011100004485342652,
+            "duration_ms": 0.00960000033956021,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2964,7 +2964,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.009200004569720477,
+            "duration_ms": 0.00790000194683671,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3035,7 +3035,7 @@
             ],
             "spans": [
               {
-                "id": "23307b9460f841e0a92db851316f98eb",
+                "id": "6499ea13712d489fa438fb4e330f61c5",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A999"
@@ -3043,10 +3043,10 @@
                 "result": {
                   "error": "not_found"
                 },
-                "duration_ms": 0.011600001016631722
+                "duration_ms": 0.010599993402138352
               }
             ],
-            "duration_ms": 0.033700001949910074,
+            "duration_ms": 0.028100002964492887,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3119,7 +3119,7 @@
             ],
             "spans": [
               {
-                "id": "1b36fa0db99a4381841fa86c36e368bf",
+                "id": "e51cf4d78675404fa6317122ee2693a8",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A999"
@@ -3127,10 +3127,10 @@
                 "result": {
                   "error": "not_found"
                 },
-                "duration_ms": 0.010299998393747956
+                "duration_ms": 0.008100003469735384
               }
             ],
-            "duration_ms": 0.035700002626981586,
+            "duration_ms": 0.02680000034160912,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3199,17 +3199,17 @@
             ],
             "spans": [
               {
-                "id": "467aa80dd02943e59cad52238733d78e",
+                "id": "52c2b3bc52704eff9b05cc28a9e4da19",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.009899995347950608
+                "duration_ms": 0.007399998139590025
               }
             ],
-            "duration_ms": 0.032199997804127634,
+            "duration_ms": 0.023799999326001853,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3282,7 +3282,7 @@
             ],
             "spans": [
               {
-                "id": "5de1dbc4819c4183a38d3372baadd064",
+                "id": "ebaf490aa41d41da9c9d4c204619809a",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -3292,10 +3292,10 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.01049999991664663
+                "duration_ms": 0.007700000423938036
               }
             ],
-            "duration_ms": 0.03360000118846074,
+            "duration_ms": 0.025800000003073364,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3374,7 +3374,7 @@
             ],
             "spans": [
               {
-                "id": "cfedd63c83e94973a24cff48ee8c6cff",
+                "id": "08ec0abe36c7452c96951d554da1bb74",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -3384,20 +3384,20 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.010700001439545304
+                "duration_ms": 0.008100003469735384
               },
               {
-                "id": "e849c022b8e94739a5f194269f0b57dd",
+                "id": "22be1d222e45433ba71d5e54521fdafa",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.005800000508315861
+                "duration_ms": 0.004599998646881431
               }
             ],
-            "duration_ms": 0.04780000017490238,
+            "duration_ms": 0.03599999763537198,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3482,7 +3482,7 @@
             ],
             "spans": [
               {
-                "id": "4611b8937041469e95d1ed6876ea356c",
+                "id": "fe1ecce797f447668c605244b34e5eb3",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -3492,10 +3492,10 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.011399999493733048
+                "duration_ms": 0.008200004231184721
               }
             ],
-            "duration_ms": 0.03460000152699649,
+            "duration_ms": 0.028599999495781958,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3537,25 +3537,25 @@
       ],
       "metrics": {
         "pass_rate": 1.0,
-        "latency_ms": 0.03553225847539462,
+        "latency_ms": 0.03193548365098034,
         "tokens": null,
         "cost": null,
-        "tool_arguments": 1.0,
-        "required_evidence": 1.0,
-        "output_schema": 1.0,
-        "forbidden_actions": 1.0,
+        "tool_choice": 1.0,
         "task_completion": 1.0,
-        "tool_choice": 1.0
+        "output_schema": 1.0,
+        "required_evidence": 1.0,
+        "forbidden_actions": 1.0,
+        "tool_arguments": 1.0
       }
     },
     {
       "schema_version": "1",
-      "id": "f2586c7d800a45799de4c25a8433a9c2",
+      "id": "d0d061ac97c24440a33e323c8d3d11da",
       "version": "candidate",
       "dataset_id": "support-operations",
       "dataset_version": 1,
       "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245",
-      "created_at": "2026-11-09T06:34:19.895613+00:00",
+      "created_at": "2026-11-09T07:56:35.375114+00:00",
       "results": [
         {
           "scenario": {
@@ -3594,7 +3594,7 @@
             ],
             "spans": [
               {
-                "id": "691d33e089ea4cd38cf69e4c67682ec5",
+                "id": "2bab492951b8443981ce218eeca2a60b",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -3604,10 +3604,10 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.011000003723893315
+                "duration_ms": 0.007999995432328433
               }
             ],
-            "duration_ms": 0.03609999839682132,
+            "duration_ms": 0.026100002287421376,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3678,7 +3678,7 @@
             ],
             "spans": [
               {
-                "id": "8243025e724d4bdf96ac374f2843b321",
+                "id": "69f297476bf1476b88383a9fb99ff608",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -3688,10 +3688,10 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.010299998393747956
+                "duration_ms": 0.007000002369750291
               }
             ],
-            "duration_ms": 0.03480000304989517,
+            "duration_ms": 0.023600005079060793,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3762,7 +3762,7 @@
             ],
             "spans": [
               {
-                "id": "6079f36db5d24eab98ca5f3b4c9c393e",
+                "id": "bacbf037141e4473b3dca0e26d4d7eb7",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -3772,10 +3772,10 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.010600000678095967
+                "duration_ms": 0.007100003131199628
               }
             ],
-            "duration_ms": 0.03759999526664615,
+            "duration_ms": 0.02529999619582668,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3846,7 +3846,7 @@
             ],
             "spans": [
               {
-                "id": "bcd8cf4f2d5f47f7b9221d5228dc8051",
+                "id": "5cb4bcf4524f4dc7833a9413a145d94e",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A103"
@@ -3856,10 +3856,10 @@
                   "age_days": 1,
                   "damaged": false
                 },
-                "duration_ms": 0.01049999991664663
+                "duration_ms": 0.007099995855242014
               }
             ],
-            "duration_ms": 0.03489999653538689,
+            "duration_ms": 0.02340000355616212,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3930,7 +3930,7 @@
             ],
             "spans": [
               {
-                "id": "d465323e720a485e851a0684c9546709",
+                "id": "b927053193bb41ce929ae56ffdba5c58",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A104"
@@ -3940,10 +3940,10 @@
                   "age_days": 30,
                   "damaged": false
                 },
-                "duration_ms": 0.014999997802078724
+                "duration_ms": 0.009900002623908222
               }
             ],
-            "duration_ms": 0.040899998566601425,
+            "duration_ms": 0.02729999687289819,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4014,7 +4014,7 @@
             ],
             "spans": [
               {
-                "id": "81794e9bf1ad4039b35b137ddeff3030",
+                "id": "12635c1f615b499bbe6b6f111ba3140b",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A105"
@@ -4024,10 +4024,10 @@
                   "age_days": 31,
                   "damaged": false
                 },
-                "duration_ms": 0.020899999071843922
+                "duration_ms": 0.006900001608300954
               }
             ],
-            "duration_ms": 0.058800003898795694,
+            "duration_ms": 0.022600004740525037,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4098,7 +4098,7 @@
             ],
             "spans": [
               {
-                "id": "eb0e6541c10745d7bc91a83a38bf4f35",
+                "id": "ec66ed3a034a4774a0fe6b139948d616",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A106"
@@ -4108,10 +4108,10 @@
                   "age_days": 0,
                   "damaged": true
                 },
-                "duration_ms": 0.012299999070819467
+                "duration_ms": 0.006900001608300954
               }
             ],
-            "duration_ms": 0.04350000381236896,
+            "duration_ms": 0.024400003894697875,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4188,7 +4188,7 @@
             ],
             "spans": [
               {
-                "id": "b43cd54a048e48d9be71e35b6151e149",
+                "id": "cd1503be6d9342659acf423686d68461",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -4198,20 +4198,20 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.010700001439545304
+                "duration_ms": 0.006800000846851617
               },
               {
-                "id": "5979f031b87b4adb9b3e154a6d2a6589",
+                "id": "33b109a9bde34075b9bf58016c0edbc1",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006000002031214535
+                "duration_ms": 0.004399997123982757
               }
             ],
-            "duration_ms": 0.04859999899053946,
+            "duration_ms": 0.03170000127283856,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4288,7 +4288,7 @@
             ],
             "spans": [
               {
-                "id": "d214d889f0bc458d9a0af6f7a60bdd7a",
+                "id": "05bcfff7446e4e56a3b3fceeef444dce",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -4298,20 +4298,20 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.010700001439545304
+                "duration_ms": 0.006900001608300954
               },
               {
-                "id": "9cfdc7b962164e1f83ce13f73194d808",
+                "id": "75281a37326c47869f67244681015bd0",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006000002031214535
+                "duration_ms": 0.0039000005926936865
               }
             ],
-            "duration_ms": 0.05149999924469739,
+            "duration_ms": 0.030700000934302807,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4388,7 +4388,7 @@
             ],
             "spans": [
               {
-                "id": "97218561b5744e1aa0933e694e63f071",
+                "id": "d2031713cae14c4d96765a61cb79b52f",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -4398,20 +4398,20 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.010299998393747956
+                "duration_ms": 0.01030000566970557
               },
               {
-                "id": "c458cafc0b204348b69be6c5ed996cb4",
+                "id": "56e917f6b63e423385a66b4a803c2fd9",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006099995516706258
+                "duration_ms": 0.004199995601084083
               }
             ],
-            "duration_ms": 0.04829999670619145,
+            "duration_ms": 0.03899999865097925,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4488,7 +4488,7 @@
             ],
             "spans": [
               {
-                "id": "647bd3cbd7b34e3d905bf894974d5eaf",
+                "id": "2ce8802cfc84416984c8d6bbbe6d705c",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A103"
@@ -4498,20 +4498,20 @@
                   "age_days": 1,
                   "damaged": false
                 },
-                "duration_ms": 0.010099996870849282
+                "duration_ms": 0.007099995855242014
               },
               {
-                "id": "5b31e7c3d8bb4324b3bcb60dfbdec739",
+                "id": "1a28a919d3ae453e8216b2e3cb2128be",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006599999323952943
+                "duration_ms": 0.0037999998312443495
               }
             ],
-            "duration_ms": 0.0486999997519888,
+            "duration_ms": 0.03949999518226832,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4588,7 +4588,7 @@
             ],
             "spans": [
               {
-                "id": "d594747a107a4f98b8307b95758d6384",
+                "id": "7ef6b58a26bb4144913047e0b69c59b2",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A104"
@@ -4598,20 +4598,20 @@
                   "age_days": 30,
                   "damaged": false
                 },
-                "duration_ms": 0.010700001439545304
+                "duration_ms": 0.006900001608300954
               },
               {
-                "id": "a5cdd04d83374531a28512a45dcfd064",
+                "id": "b89aa40758b045579d00d894aed15287",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.005800000508315861
+                "duration_ms": 0.0039000005926936865
               }
             ],
-            "duration_ms": 0.05059999966761097,
+            "duration_ms": 0.03290000313427299,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4688,7 +4688,7 @@
             ],
             "spans": [
               {
-                "id": "b6f4d3b29616476f90d5805bdef5af4f",
+                "id": "b95f1efff1634740b5a4a3bbcf3010d3",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A105"
@@ -4698,20 +4698,20 @@
                   "age_days": 31,
                   "damaged": false
                 },
-                "duration_ms": 0.010600000678095967
+                "duration_ms": 0.006799993570894003
               },
               {
-                "id": "aa47d760726b4420afce8c782945002c",
+                "id": "2843ed23ad944281b1f5fe61691f622b",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006000002031214535
+                "duration_ms": 0.003999994078185409
               }
             ],
-            "duration_ms": 0.048800000513438135,
+            "duration_ms": 0.031199997465591878,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4788,7 +4788,7 @@
             ],
             "spans": [
               {
-                "id": "e7f7f8e92c464a1e9db65007cf84819b",
+                "id": "caf2e8d6568a45f8abe90cd1aae09a86",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A106"
@@ -4798,20 +4798,20 @@
                   "age_days": 0,
                   "damaged": true
                 },
-                "duration_ms": 0.010900002962443978
+                "duration_ms": 0.007700000423938036
               },
               {
-                "id": "631266a8ea394d009cefe9d0d1035dbf",
+                "id": "cceb11cec5814129aef61acae95eb1d5",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006000002031214535
+                "duration_ms": 0.0042000028770416975
               }
             ],
-            "duration_ms": 0.048800000513438135,
+            "duration_ms": 0.03669999568955973,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4879,7 +4879,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.008499999239575118,
+            "duration_ms": 0.006399997801054269,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4947,7 +4947,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.008899995009414852,
+            "duration_ms": 0.00670000008540228,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5015,7 +5015,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.00910000380827114,
+            "duration_ms": 0.006900001608300954,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5083,7 +5083,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.008999995770864189,
+            "duration_ms": 0.00670000008540228,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5152,17 +5152,17 @@
             "evidence": [],
             "spans": [
               {
-                "id": "04f435f9977044da82093cd9a7062ba7",
+                "id": "d3ae71fa41e048ff9c609649560dd065",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.00910000380827114
+                "duration_ms": 0.006599999323952943
               }
             ],
-            "duration_ms": 0.029000002541579306,
+            "duration_ms": 0.02149999636458233,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5231,17 +5231,17 @@
             "evidence": [],
             "spans": [
               {
-                "id": "f873b3119c704a1eb6609d41790673b0",
+                "id": "6d9c3383b6e74f6a80954377299c367f",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.009399998816661537
+                "duration_ms": 0.00790000194683671
               }
             ],
-            "duration_ms": 0.029499999072868377,
+            "duration_ms": 0.02269999822601676,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5310,17 +5310,17 @@
             "evidence": [],
             "spans": [
               {
-                "id": "a5f368803ffa47f6aa43f9f03ea2f4dc",
+                "id": "be24ef3716954271851ebb906f524f99",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.007399998139590025
+                "duration_ms": 0.006300004315562546
               }
             ],
-            "duration_ms": 0.027900001441594213,
+            "duration_ms": 0.025200002710334957,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5389,17 +5389,17 @@
             "evidence": [],
             "spans": [
               {
-                "id": "5e647dfb6f43482a8b6c9eed368fd411",
+                "id": "d46fc79d501741c6aa19bfaf03cb494e",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.010100004146806896
+                "duration_ms": 0.006499998562503606
               }
             ],
-            "duration_ms": 0.03149999974993989,
+            "duration_ms": 0.0225000039790757,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5461,7 +5461,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.016199999663513154,
+            "duration_ms": 0.007499998901039362,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5523,7 +5523,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.010600000678095967,
+            "duration_ms": 0.007200003892648965,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5585,7 +5585,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.007800001185387373,
+            "duration_ms": 0.006399997801054269,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5656,7 +5656,7 @@
             ],
             "spans": [
               {
-                "id": "ca4048fb7a654061b273a8339c66401d",
+                "id": "786552237c6241f7a27f74e56a5f2c6d",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A999"
@@ -5664,10 +5664,10 @@
                 "result": {
                   "error": "not_found"
                 },
-                "duration_ms": 0.01049999991664663
+                "duration_ms": 0.008600000001024455
               }
             ],
-            "duration_ms": 0.030499999411404133,
+            "duration_ms": 0.0259000007645227,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5740,7 +5740,7 @@
             ],
             "spans": [
               {
-                "id": "4a9f28ec32424263bb94317d2469df2f",
+                "id": "64c8f925e04d4a5381f8fe663f17a2ed",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A999"
@@ -5748,10 +5748,10 @@
                 "result": {
                   "error": "not_found"
                 },
-                "duration_ms": 0.009099996532313526
+                "duration_ms": 0.006499998562503606
               }
             ],
-            "duration_ms": 0.024300003133248538,
+            "duration_ms": 0.02050000330200419,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5820,17 +5820,17 @@
             ],
             "spans": [
               {
-                "id": "e0a3a82b3eeb40819c8a0c26e1acd2ae",
+                "id": "5dcf704de3b54accaf474275e0247f42",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.007199996616691351
+                "duration_ms": 0.007499998901039362
               }
             ],
-            "duration_ms": 0.022600004740525037,
+            "duration_ms": 0.022000000171829015,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5903,7 +5903,7 @@
             ],
             "spans": [
               {
-                "id": "b52b97bb35e34001b1ca77b93ba9e58c",
+                "id": "f4b5a4ca88974a2796ecaf4a7aeef1ad",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -5913,10 +5913,10 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.006999995093792677
+                "duration_ms": 0.00670000008540228
               }
             ],
-            "duration_ms": 0.023200002033263445,
+            "duration_ms": 0.022000000171829015,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5995,7 +5995,7 @@
             ],
             "spans": [
               {
-                "id": "1f4ac81fde424bc997b76f955f5fef5e",
+                "id": "067b16a91bda408f88db2275f0ea36b1",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -6005,20 +6005,20 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.007200003892648965
+                "duration_ms": 0.006800000846851617
               },
               {
-                "id": "fc19f5eabf694fd08e85464d5c21b5a7",
+                "id": "c52165d3a39d4829a401cc6d100131cf",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.00530000397702679
+                "duration_ms": 0.0041000021155923605
               }
             ],
-            "duration_ms": 0.03599999763537198,
+            "duration_ms": 0.03380000271135941,
             "tokens": null,
             "cost": null,
             "error": null
@@ -6103,7 +6103,7 @@
             ],
             "spans": [
               {
-                "id": "967db2770d174ed3be7bc0e69d418c70",
+                "id": "cf36a6fb589d4d018e366398f40f6d3d",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -6113,10 +6113,10 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.009700001101009548
+                "duration_ms": 0.00670000008540228
               }
             ],
-            "duration_ms": 0.0261999957729131,
+            "duration_ms": 0.021800005924887955,
             "tokens": null,
             "cost": null,
             "error": null
@@ -6158,21 +6158,21 @@
       ],
       "metrics": {
         "pass_rate": 0.6451612903225806,
-        "latency_ms": 0.0316999998645887,
+        "latency_ms": 0.02258387159541129,
         "tokens": null,
         "cost": null,
-        "tool_arguments": 0.7419354838709677,
-        "required_evidence": 1.0,
-        "output_schema": 1.0,
-        "forbidden_actions": 1.0,
+        "tool_choice": 0.7419354838709677,
         "task_completion": 0.6451612903225806,
-        "tool_choice": 0.7419354838709677
+        "output_schema": 1.0,
+        "required_evidence": 1.0,
+        "forbidden_actions": 1.0,
+        "tool_arguments": 0.7419354838709677
       }
     }
   ],
   "comparison": {
-    "baseline_id": "bef4dd244a734e9e97b3f32524682ede",
-    "candidate_id": "f2586c7d800a45799de4c25a8433a9c2",
+    "baseline_id": "f90dfaf2dbb9494eb7220d968a1b0882",
+    "candidate_id": "d0d061ac97c24440a33e323c8d3d11da",
     "pass_rate_drop": 0.3548387096774194,
     "threshold": 0,
     "gate_failed": true,
