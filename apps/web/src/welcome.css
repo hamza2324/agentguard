@@ -1119,7 +1119,7 @@
     font-size: 34px;
   }
   .choose-path h2 br {
-    display: none;
+    display: initial;
   }
   .choose-path b {
     font-size: 16px;
@@ -1207,8 +1207,8 @@
     letter-spacing: 0.7px;
   }
   .hero-copy h1 {
-    font-size: 70px;
-    letter-spacing: -4px;
+    font-size: 54px;
+    letter-spacing: -3px;
   }
   .hero-copy > p {
     font-size: 12px;

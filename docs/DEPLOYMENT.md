@@ -1,5 +1,7 @@
 # GitHub publication
 
+Public website: https://hamza2324.github.io/agentguard/.
+
 Repository: https://github.com/hamza2324/agentguard. Existing Git Credential Manager authentication from the development environment was successfully reused. A separate `gh auth login` is not required when a credential helper already supplies GitHub credentials. During publication, the helper credential was passed to GitHub CLI through a process-local environment variable and was never printed or written into project files.
 
 The commands below are fallback instructions for a fresh machine without that configured authentication. Hosted execution status is recorded in STATUS.md.

@@ -6,7 +6,9 @@
 
 A reproducible evaluation lab for tool-using agents. Execute a real reference agent, score observed behavior, compare versions, inspect the evidence, and turn a reviewed failure into a regression test. The core benchmark runs locally without API keys, hosted services, or a paid LLM.
 
-**Source:** [hamza2324/agentguard](https://github.com/hamza2324/agentguard). The public site includes a product introduction, a real before/after example, a support-agent playground and an explanatory product guide. Hosted workflow status is recorded in [verification status](docs/STATUS.md).
+[![CI](https://github.com/hamza2324/agentguard/actions/workflows/ci.yml/badge.svg)](https://github.com/hamza2324/agentguard/actions/workflows/ci.yml)
+
+**[Open the live website ?](https://hamza2324.github.io/agentguard/)** ? [Source code](https://github.com/hamza2324/agentguard). The public site includes a product introduction, a real before/after example, a support-agent playground and an explanatory product guide. Hosted workflow status is recorded in [verification status](docs/STATUS.md).
 
 ## See the regression
 
@@ -171,7 +173,7 @@ npm.cmd test
 npm.cmd audit --audit-level=moderate
 ```
 
-Verified locally: **19 Python tests; 14 browser tests passed, 2 duplicate mobile integrations intentionally skipped**. Browser checks include the real backend and a repository-subpath server. TypeScript build, ESLint, Ruff and snapshot integrity validation pass. npm audit reported zero vulnerabilities after updating development tooling and overriding the affected minimatch dependency to its patched release; pip-audit reported no known Python vulnerabilities. See [validation status](docs/STATUS.md). These checks do not establish that hosted CI has run.
+Verified locally: **19 Python tests; 14 browser tests passed, 2 duplicate mobile integrations intentionally skipped**. Browser checks include the real backend and a repository-subpath server. TypeScript build, ESLint, Ruff and snapshot integrity validation pass. npm audit reported zero vulnerabilities after updating development tooling and overriding the affected minimatch dependency to its patched release; pip-audit reported no known Python vulnerabilities. See [validation status](docs/STATUS.md). Hosted CI, deterministic evaluation and GitHub Pages deployment also succeeded on main; see [workflow runs](https://github.com/hamza2324/agentguard/actions).
 
 ## Deployment
 
