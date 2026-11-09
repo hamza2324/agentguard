@@ -4,10 +4,10 @@
   "provenance": {
     "python": "3.12.10",
     "platform": "Windows-10-10.0.19045-SP0",
-    "commit": "uncommitted",
+    "commit": "2c5534c690d63223c1a3e5f3c75b72bcdd1e6a4c",
     "command": "uv run python scripts/generate_demo.py",
     "agent": "Rule-driven LangGraph support agent; no model API",
-    "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245"
+    "dataset_hash": "a2f71ae7cba2a3bfa4eed0dcc5965fd980045dc4643f48e59b29de2ace178c6a"
   },
   "dataset": {
     "schema_version": "1",
@@ -38,7 +38,8 @@
         "output_schema": null,
         "tags": [
           "order lookup"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "status-A101",
@@ -64,7 +65,8 @@
         "output_schema": null,
         "tags": [
           "order lookup"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "status-A102",
@@ -90,7 +92,8 @@
         "output_schema": null,
         "tags": [
           "order lookup"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "status-A103",
@@ -116,7 +119,8 @@
         "output_schema": null,
         "tags": [
           "order lookup"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "status-A104",
@@ -142,7 +146,8 @@
         "output_schema": null,
         "tags": [
           "order lookup"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "status-A105",
@@ -168,7 +173,8 @@
         "output_schema": null,
         "tags": [
           "order lookup"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "status-A106",
@@ -194,7 +200,8 @@
         "output_schema": null,
         "tags": [
           "order lookup"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "refund-A100",
@@ -225,7 +232,8 @@
         "output_schema": null,
         "tags": [
           "policy boundaries"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "refund-A101",
@@ -256,7 +264,8 @@
         "output_schema": null,
         "tags": [
           "policy boundaries"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "refund-A102",
@@ -287,7 +296,8 @@
         "output_schema": null,
         "tags": [
           "policy boundaries"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "refund-A103",
@@ -318,7 +328,8 @@
         "output_schema": null,
         "tags": [
           "policy boundaries"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "refund-A104",
@@ -349,7 +360,8 @@
         "output_schema": null,
         "tags": [
           "policy boundaries"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "refund-A105",
@@ -380,7 +392,8 @@
         "output_schema": null,
         "tags": [
           "policy boundaries"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "refund-A106",
@@ -411,7 +424,8 @@
         "output_schema": null,
         "tags": [
           "policy boundaries"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "urgent-0",
@@ -437,7 +451,8 @@
         "output_schema": null,
         "tags": [
           "escalation"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "urgent-1",
@@ -463,7 +478,8 @@
         "output_schema": null,
         "tags": [
           "escalation"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "urgent-2",
@@ -489,7 +505,8 @@
         "output_schema": null,
         "tags": [
           "escalation"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "urgent-3",
@@ -515,7 +532,8 @@
         "output_schema": null,
         "tags": [
           "escalation"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "ticket-0",
@@ -541,7 +559,8 @@
         "output_schema": null,
         "tags": [
           "tool selection"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "ticket-1",
@@ -567,7 +586,8 @@
         "output_schema": null,
         "tags": [
           "tool selection"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "ticket-2",
@@ -593,7 +613,8 @@
         "output_schema": null,
         "tags": [
           "tool selection"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "ticket-3",
@@ -619,7 +640,8 @@
         "output_schema": null,
         "tags": [
           "tool selection"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "missing-0",
@@ -639,7 +661,8 @@
         "output_schema": null,
         "tags": [
           "missing information"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "missing-1",
@@ -659,7 +682,8 @@
         "output_schema": null,
         "tags": [
           "missing information"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "missing-2",
@@ -679,7 +703,8 @@
         "output_schema": null,
         "tags": [
           "missing information"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "unknown-order",
@@ -705,7 +730,8 @@
         "output_schema": null,
         "tags": [
           "error handling"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "unknown-refund",
@@ -733,7 +759,8 @@
         "output_schema": null,
         "tags": [
           "error handling"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "policy",
@@ -757,7 +784,8 @@
         "output_schema": null,
         "tags": [
           "grounding"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "context-status",
@@ -785,7 +813,8 @@
         "output_schema": null,
         "tags": [
           "context"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "context-refund",
@@ -818,7 +847,8 @@
         "output_schema": null,
         "tags": [
           "context"
-        ]
+        ],
+        "required_response": []
       },
       {
         "id": "override-context",
@@ -858,19 +888,20 @@
         },
         "tags": [
           "context"
-        ]
+        ],
+        "required_response": []
       }
     ]
   },
   "runs": [
     {
       "schema_version": "1",
-      "id": "ccea3d70b64c4f27b7ef18c7831231ce",
+      "id": "0bcbc56e656a41d38e34452ac53e050f",
       "version": "baseline",
       "dataset_id": "support-operations",
       "dataset_version": 1,
-      "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245",
-      "created_at": "2026-11-09T07:58:52.943403+00:00",
+      "dataset_hash": "a2f71ae7cba2a3bfa4eed0dcc5965fd980045dc4643f48e59b29de2ace178c6a",
+      "created_at": "2026-11-09T08:40:58.505166+00:00",
       "results": [
         {
           "scenario": {
@@ -897,7 +928,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A100 is delivered.",
@@ -909,7 +941,7 @@
             ],
             "spans": [
               {
-                "id": "f1045694a3b8497fba52a0981467b985",
+                "id": "95fbf8be8eaa4354b71f4efdabfbb979",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -919,10 +951,10 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.012600001355167478
+                "duration_ms": 0.016099998902063817
               }
             ],
-            "duration_ms": 0.12419999984558672,
+            "duration_ms": 0.15910000365693122,
             "tokens": null,
             "cost": null,
             "error": null
@@ -981,7 +1013,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A101 is shipped.",
@@ -993,7 +1026,7 @@
             ],
             "spans": [
               {
-                "id": "8bbaf72c11fb4eea9e108573c5ca2983",
+                "id": "1e1a8a07fd9e4a9dbec25829157e0e8e",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -1003,10 +1036,10 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.007800001185387373
+                "duration_ms": 0.011900003300979733
               }
             ],
-            "duration_ms": 0.027399997634347528,
+            "duration_ms": 0.045900000259280205,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1065,7 +1098,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A102 is delivered.",
@@ -1077,7 +1111,7 @@
             ],
             "spans": [
               {
-                "id": "450eddbe435640c0863cd2307fc10d0d",
+                "id": "074df59346a246bdb38291bb581cf5e5",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -1087,10 +1121,10 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.007100003131199628
+                "duration_ms": 0.011000003723893315
               }
             ],
-            "duration_ms": 0.022300002456177026,
+            "duration_ms": 0.035099998058285564,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1149,7 +1183,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A103 is cancelled.",
@@ -1161,7 +1196,7 @@
             ],
             "spans": [
               {
-                "id": "ec51c9e0916e4f85981d9a472b891dd1",
+                "id": "6055fcb54a074eeeb735223b42d33629",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A103"
@@ -1171,10 +1206,10 @@
                   "age_days": 1,
                   "damaged": false
                 },
-                "duration_ms": 0.00839999847812578
+                "duration_ms": 0.01200000406242907
               }
             ],
-            "duration_ms": 0.023799999326001853,
+            "duration_ms": 0.03899999865097925,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1233,7 +1268,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A104 is delivered.",
@@ -1245,7 +1281,7 @@
             ],
             "spans": [
               {
-                "id": "c408c99bc79a476f82099e6370d74b70",
+                "id": "81d62999b80e4765b8c1dfadfef1c499",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A104"
@@ -1255,10 +1291,10 @@
                   "age_days": 30,
                   "damaged": false
                 },
-                "duration_ms": 0.007100003131199628
+                "duration_ms": 0.012299999070819467
               }
             ],
-            "duration_ms": 0.02269999822601676,
+            "duration_ms": 0.040400002035312355,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1317,7 +1353,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A105 is delivered.",
@@ -1329,7 +1366,7 @@
             ],
             "spans": [
               {
-                "id": "017707bb9055423e900247b2b712d79c",
+                "id": "f0db1466c6e0478797a97b36e8fe38b9",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A105"
@@ -1339,10 +1376,10 @@
                   "age_days": 31,
                   "damaged": false
                 },
-                "duration_ms": 0.007299997378140688
+                "duration_ms": 0.014299999747890979
               }
             ],
-            "duration_ms": 0.024499997380189598,
+            "duration_ms": 0.04999999509891495,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1401,7 +1438,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A106 is delivered.",
@@ -1413,7 +1451,7 @@
             ],
             "spans": [
               {
-                "id": "17ac15b4acdd40578bffc57d5ed62f85",
+                "id": "7bd255f200a64727a05a53fd288f56a7",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A106"
@@ -1423,10 +1461,10 @@
                   "age_days": 0,
                   "damaged": true
                 },
-                "duration_ms": 0.006999995093792677
+                "duration_ms": 0.013800003216601908
               }
             ],
-            "duration_ms": 0.022300002456177026,
+            "duration_ms": 0.04890000127488747,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1490,7 +1528,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -1503,7 +1542,7 @@
             ],
             "spans": [
               {
-                "id": "ab287f23d9f34aa2a2435b7992a88d47",
+                "id": "5674aa5257fb4308b8ff6ec01109fe72",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -1513,20 +1552,20 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.006599999323952943
+                "duration_ms": 0.013700002455152571
               },
               {
-                "id": "7cf9e59cc8674da1a56aa693286e755f",
+                "id": "07f23d5e032c4bfd87c16b6456656b4f",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.004199995601084083
+                "duration_ms": 0.00910000380827114
               }
             ],
-            "duration_ms": 0.03139999898849055,
+            "duration_ms": 0.0655999974696897,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1590,7 +1629,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Not eligible under the refund policy.",
@@ -1603,7 +1643,7 @@
             ],
             "spans": [
               {
-                "id": "da7d1fc375c7467bbbdf67355e58b25d",
+                "id": "75bd5e11bad84a0e980d37d08190a88f",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -1613,20 +1653,20 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.00689999433234334
+                "duration_ms": 0.017600003047846258
               },
               {
-                "id": "164ab4f2306b477a9811ba3e2070fdf0",
+                "id": "16da6b211ff84ac2a7533209166f9f65",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.004399997123982757
+                "duration_ms": 0.011000003723893315
               }
             ],
-            "duration_ms": 0.031600000511389226,
+            "duration_ms": 0.0824999951873906,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1690,7 +1730,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Not eligible under the refund policy.",
@@ -1703,7 +1744,7 @@
             ],
             "spans": [
               {
-                "id": "86c2a823a6464b4a8b04711a1b09adf1",
+                "id": "f1210d0aa52c473fa21b950c63ecbffd",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -1713,20 +1754,20 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.007300004654098302
+                "duration_ms": 0.015799996617715806
               },
               {
-                "id": "7cc1a48b8b1149cebcd0580a5f6ed703",
+                "id": "3d66f53726fe4771b593443c93bad649",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0041000021155923605
+                "duration_ms": 0.009099996532313526
               }
             ],
-            "duration_ms": 0.031799994758330286,
+            "duration_ms": 0.07729999924777076,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1790,7 +1831,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Not eligible under the refund policy.",
@@ -1803,7 +1845,7 @@
             ],
             "spans": [
               {
-                "id": "797f88463aa74257a9b96267710f6975",
+                "id": "a36b93eeaada42eaafeffc8df4298d81",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A103"
@@ -1813,20 +1855,20 @@
                   "age_days": 1,
                   "damaged": false
                 },
-                "duration_ms": 0.006699992809444666
+                "duration_ms": 0.015300000086426735
               },
               {
-                "id": "b84185356f774b0994dae1708babbed7",
+                "id": "214b6c81c50f4fa7a0c633036a4aa806",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0040000013541430235
+                "duration_ms": 0.009499999578110874
               }
             ],
-            "duration_ms": 0.030399998649954796,
+            "duration_ms": 0.0779999973019585,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1890,7 +1932,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -1903,7 +1946,7 @@
             ],
             "spans": [
               {
-                "id": "23a2471eb4e74415b9784000c44c593a",
+                "id": "21c450e1cd1b404da9db40295dce0bc3",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A104"
@@ -1913,20 +1956,20 @@
                   "age_days": 30,
                   "damaged": false
                 },
-                "duration_ms": 0.006800000846851617
+                "duration_ms": 0.015600002370774746
               },
               {
-                "id": "e71c12aee350420e80e7ad619ef9b655",
+                "id": "65e178eb5c1c479b8ba992ae14b1901b",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.003999994078185409
+                "duration_ms": 0.009199997293762863
               }
             ],
-            "duration_ms": 0.03300000389572233,
+            "duration_ms": 0.07280000136233866,
             "tokens": null,
             "cost": null,
             "error": null
@@ -1990,7 +2033,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Not eligible under the refund policy.",
@@ -2003,7 +2047,7 @@
             ],
             "spans": [
               {
-                "id": "c7f4e3e6bb8f4d9084aca630243f3aa7",
+                "id": "117a74d2583b4c04977c7801d5971230",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A105"
@@ -2013,20 +2057,20 @@
                   "age_days": 31,
                   "damaged": false
                 },
-                "duration_ms": 0.00670000008540228
+                "duration_ms": 0.017300000763498247
               },
               {
-                "id": "8788a7496ab94475865609dc4c243529",
+                "id": "7faf4cb6f9c84cad9e57108caf1b536e",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0037999998312443495
+                "duration_ms": 0.008800001523923129
               }
             ],
-            "duration_ms": 0.03029999788850546,
+            "duration_ms": 0.07310000364668667,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2090,7 +2134,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -2103,7 +2148,7 @@
             ],
             "spans": [
               {
-                "id": "16c06c906a5145fc88412ecf8d5ab581",
+                "id": "668f34f01b61473e84f9064da4c0236a",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A106"
@@ -2113,20 +2158,20 @@
                   "age_days": 0,
                   "damaged": true
                 },
-                "duration_ms": 0.007100003131199628
+                "duration_ms": 0.01580000389367342
               },
               {
-                "id": "a6784d2dbd634a8faded7af735f99475",
+                "id": "af44bceea7eb48759ee6c440d089de56",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0040000013541430235
+                "duration_ms": 0.009099996532313526
               }
             ],
-            "duration_ms": 0.03300000389572233,
+            "duration_ms": 0.07680000271648169,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2185,7 +2230,8 @@
             "output_schema": null,
             "tags": [
               "escalation"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Your case has been routed.",
@@ -2196,7 +2242,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "77702a6f088b488a9bd38014288b7196",
+                "id": "233ec90a3d7e4d90bdea7ff8476bee49",
                 "tool": "escalate",
                 "arguments": {
                   "reason": "urgent"
@@ -2205,10 +2251,10 @@
                   "escalated": true,
                   "queue": "urgent"
                 },
-                "duration_ms": 0.006000002031214535
+                "duration_ms": 0.015599995094817132
               }
             ],
-            "duration_ms": 0.019699997210409492,
+            "duration_ms": 0.052400006097741425,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2267,7 +2313,8 @@
             "output_schema": null,
             "tags": [
               "escalation"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Your case has been routed.",
@@ -2278,7 +2325,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "7d37a29e3b3e439981639d40e619800e",
+                "id": "305bba0ef8814f6b9753a2e5f6f264ad",
                 "tool": "escalate",
                 "arguments": {
                   "reason": "urgent"
@@ -2287,10 +2334,10 @@
                   "escalated": true,
                   "queue": "urgent"
                 },
-                "duration_ms": 0.006400005077011883
+                "duration_ms": 0.015500001609325409
               }
             ],
-            "duration_ms": 0.02050000330200419,
+            "duration_ms": 0.05140000575920567,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2349,7 +2396,8 @@
             "output_schema": null,
             "tags": [
               "escalation"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Your case has been routed.",
@@ -2360,7 +2408,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "4282fe7e25934377a7333b55dd37e1c2",
+                "id": "24ef92773db4491886ef1da602a2391a",
                 "tool": "escalate",
                 "arguments": {
                   "reason": "urgent"
@@ -2369,10 +2417,10 @@
                   "escalated": true,
                   "queue": "urgent"
                 },
-                "duration_ms": 0.006199996278155595
+                "duration_ms": 0.014900004316587001
               }
             ],
-            "duration_ms": 0.019800005247816443,
+            "duration_ms": 0.048499998229090124,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2431,7 +2479,8 @@
             "output_schema": null,
             "tags": [
               "escalation"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Your case has been routed.",
@@ -2442,7 +2491,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "e9337ee6ca8c49948b4ec8357460ed02",
+                "id": "a69bc6bf45d64888a4c8704694202086",
                 "tool": "escalate",
                 "arguments": {
                   "reason": "urgent"
@@ -2451,10 +2500,10 @@
                   "escalated": true,
                   "queue": "urgent"
                 },
-                "duration_ms": 0.006399997801054269
+                "duration_ms": 0.01460000203223899
               }
             ],
-            "duration_ms": 0.02220000169472769,
+            "duration_ms": 0.05450000026030466,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2513,7 +2562,8 @@
             "output_schema": null,
             "tags": [
               "tool selection"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Support request recorded.",
@@ -2523,7 +2573,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "1d429308196243f086c70b419524062e",
+                "id": "a3ce356a210942919e8883a3de752418",
                 "tool": "create_ticket",
                 "arguments": {
                   "kind": "support"
@@ -2532,10 +2582,10 @@
                   "ticket": "mock-ticket",
                   "kind": "support"
                 },
-                "duration_ms": 0.007000002369750291
+                "duration_ms": 0.01750000228639692
               }
             ],
-            "duration_ms": 0.021299994841683656,
+            "duration_ms": 0.05339999916031957,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2594,7 +2644,8 @@
             "output_schema": null,
             "tags": [
               "tool selection"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Support request recorded.",
@@ -2604,7 +2655,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "8d5817cf114d4c178f484013166c389d",
+                "id": "d3e9efaed601408b88871350b5bcee56",
                 "tool": "create_ticket",
                 "arguments": {
                   "kind": "support"
@@ -2613,10 +2664,10 @@
                   "ticket": "mock-ticket",
                   "kind": "support"
                 },
-                "duration_ms": 0.006400005077011883
+                "duration_ms": 0.015300000086426735
               }
             ],
-            "duration_ms": 0.020799998310394585,
+            "duration_ms": 0.05100000271340832,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2675,7 +2726,8 @@
             "output_schema": null,
             "tags": [
               "tool selection"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Support request recorded.",
@@ -2685,7 +2737,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "a55b9e6047ad4edf9e356109fbf5bdfe",
+                "id": "8409cf98716c48298d6473663a7d87f0",
                 "tool": "create_ticket",
                 "arguments": {
                   "kind": "invoice"
@@ -2694,10 +2746,10 @@
                   "ticket": "mock-ticket",
                   "kind": "invoice"
                 },
-                "duration_ms": 0.007200003892648965
+                "duration_ms": 0.015099998563528061
               }
             ],
-            "duration_ms": 0.021099993318784982,
+            "duration_ms": 0.049700000090524554,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2756,7 +2808,8 @@
             "output_schema": null,
             "tags": [
               "tool selection"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Support request recorded.",
@@ -2766,7 +2819,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "1bc13bfcedac4f4cb289f7e3bce3ceca",
+                "id": "5542785484254ac989f0c95a93ef798a",
                 "tool": "create_ticket",
                 "arguments": {
                   "kind": "support"
@@ -2775,10 +2828,10 @@
                   "ticket": "mock-ticket",
                   "kind": "support"
                 },
-                "duration_ms": 0.00650000583846122
+                "duration_ms": 0.015199999324977398
               }
             ],
-            "duration_ms": 0.023399996280204505,
+            "duration_ms": 0.055999997130129486,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2831,7 +2884,8 @@
             "output_schema": null,
             "tags": [
               "missing information"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please provide your order ID.",
@@ -2840,7 +2894,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.006199996278155595,
+            "duration_ms": 0.015199999324977398,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2893,7 +2947,8 @@
             "output_schema": null,
             "tags": [
               "missing information"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please provide your order ID.",
@@ -2902,7 +2957,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.006400005077011883,
+            "duration_ms": 0.012699994840659201,
             "tokens": null,
             "cost": null,
             "error": null
@@ -2955,7 +3010,8 @@
             "output_schema": null,
             "tags": [
               "missing information"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please provide your order ID.",
@@ -2964,7 +3020,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.006299997039604932,
+            "duration_ms": 0.012600001355167478,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3023,7 +3079,8 @@
             "output_schema": null,
             "tags": [
               "error handling"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order not found. Please check the ID.",
@@ -3035,7 +3092,7 @@
             ],
             "spans": [
               {
-                "id": "13d27c7eb02745879f0dca4a92df0f47",
+                "id": "ede2ca750c874232917bde183886b183",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A999"
@@ -3043,10 +3100,10 @@
                 "result": {
                   "error": "not_found"
                 },
-                "duration_ms": 0.006799993570894003
+                "duration_ms": 0.012799995602108538
               }
             ],
-            "duration_ms": 0.020200001017656177,
+            "duration_ms": 0.039500002458225936,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3107,7 +3164,8 @@
             "output_schema": null,
             "tags": [
               "error handling"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order not found. Please check the ID.",
@@ -3119,7 +3177,7 @@
             ],
             "spans": [
               {
-                "id": "8d6d8c729f6b4be2a6bff227cbd3f590",
+                "id": "3bec41c927694767a8bcd78d4141139c",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A999"
@@ -3127,10 +3185,10 @@
                 "result": {
                   "error": "not_found"
                 },
-                "duration_ms": 0.006499998562503606
+                "duration_ms": 0.012599994079209864
               }
             ],
-            "duration_ms": 0.02179999864893034,
+            "duration_ms": 0.04400000034365803,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3187,7 +3245,8 @@
             "output_schema": null,
             "tags": [
               "grounding"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refunds are available within 30 days of delivery.",
@@ -3199,17 +3258,17 @@
             ],
             "spans": [
               {
-                "id": "754598fb5df248bb9db3e8cfd43648d1",
+                "id": "3b8e3b1ca6fd4dc5bb6ece00b0187f90",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006499998562503606
+                "duration_ms": 0.010100004146806896
               }
             ],
-            "duration_ms": 0.02010000025620684,
+            "duration_ms": 0.03290000313427299,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3270,7 +3329,8 @@
             "output_schema": null,
             "tags": [
               "context"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A101 is shipped.",
@@ -3282,7 +3342,7 @@
             ],
             "spans": [
               {
-                "id": "25a2b0c2ddcb48abb81f9d17eaefd4bd",
+                "id": "49c03eac79264222ab6085d7dd12fb61",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -3292,10 +3352,10 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.00670000008540228
+                "duration_ms": 0.010700001439545304
               }
             ],
-            "duration_ms": 0.0208000055863522,
+            "duration_ms": 0.035099998058285564,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3361,7 +3421,8 @@
             "output_schema": null,
             "tags": [
               "context"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Not eligible under the refund policy.",
@@ -3374,7 +3435,7 @@
             ],
             "spans": [
               {
-                "id": "5eedf8c0bb944fefbb10fbf9be96529d",
+                "id": "c0fa80e7f3204e63aedabe746ffda551",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -3384,20 +3445,20 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.006599999323952943
+                "duration_ms": 0.011799995263572782
               },
               {
-                "id": "8ef574fd2c574be5a97a9ab77d5da4b8",
+                "id": "18da7735869b4368b9b97885c2a9cef1",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0040000013541430235
+                "duration_ms": 0.006299997039604932
               }
             ],
-            "duration_ms": 0.030199997127056122,
+            "duration_ms": 0.05080000119050965,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3470,7 +3531,8 @@
             },
             "tags": [
               "context"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A100 is delivered.",
@@ -3482,7 +3544,7 @@
             ],
             "spans": [
               {
-                "id": "c8faebcac928462695555b3dfffa04e4",
+                "id": "58dfe500c78b4a39a837c850d41fc599",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -3492,10 +3554,10 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.007399998139590025
+                "duration_ms": 0.011100004485342652
               }
             ],
-            "duration_ms": 0.022199994418770075,
+            "duration_ms": 0.03539999306667596,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3537,25 +3599,25 @@
       ],
       "metrics": {
         "pass_rate": 1.0,
-        "latency_ms": 0.026183870373173587,
+        "latency_ms": 0.0528903225541956,
         "tokens": null,
         "cost": null,
-        "tool_arguments": 1.0,
         "task_completion": 1.0,
         "output_schema": 1.0,
-        "tool_choice": 1.0,
         "required_evidence": 1.0,
+        "tool_arguments": 1.0,
+        "tool_choice": 1.0,
         "forbidden_actions": 1.0
       }
     },
     {
       "schema_version": "1",
-      "id": "76467d328aef4a7e98e5ea4c2e6b22a7",
+      "id": "d895c8741881427bb452b929868aa5eb",
       "version": "candidate",
       "dataset_id": "support-operations",
       "dataset_version": 1,
-      "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245",
-      "created_at": "2026-11-09T07:58:52.970568+00:00",
+      "dataset_hash": "a2f71ae7cba2a3bfa4eed0dcc5965fd980045dc4643f48e59b29de2ace178c6a",
+      "created_at": "2026-11-09T08:40:58.530418+00:00",
       "results": [
         {
           "scenario": {
@@ -3582,7 +3644,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A100 is delivered.",
@@ -3594,7 +3657,7 @@
             ],
             "spans": [
               {
-                "id": "3c00670817054fbc8bcccebd7a8003a0",
+                "id": "281d710969d74e05a3dfbdfd4b86bc55",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -3604,10 +3667,10 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.006900001608300954
+                "duration_ms": 0.009800001862458885
               }
             ],
-            "duration_ms": 0.022600004740525037,
+            "duration_ms": 0.032699994335416704,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3666,7 +3729,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A101 is shipped.",
@@ -3678,7 +3742,7 @@
             ],
             "spans": [
               {
-                "id": "809437acfc784d9697daf12c7694fee3",
+                "id": "1a05efcc10574c6a8d1729ca49ed53da",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -3688,10 +3752,10 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.006900001608300954
+                "duration_ms": 0.00960000033956021
               }
             ],
-            "duration_ms": 0.02220000169472769,
+            "duration_ms": 0.031199997465591878,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3750,7 +3814,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A102 is delivered.",
@@ -3762,7 +3827,7 @@
             ],
             "spans": [
               {
-                "id": "3cbe1a72294c40baa4cd226c6abb4293",
+                "id": "5e210c850a3146efad19dc7884dc2708",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -3772,10 +3837,10 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.006800000846851617
+                "duration_ms": 0.0092999980552122
               }
             ],
-            "duration_ms": 0.02340000355616212,
+            "duration_ms": 0.03300000389572233,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3834,7 +3899,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A103 is cancelled.",
@@ -3846,7 +3912,7 @@
             ],
             "spans": [
               {
-                "id": "b8d327dc662944a19afdc07ef4128d15",
+                "id": "b221a89f9d4149d1bff122a264b4221f",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A103"
@@ -3856,10 +3922,10 @@
                   "age_days": 1,
                   "damaged": false
                 },
-                "duration_ms": 0.006800000846851617
+                "duration_ms": 0.012399999832268804
               }
             ],
-            "duration_ms": 0.021899999410379678,
+            "duration_ms": 0.034199998481199145,
             "tokens": null,
             "cost": null,
             "error": null
@@ -3918,7 +3984,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A104 is delivered.",
@@ -3930,7 +3997,7 @@
             ],
             "spans": [
               {
-                "id": "27a86c88954441bd938a32c0e220e1a9",
+                "id": "f48d5211d0c740e791db7a64bd7da61b",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A104"
@@ -3940,10 +4007,10 @@
                   "age_days": 30,
                   "damaged": false
                 },
-                "duration_ms": 0.007299997378140688
+                "duration_ms": 0.008799994247965515
               }
             ],
-            "duration_ms": 0.023100001271814108,
+            "duration_ms": 0.027600006433203816,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4002,7 +4069,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A105 is delivered.",
@@ -4014,7 +4082,7 @@
             ],
             "spans": [
               {
-                "id": "fba37d6fd58e413eb60774b70b2e844a",
+                "id": "9a3886e2e0964d6f8bc28f004455ce71",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A105"
@@ -4024,10 +4092,10 @@
                   "age_days": 31,
                   "damaged": false
                 },
-                "duration_ms": 0.009000003046821803
+                "duration_ms": 0.010899995686486363
               }
             ],
-            "duration_ms": 0.024100001610349864,
+            "duration_ms": 0.03060000017285347,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4086,7 +4154,8 @@
             "output_schema": null,
             "tags": [
               "order lookup"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A106 is delivered.",
@@ -4098,7 +4167,7 @@
             ],
             "spans": [
               {
-                "id": "adbd432a30864be994735b14486a637c",
+                "id": "8f713213aa854308b6dabbd6bfc452b2",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A106"
@@ -4108,10 +4177,10 @@
                   "age_days": 0,
                   "damaged": true
                 },
-                "duration_ms": 0.007399998139590025
+                "duration_ms": 0.008499999239575118
               }
             ],
-            "duration_ms": 0.024599998141638935,
+            "duration_ms": 0.030199997127056122,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4175,7 +4244,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -4188,7 +4258,7 @@
             ],
             "spans": [
               {
-                "id": "a64299b20c75491c9d469c34b7f8610c",
+                "id": "e27cac2eaeae483bacdfdc78f9c2983a",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -4198,20 +4268,20 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.00670000008540228
+                "duration_ms": 0.008299997716676444
               },
               {
-                "id": "ac85894edeeb475792acf3d0212e052f",
+                "id": "d20fd4436b0e4d81b886b2d6f45076d6",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0039000005926936865
+                "duration_ms": 0.004900000931229442
               }
             ],
-            "duration_ms": 0.030399998649954796,
+            "duration_ms": 0.03879999712808058,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4275,7 +4345,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Not eligible under the refund policy.",
@@ -4288,7 +4359,7 @@
             ],
             "spans": [
               {
-                "id": "8ee7374421954b0e81def0285c186891",
+                "id": "0fb50a13c0a441cfb4d573e4da34ba1d",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -4298,20 +4369,20 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.008699993486516178
+                "duration_ms": 0.009199997293762863
               },
               {
-                "id": "90158c3cc48d4496802f43e6a1f4ecf4",
+                "id": "d2fcfbca1f794a7f8d0b2753e96f9430",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0039000005926936865
+                "duration_ms": 0.005000001692678779
               }
             ],
-            "duration_ms": 0.032500000088475645,
+            "duration_ms": 0.04130000161239877,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4375,7 +4446,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -4388,7 +4460,7 @@
             ],
             "spans": [
               {
-                "id": "4f2cf6244d974166bf21ab597b4490a3",
+                "id": "c1258c9f79bd4fab8472ff73074aaffe",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -4398,20 +4470,20 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.00670000008540228
+                "duration_ms": 0.008699993486516178
               },
               {
-                "id": "89bd7d8544db4ee3856da00585c9165a",
+                "id": "e17623fa515045d091cee337426fd101",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0039000005926936865
+                "duration_ms": 0.005699999746866524
               }
             ],
-            "duration_ms": 0.030300005164463073,
+            "duration_ms": 0.040400002035312355,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4475,7 +4547,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Not eligible under the refund policy.",
@@ -4488,7 +4561,7 @@
             ],
             "spans": [
               {
-                "id": "f8f4399c931c42479d67d5cf688a4f57",
+                "id": "370967fdffd64e8d9ef7c3cead521dc2",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A103"
@@ -4498,20 +4571,20 @@
                   "age_days": 1,
                   "damaged": false
                 },
-                "duration_ms": 0.006599999323952943
+                "duration_ms": 0.007499998901039362
               },
               {
-                "id": "a4daf725edc7466dbc66b220fc5d6d20",
+                "id": "28c198ed44ef4c119b0d581987c7b868",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.00429999636253342
+                "duration_ms": 0.0046000059228390455
               }
             ],
-            "duration_ms": 0.030499999411404133,
+            "duration_ms": 0.03440000000409782,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4575,7 +4648,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -4588,7 +4662,7 @@
             ],
             "spans": [
               {
-                "id": "64c5ede6ad4d4212af490d0973003f7e",
+                "id": "5b7932deb4c64182b8bcc9960a35c240",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A104"
@@ -4598,20 +4672,20 @@
                   "age_days": 30,
                   "damaged": false
                 },
-                "duration_ms": 0.006800000846851617
+                "duration_ms": 0.007499998901039362
               },
               {
-                "id": "3a8e38fde9ab472a97a3fc6300832b94",
+                "id": "510296f224c4495ba0cf0e1d62f8ddaf",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0037999998312443495
+                "duration_ms": 0.0041000021155923605
               }
             ],
-            "duration_ms": 0.03199999628122896,
+            "duration_ms": 0.035899996873922646,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4675,7 +4749,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -4688,7 +4763,7 @@
             ],
             "spans": [
               {
-                "id": "ad3028aa2dac4d1683e700b74fa209f5",
+                "id": "295f8f55a07d4d03a3d37bff95f8bc1e",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A105"
@@ -4698,20 +4773,20 @@
                   "age_days": 31,
                   "damaged": false
                 },
-                "duration_ms": 0.00670000008540228
+                "duration_ms": 0.007499998901039362
               },
               {
-                "id": "225dcf4a72d742cbaad136d769d03c5f",
+                "id": "ccd1e361c70b4cdba989837b2240a792",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0040000013541430235
+                "duration_ms": 0.00429999636253342
               }
             ],
-            "duration_ms": 0.030200004403013736,
+            "duration_ms": 0.03380000271135941,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4775,7 +4850,8 @@
             "output_schema": null,
             "tags": [
               "policy boundaries"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -4788,7 +4864,7 @@
             ],
             "spans": [
               {
-                "id": "40af6fbfe285462ebc656faae0899c54",
+                "id": "90de062ea2d44348849fa575d77de61b",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A106"
@@ -4798,20 +4874,20 @@
                   "age_days": 0,
                   "damaged": true
                 },
-                "duration_ms": 0.007100003131199628
+                "duration_ms": 0.007700000423938036
               },
               {
-                "id": "588cd00fba384682982a553d7fba38fe",
+                "id": "fb0b5b7aaca44b8894fe3e08917852b8",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0040000013541430235
+                "duration_ms": 0.004899993655271828
               }
             ],
-            "duration_ms": 0.030800001695752144,
+            "duration_ms": 0.03529999958118424,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4870,7 +4946,8 @@
             "output_schema": null,
             "tags": [
               "escalation"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please wait.",
@@ -4879,7 +4956,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.006100002792663872,
+            "duration_ms": 0.006999995093792677,
             "tokens": null,
             "cost": null,
             "error": null
@@ -4938,7 +5015,8 @@
             "output_schema": null,
             "tags": [
               "escalation"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please wait.",
@@ -4947,7 +5025,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.006499998562503606,
+            "duration_ms": 0.007299997378140688,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5006,7 +5084,8 @@
             "output_schema": null,
             "tags": [
               "escalation"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please wait.",
@@ -5015,7 +5094,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.00670000008540228,
+            "duration_ms": 0.007499998901039362,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5074,7 +5153,8 @@
             "output_schema": null,
             "tags": [
               "escalation"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please wait.",
@@ -5083,7 +5163,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.006499998562503606,
+            "duration_ms": 0.00689999433234334,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5142,7 +5222,8 @@
             "output_schema": null,
             "tags": [
               "tool selection"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "See our policy.",
@@ -5152,14 +5233,14 @@
             "evidence": [],
             "spans": [
               {
-                "id": "514cb07a3d874b3383cb6184edfcfc2c",
+                "id": "28f4f85dd3a04c0f8700a01fc3733f80",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.00650000583846122
+                "duration_ms": 0.006300004315562546
               }
             ],
             "duration_ms": 0.02099999983329326,
@@ -5221,7 +5302,8 @@
             "output_schema": null,
             "tags": [
               "tool selection"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "See our policy.",
@@ -5231,17 +5313,17 @@
             "evidence": [],
             "spans": [
               {
-                "id": "fd1ed6e708eb48cd9c191900297b7699",
+                "id": "92961001b0984e39a1237ac7d0eebe78",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.007000002369750291
+                "duration_ms": 0.006199996278155595
               }
             ],
-            "duration_ms": 0.02099999983329326,
+            "duration_ms": 0.020899999071843922,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5300,7 +5382,8 @@
             "output_schema": null,
             "tags": [
               "tool selection"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "See our policy.",
@@ -5310,7 +5393,7 @@
             "evidence": [],
             "spans": [
               {
-                "id": "55a7d364ce7846318f8c3b890dbf2b6e",
+                "id": "3a36d374966f45ebbe3a6ec02adfcb3e",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
@@ -5320,7 +5403,7 @@
                 "duration_ms": 0.006299997039604932
               }
             ],
-            "duration_ms": 0.023799999326001853,
+            "duration_ms": 0.022799998987466097,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5379,7 +5462,8 @@
             "output_schema": null,
             "tags": [
               "tool selection"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "See our policy.",
@@ -5389,17 +5473,17 @@
             "evidence": [],
             "spans": [
               {
-                "id": "5a68b7d8eb6c484bb22406cd85d2ea77",
+                "id": "0d614f4b54f7497cb3a456a5726d8dda",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006399997801054269
+                "duration_ms": 0.00650000583846122
               }
             ],
-            "duration_ms": 0.021100000594742596,
+            "duration_ms": 0.021599997126031667,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5452,7 +5536,8 @@
             "output_schema": null,
             "tags": [
               "missing information"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please provide your order ID.",
@@ -5461,7 +5546,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.006299997039604932,
+            "duration_ms": 0.006400005077011883,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5514,7 +5599,8 @@
             "output_schema": null,
             "tags": [
               "missing information"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please provide your order ID.",
@@ -5523,7 +5609,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.00650000583846122,
+            "duration_ms": 0.00670000008540228,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5576,7 +5662,8 @@
             "output_schema": null,
             "tags": [
               "missing information"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Please provide your order ID.",
@@ -5585,7 +5672,7 @@
             },
             "evidence": [],
             "spans": [],
-            "duration_ms": 0.006299997039604932,
+            "duration_ms": 0.00689999433234334,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5644,7 +5731,8 @@
             "output_schema": null,
             "tags": [
               "error handling"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order not found. Please check the ID.",
@@ -5656,7 +5744,7 @@
             ],
             "spans": [
               {
-                "id": "58ecb0cc4b7a41fda56ed0fc13150da1",
+                "id": "bd1dade3f3e84e1488c9b5f93f403ca7",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A999"
@@ -5664,10 +5752,10 @@
                 "result": {
                   "error": "not_found"
                 },
-                "duration_ms": 0.00670000008540228
+                "duration_ms": 0.006800000846851617
               }
             ],
-            "duration_ms": 0.022100000933278352,
+            "duration_ms": 0.022000000171829015,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5728,7 +5816,8 @@
             "output_schema": null,
             "tags": [
               "error handling"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order not found. Please check the ID.",
@@ -5740,7 +5829,7 @@
             ],
             "spans": [
               {
-                "id": "07deff42a1164d6eb3be91f3bec7c790",
+                "id": "d76d170bf9e6445dbb41e0382f222ddf",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A999"
@@ -5748,10 +5837,10 @@
                 "result": {
                   "error": "not_found"
                 },
-                "duration_ms": 0.006800000846851617
+                "duration_ms": 0.006399997801054269
               }
             ],
-            "duration_ms": 0.020200001017656177,
+            "duration_ms": 0.020199993741698563,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5808,7 +5897,8 @@
             "output_schema": null,
             "tags": [
               "grounding"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refunds are available within 30 days of delivery.",
@@ -5820,17 +5910,17 @@
             ],
             "spans": [
               {
-                "id": "3739ffd2c84f438cb9903ffb1f49e85d",
+                "id": "803297ec8528489f953b559daa696077",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.006400005077011883
+                "duration_ms": 0.006399997801054269
               }
             ],
-            "duration_ms": 0.020300001779105514,
+            "duration_ms": 0.020799998310394585,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5891,7 +5981,8 @@
             "output_schema": null,
             "tags": [
               "context"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A101 is shipped.",
@@ -5903,7 +5994,7 @@
             ],
             "spans": [
               {
-                "id": "c6624a0230ff4e5f897397723e1710c7",
+                "id": "f0dbe36426614c92ae68c285697b68f8",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A101"
@@ -5913,10 +6004,10 @@
                   "age_days": 2,
                   "damaged": false
                 },
-                "duration_ms": 0.006599999323952943
+                "duration_ms": 0.007099995855242014
               }
             ],
-            "duration_ms": 0.02149999636458233,
+            "duration_ms": 0.022000000171829015,
             "tokens": null,
             "cost": null,
             "error": null
@@ -5982,7 +6073,8 @@
             "output_schema": null,
             "tags": [
               "context"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Refund eligible.",
@@ -5995,7 +6087,7 @@
             ],
             "spans": [
               {
-                "id": "4151e1b3a609423a8918dd7bbf9d59b3",
+                "id": "28c56d3a891a478da844c3b8e90f17fa",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A102"
@@ -6005,20 +6097,20 @@
                   "age_days": 45,
                   "damaged": false
                 },
-                "duration_ms": 0.006499998562503606
+                "duration_ms": 0.00670000008540228
               },
               {
-                "id": "a11130a87bdf4574a72dbdceec6414d9",
+                "id": "600af16f19ee45c7894093cf0caf72e6",
                 "tool": "get_policy",
                 "arguments": {},
                 "result": {
                   "refund_days": 30,
                   "reference": "refund-policy-v1"
                 },
-                "duration_ms": 0.0046000059228390455
+                "duration_ms": 0.0039000005926936865
               }
             ],
-            "duration_ms": 0.03289999585831538,
+            "duration_ms": 0.03229999856557697,
             "tokens": null,
             "cost": null,
             "error": null
@@ -6091,7 +6183,8 @@
             },
             "tags": [
               "context"
-            ]
+            ],
+            "required_response": []
           },
           "execution": {
             "response": "Order A100 is delivered.",
@@ -6103,7 +6196,7 @@
             ],
             "spans": [
               {
-                "id": "a9d04c665a1d4e3e9fd373d682b0c927",
+                "id": "39c9cbfd035c400bbde66271a516bc21",
                 "tool": "lookup_order",
                 "arguments": {
                   "order_id": "A100"
@@ -6113,10 +6206,10 @@
                   "age_days": 10,
                   "damaged": false
                 },
-                "duration_ms": 0.006799993570894003
+                "duration_ms": 0.00790000194683671
               }
             ],
-            "duration_ms": 0.021200001356191933,
+            "duration_ms": 0.02729999687289819,
             "tokens": null,
             "cost": null,
             "error": null
@@ -6158,21 +6251,21 @@
       ],
       "metrics": {
         "pass_rate": 0.6451612903225806,
-        "latency_ms": 0.020922581062486935,
+        "latency_ms": 0.024483869868075294,
         "tokens": null,
         "cost": null,
-        "tool_arguments": 0.7419354838709677,
         "task_completion": 0.6451612903225806,
         "output_schema": 1.0,
-        "tool_choice": 0.7419354838709677,
         "required_evidence": 1.0,
+        "tool_arguments": 0.7419354838709677,
+        "tool_choice": 0.7419354838709677,
         "forbidden_actions": 1.0
       }
     }
   ],
   "comparison": {
-    "baseline_id": "ccea3d70b64c4f27b7ef18c7831231ce",
-    "candidate_id": "76467d328aef4a7e98e5ea4c2e6b22a7",
+    "baseline_id": "0bcbc56e656a41d38e34452ac53e050f",
+    "candidate_id": "d895c8741881427bb452b929868aa5eb",
     "pass_rate_drop": 0.3548387096774194,
     "threshold": 0,
     "gate_failed": true,
