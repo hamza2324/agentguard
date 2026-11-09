@@ -1,0 +1,31 @@
+import { defineConfig } from "@playwright/test";
+export default defineConfig({
+  testDir: "./tests",
+  use: { baseURL: "http://127.0.0.1:4173" },
+  webServer: [
+    {
+      command: "npm run preview -- --port 4173",
+      url: "http://127.0.0.1:4173",
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      command:
+        "uv run uvicorn agentguard.api:create_app --factory --app-dir backend/src --host 127.0.0.1 --port 8000",
+      cwd: "../..",
+      url: "http://127.0.0.1:8000/health",
+      env: { DATABASE_URL: "sqlite:///playwright.db" },
+      reuseExistingServer: !process.env.CI,
+    },
+  ],
+  projects: [
+    { name: "chromium", use: { browserName: "chromium" } },
+    {
+      name: "mobile",
+      use: {
+        browserName: "chromium",
+        viewport: { width: 390, height: 844 },
+        isMobile: true,
+      },
+    },
+  ],
+});

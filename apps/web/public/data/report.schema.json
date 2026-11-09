@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset",
+    "runs",
+    "comparison",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "runs": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2
+    }
+  }
+}

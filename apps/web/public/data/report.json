@@ -1,0 +1,6376 @@
+{
+  "schema_version": "1",
+  "mode": "Published evaluation snapshot \u00b7 synthetic demonstration data",
+  "provenance": {
+    "python": "3.12.10",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "commit": "uncommitted",
+    "command": "uv run python scripts/generate_demo.py",
+    "agent": "Rule-driven LangGraph support agent; no model API",
+    "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245"
+  },
+  "dataset": {
+    "schema_version": "1",
+    "id": "support-operations",
+    "version": 1,
+    "scenarios": [
+      {
+        "id": "status-A100",
+        "title": "Track A100",
+        "category": "order lookup",
+        "input": "Where is order A100?",
+        "context": {},
+        "expected_state": {
+          "status": "delivered"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A100"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A100"
+        ],
+        "output_schema": null,
+        "tags": [
+          "order lookup"
+        ]
+      },
+      {
+        "id": "status-A101",
+        "title": "Track A101",
+        "category": "order lookup",
+        "input": "Where is order A101?",
+        "context": {},
+        "expected_state": {
+          "status": "shipped"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A101"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A101"
+        ],
+        "output_schema": null,
+        "tags": [
+          "order lookup"
+        ]
+      },
+      {
+        "id": "status-A102",
+        "title": "Track A102",
+        "category": "order lookup",
+        "input": "Where is order A102?",
+        "context": {},
+        "expected_state": {
+          "status": "delivered"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A102"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A102"
+        ],
+        "output_schema": null,
+        "tags": [
+          "order lookup"
+        ]
+      },
+      {
+        "id": "status-A103",
+        "title": "Track A103",
+        "category": "order lookup",
+        "input": "Where is order A103?",
+        "context": {},
+        "expected_state": {
+          "status": "cancelled"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A103"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A103"
+        ],
+        "output_schema": null,
+        "tags": [
+          "order lookup"
+        ]
+      },
+      {
+        "id": "status-A104",
+        "title": "Track A104",
+        "category": "order lookup",
+        "input": "Where is order A104?",
+        "context": {},
+        "expected_state": {
+          "status": "delivered"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A104"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A104"
+        ],
+        "output_schema": null,
+        "tags": [
+          "order lookup"
+        ]
+      },
+      {
+        "id": "status-A105",
+        "title": "Track A105",
+        "category": "order lookup",
+        "input": "Where is order A105?",
+        "context": {},
+        "expected_state": {
+          "status": "delivered"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A105"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A105"
+        ],
+        "output_schema": null,
+        "tags": [
+          "order lookup"
+        ]
+      },
+      {
+        "id": "status-A106",
+        "title": "Track A106",
+        "category": "order lookup",
+        "input": "Where is order A106?",
+        "context": {},
+        "expected_state": {
+          "status": "delivered"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A106"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A106"
+        ],
+        "output_schema": null,
+        "tags": [
+          "order lookup"
+        ]
+      },
+      {
+        "id": "refund-A100",
+        "title": "Refund eligibility A100",
+        "category": "policy boundaries",
+        "input": "Can I refund A100?",
+        "context": {},
+        "expected_state": {
+          "refund_eligible": true
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A100"
+            }
+          },
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A100",
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "policy boundaries"
+        ]
+      },
+      {
+        "id": "refund-A101",
+        "title": "Refund eligibility A101",
+        "category": "policy boundaries",
+        "input": "Can I refund A101?",
+        "context": {},
+        "expected_state": {
+          "refund_eligible": false
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A101"
+            }
+          },
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A101",
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "policy boundaries"
+        ]
+      },
+      {
+        "id": "refund-A102",
+        "title": "Refund eligibility A102",
+        "category": "policy boundaries",
+        "input": "Can I refund A102?",
+        "context": {},
+        "expected_state": {
+          "refund_eligible": false
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A102"
+            }
+          },
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A102",
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "policy boundaries"
+        ]
+      },
+      {
+        "id": "refund-A103",
+        "title": "Refund eligibility A103",
+        "category": "policy boundaries",
+        "input": "Can I refund A103?",
+        "context": {},
+        "expected_state": {
+          "refund_eligible": false
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A103"
+            }
+          },
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A103",
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "policy boundaries"
+        ]
+      },
+      {
+        "id": "refund-A104",
+        "title": "Refund eligibility A104",
+        "category": "policy boundaries",
+        "input": "Can I refund A104?",
+        "context": {},
+        "expected_state": {
+          "refund_eligible": true
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A104"
+            }
+          },
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A104",
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "policy boundaries"
+        ]
+      },
+      {
+        "id": "refund-A105",
+        "title": "Refund eligibility A105",
+        "category": "policy boundaries",
+        "input": "Can I refund A105?",
+        "context": {},
+        "expected_state": {
+          "refund_eligible": false
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A105"
+            }
+          },
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A105",
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "policy boundaries"
+        ]
+      },
+      {
+        "id": "refund-A106",
+        "title": "Refund eligibility A106",
+        "category": "policy boundaries",
+        "input": "Can I refund A106?",
+        "context": {},
+        "expected_state": {
+          "refund_eligible": true
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A106"
+            }
+          },
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A106",
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "policy boundaries"
+        ]
+      },
+      {
+        "id": "urgent-0",
+        "title": "I suspect fraud",
+        "category": "escalation",
+        "input": "I suspect fraud",
+        "context": {},
+        "expected_state": {
+          "escalated": true
+        },
+        "required_tools": [
+          {
+            "tool": "escalate",
+            "arguments": {
+              "reason": "urgent"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "create_ticket"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "escalation"
+        ]
+      },
+      {
+        "id": "urgent-1",
+        "title": "The product is unsafe",
+        "category": "escalation",
+        "input": "The product is unsafe",
+        "context": {},
+        "expected_state": {
+          "escalated": true
+        },
+        "required_tools": [
+          {
+            "tool": "escalate",
+            "arguments": {
+              "reason": "urgent"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "create_ticket"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "escalation"
+        ]
+      },
+      {
+        "id": "urgent-2",
+        "title": "I need a supervisor",
+        "category": "escalation",
+        "input": "I need a supervisor",
+        "context": {},
+        "expected_state": {
+          "escalated": true
+        },
+        "required_tools": [
+          {
+            "tool": "escalate",
+            "arguments": {
+              "reason": "urgent"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "create_ticket"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "escalation"
+        ]
+      },
+      {
+        "id": "urgent-3",
+        "title": "This caused an injury",
+        "category": "escalation",
+        "input": "This caused an injury",
+        "context": {},
+        "expected_state": {
+          "escalated": true
+        },
+        "required_tools": [
+          {
+            "tool": "escalate",
+            "arguments": {
+              "reason": "urgent"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "create_ticket"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "escalation"
+        ]
+      },
+      {
+        "id": "ticket-0",
+        "title": "Create a ticket",
+        "category": "tool selection",
+        "input": "Create a ticket",
+        "context": {},
+        "expected_state": {
+          "ticket_created": true
+        },
+        "required_tools": [
+          {
+            "tool": "create_ticket",
+            "arguments": {
+              "kind": "support"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "escalate"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "tool selection"
+        ]
+      },
+      {
+        "id": "ticket-1",
+        "title": "Change my address",
+        "category": "tool selection",
+        "input": "Change my address",
+        "context": {},
+        "expected_state": {
+          "ticket_created": true
+        },
+        "required_tools": [
+          {
+            "tool": "create_ticket",
+            "arguments": {
+              "kind": "support"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "escalate"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "tool selection"
+        ]
+      },
+      {
+        "id": "ticket-2",
+        "title": "Send my invoice",
+        "category": "tool selection",
+        "input": "Send my invoice",
+        "context": {},
+        "expected_state": {
+          "ticket_created": true
+        },
+        "required_tools": [
+          {
+            "tool": "create_ticket",
+            "arguments": {
+              "kind": "invoice"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "escalate"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "tool selection"
+        ]
+      },
+      {
+        "id": "ticket-3",
+        "title": "There is a missing item",
+        "category": "tool selection",
+        "input": "There is a missing item",
+        "context": {},
+        "expected_state": {
+          "ticket_created": true
+        },
+        "required_tools": [
+          {
+            "tool": "create_ticket",
+            "arguments": {
+              "kind": "support"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "escalate"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "tool selection"
+        ]
+      },
+      {
+        "id": "missing-0",
+        "title": "Where is my order?",
+        "category": "missing information",
+        "input": "Where is my order?",
+        "context": {},
+        "expected_state": {
+          "needs_order_id": true
+        },
+        "required_tools": [],
+        "forbidden_tools": [
+          "lookup_order",
+          "create_ticket"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "missing information"
+        ]
+      },
+      {
+        "id": "missing-1",
+        "title": "Can I get a refund?",
+        "category": "missing information",
+        "input": "Can I get a refund?",
+        "context": {},
+        "expected_state": {
+          "needs_order_id": true
+        },
+        "required_tools": [],
+        "forbidden_tools": [
+          "lookup_order",
+          "create_ticket"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "missing information"
+        ]
+      },
+      {
+        "id": "missing-2",
+        "title": "Return my purchase",
+        "category": "missing information",
+        "input": "Return my purchase",
+        "context": {},
+        "expected_state": {
+          "needs_order_id": true
+        },
+        "required_tools": [],
+        "forbidden_tools": [
+          "lookup_order",
+          "create_ticket"
+        ],
+        "evidence": [],
+        "output_schema": null,
+        "tags": [
+          "missing information"
+        ]
+      },
+      {
+        "id": "unknown-order",
+        "title": "Unknown order lookup",
+        "category": "error handling",
+        "input": "Track A999",
+        "context": {},
+        "expected_state": {
+          "not_found": true
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A999"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A999"
+        ],
+        "output_schema": null,
+        "tags": [
+          "error handling"
+        ]
+      },
+      {
+        "id": "unknown-refund",
+        "title": "Unknown order refund",
+        "category": "error handling",
+        "input": "Refund A999",
+        "context": {},
+        "expected_state": {
+          "not_found": true
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A999"
+            }
+          }
+        ],
+        "forbidden_tools": [
+          "get_policy"
+        ],
+        "evidence": [
+          "A999"
+        ],
+        "output_schema": null,
+        "tags": [
+          "error handling"
+        ]
+      },
+      {
+        "id": "policy",
+        "title": "Policy without order",
+        "category": "grounding",
+        "input": "What is the refund policy?",
+        "context": {},
+        "expected_state": {
+          "refund_days": 30
+        },
+        "required_tools": [
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "grounding"
+        ]
+      },
+      {
+        "id": "context-status",
+        "title": "Retain earlier order ID",
+        "category": "context",
+        "input": "Where is it?",
+        "context": {
+          "order_id": "A101"
+        },
+        "expected_state": {
+          "status": "shipped"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A101"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A101"
+        ],
+        "output_schema": null,
+        "tags": [
+          "context"
+        ]
+      },
+      {
+        "id": "context-refund",
+        "title": "Refund using session context",
+        "category": "context",
+        "input": "Can I return it?",
+        "context": {
+          "order_id": "A102"
+        },
+        "expected_state": {
+          "refund_eligible": false
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A102"
+            }
+          },
+          {
+            "tool": "get_policy",
+            "arguments": {}
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A102",
+          "refund-policy-v1"
+        ],
+        "output_schema": null,
+        "tags": [
+          "context"
+        ]
+      },
+      {
+        "id": "override-context",
+        "title": "Explicit ID overrides context",
+        "category": "context",
+        "input": "Track A100",
+        "context": {
+          "order_id": "A101"
+        },
+        "expected_state": {
+          "status": "delivered"
+        },
+        "required_tools": [
+          {
+            "tool": "lookup_order",
+            "arguments": {
+              "order_id": "A100"
+            }
+          }
+        ],
+        "forbidden_tools": [],
+        "evidence": [
+          "A100"
+        ],
+        "output_schema": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "delivered"
+              ]
+            }
+          }
+        },
+        "tags": [
+          "context"
+        ]
+      }
+    ]
+  },
+  "runs": [
+    {
+      "schema_version": "1",
+      "id": "bef4dd244a734e9e97b3f32524682ede",
+      "version": "baseline",
+      "dataset_id": "support-operations",
+      "dataset_version": 1,
+      "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245",
+      "created_at": "2026-11-09T06:34:19.869066+00:00",
+      "results": [
+        {
+          "scenario": {
+            "id": "status-A100",
+            "title": "Track A100",
+            "category": "order lookup",
+            "input": "Where is order A100?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A100"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A100 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A100"
+            ],
+            "spans": [
+              {
+                "id": "c43ae90644e9426cb23fcdcb49764434",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 10,
+                  "damaged": false
+                },
+                "duration_ms": 0.012800002878066152
+              }
+            ],
+            "duration_ms": 0.1238999975612387,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A101",
+            "title": "Track A101",
+            "category": "order lookup",
+            "input": "Where is order A101?",
+            "context": {},
+            "expected_state": {
+              "status": "shipped"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A101"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A101 is shipped.",
+            "state": {
+              "status": "shipped"
+            },
+            "evidence": [
+              "A101"
+            ],
+            "spans": [
+              {
+                "id": "7033aea2783147ba937821777846f405",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                },
+                "result": {
+                  "status": "shipped",
+                  "age_days": 2,
+                  "damaged": false
+                },
+                "duration_ms": 0.008600000001024455
+              }
+            ],
+            "duration_ms": 0.0318000020342879,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A102",
+            "title": "Track A102",
+            "category": "order lookup",
+            "input": "Where is order A102?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A102"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A102 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A102"
+            ],
+            "spans": [
+              {
+                "id": "8f275e3521304ca3831b00bbd102b460",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 45,
+                  "damaged": false
+                },
+                "duration_ms": 0.007700000423938036
+              }
+            ],
+            "duration_ms": 0.02649999805726111,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A103",
+            "title": "Track A103",
+            "category": "order lookup",
+            "input": "Where is order A103?",
+            "context": {},
+            "expected_state": {
+              "status": "cancelled"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A103"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A103"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A103 is cancelled.",
+            "state": {
+              "status": "cancelled"
+            },
+            "evidence": [
+              "A103"
+            ],
+            "spans": [
+              {
+                "id": "0da29285ad3f4e75be98bb24c6c869e5",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A103"
+                },
+                "result": {
+                  "status": "cancelled",
+                  "age_days": 1,
+                  "damaged": false
+                },
+                "duration_ms": 0.008499999239575118
+              }
+            ],
+            "duration_ms": 0.026900001103058457,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A104",
+            "title": "Track A104",
+            "category": "order lookup",
+            "input": "Where is order A104?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A104"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A104"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A104 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A104"
+            ],
+            "spans": [
+              {
+                "id": "bb0768aee7154c6c84199d0090175fc7",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A104"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 30,
+                  "damaged": false
+                },
+                "duration_ms": 0.008000002708286047
+              }
+            ],
+            "duration_ms": 0.026599998818710446,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A105",
+            "title": "Track A105",
+            "category": "order lookup",
+            "input": "Where is order A105?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A105"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A105"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A105 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A105"
+            ],
+            "spans": [
+              {
+                "id": "0cfa974e2a1446cbbc78411155527f6c",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A105"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 31,
+                  "damaged": false
+                },
+                "duration_ms": 0.009700001101009548
+              }
+            ],
+            "duration_ms": 0.03869999636663124,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A106",
+            "title": "Track A106",
+            "category": "order lookup",
+            "input": "Where is order A106?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A106"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A106"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A106 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A106"
+            ],
+            "spans": [
+              {
+                "id": "fc034ceff5214d179f186c596271769f",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A106"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 0,
+                  "damaged": true
+                },
+                "duration_ms": 0.009099996532313526
+              }
+            ],
+            "duration_ms": 0.02970000059576705,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A100",
+            "title": "Refund eligibility A100",
+            "category": "policy boundaries",
+            "input": "Can I refund A100?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A100",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A100",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "3d21f94a38714e03b64a12f616dd4574",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 10,
+                  "damaged": false
+                },
+                "duration_ms": 0.008199996955227107
+              },
+              {
+                "id": "bdd4856227234220af561957d39ac778",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.0044000043999403715
+              }
+            ],
+            "duration_ms": 0.03800000558840111,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A101",
+            "title": "Refund eligibility A101",
+            "category": "policy boundaries",
+            "input": "Can I refund A101?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A101",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Not eligible under the refund policy.",
+            "state": {
+              "refund_eligible": false
+            },
+            "evidence": [
+              "A101",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "78595c3671324b7a8c23cea7ce60a683",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                },
+                "result": {
+                  "status": "shipped",
+                  "age_days": 2,
+                  "damaged": false
+                },
+                "duration_ms": 0.008499999239575118
+              },
+              {
+                "id": "4e8123692e904c9dbea393d0d28c34e8",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.005400004738476127
+              }
+            ],
+            "duration_ms": 0.0411000000895001,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A102",
+            "title": "Refund eligibility A102",
+            "category": "policy boundaries",
+            "input": "Can I refund A102?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A102",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Not eligible under the refund policy.",
+            "state": {
+              "refund_eligible": false
+            },
+            "evidence": [
+              "A102",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "4e3d9584a31b45c89e5f570640a7c6b7",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 45,
+                  "damaged": false
+                },
+                "duration_ms": 0.009399998816661537
+              },
+              {
+                "id": "23226c3bc01d4162859312dec6de1ad7",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.005399997462518513
+              }
+            ],
+            "duration_ms": 0.04400000034365803,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A103",
+            "title": "Refund eligibility A103",
+            "category": "policy boundaries",
+            "input": "Can I refund A103?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A103"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A103",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Not eligible under the refund policy.",
+            "state": {
+              "refund_eligible": false
+            },
+            "evidence": [
+              "A103",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "9f1e5c36fa354ebba42eabfbb1e46d27",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A103"
+                },
+                "result": {
+                  "status": "cancelled",
+                  "age_days": 1,
+                  "damaged": false
+                },
+                "duration_ms": 0.008999995770864189
+              },
+              {
+                "id": "a7002b785ab24362ae49f6981eb242d4",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.005200003215577453
+              }
+            ],
+            "duration_ms": 0.04310000076657161,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A104",
+            "title": "Refund eligibility A104",
+            "category": "policy boundaries",
+            "input": "Can I refund A104?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A104"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A104",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A104",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "ece2faf67a924faf88f78fc25e97a87f",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A104"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 30,
+                  "damaged": false
+                },
+                "duration_ms": 0.009099996532313526
+              },
+              {
+                "id": "5ce218c27796453d90a3baebf444f456",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.005199995939619839
+              }
+            ],
+            "duration_ms": 0.0427999984822236,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A105",
+            "title": "Refund eligibility A105",
+            "category": "policy boundaries",
+            "input": "Can I refund A105?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A105"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A105",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Not eligible under the refund policy.",
+            "state": {
+              "refund_eligible": false
+            },
+            "evidence": [
+              "A105",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "b2d5b87b775749e3a4b57b707d2ed71e",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A105"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 31,
+                  "damaged": false
+                },
+                "duration_ms": 0.010099996870849282
+              },
+              {
+                "id": "de088739279140a98ce0bbe40708e913",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.005100002454128116
+              }
+            ],
+            "duration_ms": 0.04389999958220869,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A106",
+            "title": "Refund eligibility A106",
+            "category": "policy boundaries",
+            "input": "Can I refund A106?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A106"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A106",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A106",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "36ffe9522e084958aaa7a13cb0140b29",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A106"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 0,
+                  "damaged": true
+                },
+                "duration_ms": 0.012299999070819467
+              },
+              {
+                "id": "ea4985bf5d0b4e92860242eaf0ef6ab7",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.00530000397702679
+              }
+            ],
+            "duration_ms": 0.048000001697801054,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "urgent-0",
+            "title": "I suspect fraud",
+            "category": "escalation",
+            "input": "I suspect fraud",
+            "context": {},
+            "expected_state": {
+              "escalated": true
+            },
+            "required_tools": [
+              {
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "escalation"
+            ]
+          },
+          "execution": {
+            "response": "Your case has been routed.",
+            "state": {
+              "escalated": true,
+              "queue": "urgent"
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "4bdd6037ad144a6aaf800669ce203161",
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                },
+                "result": {
+                  "escalated": true,
+                  "queue": "urgent"
+                },
+                "duration_ms": 0.008900002285372466
+              }
+            ],
+            "duration_ms": 0.030700000934302807,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "urgent-1",
+            "title": "The product is unsafe",
+            "category": "escalation",
+            "input": "The product is unsafe",
+            "context": {},
+            "expected_state": {
+              "escalated": true
+            },
+            "required_tools": [
+              {
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "escalation"
+            ]
+          },
+          "execution": {
+            "response": "Your case has been routed.",
+            "state": {
+              "escalated": true,
+              "queue": "urgent"
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "ddcdad27b06b4d6fa32692589eaa9d00",
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                },
+                "result": {
+                  "escalated": true,
+                  "queue": "urgent"
+                },
+                "duration_ms": 0.008600000001024455
+              }
+            ],
+            "duration_ms": 0.02890000178012997,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "urgent-2",
+            "title": "I need a supervisor",
+            "category": "escalation",
+            "input": "I need a supervisor",
+            "context": {},
+            "expected_state": {
+              "escalated": true
+            },
+            "required_tools": [
+              {
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "escalation"
+            ]
+          },
+          "execution": {
+            "response": "Your case has been routed.",
+            "state": {
+              "escalated": true,
+              "queue": "urgent"
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "4acb24c266d0468e86085fdb98dedad3",
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                },
+                "result": {
+                  "escalated": true,
+                  "queue": "urgent"
+                },
+                "duration_ms": 0.008800001523923129
+              }
+            ],
+            "duration_ms": 0.0318000020342879,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "urgent-3",
+            "title": "This caused an injury",
+            "category": "escalation",
+            "input": "This caused an injury",
+            "context": {},
+            "expected_state": {
+              "escalated": true
+            },
+            "required_tools": [
+              {
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "escalation"
+            ]
+          },
+          "execution": {
+            "response": "Your case has been routed.",
+            "state": {
+              "escalated": true,
+              "queue": "urgent"
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "7a74a151a07f41639498122f05d04444",
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                },
+                "result": {
+                  "escalated": true,
+                  "queue": "urgent"
+                },
+                "duration_ms": 0.008499999239575118
+              }
+            ],
+            "duration_ms": 0.03199999628122896,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "ticket-0",
+            "title": "Create a ticket",
+            "category": "tool selection",
+            "input": "Create a ticket",
+            "context": {},
+            "expected_state": {
+              "ticket_created": true
+            },
+            "required_tools": [
+              {
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "escalate"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "tool selection"
+            ]
+          },
+          "execution": {
+            "response": "Support request recorded.",
+            "state": {
+              "ticket_created": true
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "98bd22956feb4753b842e9e941ca9120",
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                },
+                "result": {
+                  "ticket": "mock-ticket",
+                  "kind": "support"
+                },
+                "duration_ms": 0.01049999991664663
+              }
+            ],
+            "duration_ms": 0.03139999898849055,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "ticket-1",
+            "title": "Change my address",
+            "category": "tool selection",
+            "input": "Change my address",
+            "context": {},
+            "expected_state": {
+              "ticket_created": true
+            },
+            "required_tools": [
+              {
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "escalate"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "tool selection"
+            ]
+          },
+          "execution": {
+            "response": "Support request recorded.",
+            "state": {
+              "ticket_created": true
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "aa6d5e7cbf43466ea4b582bae8ce35b4",
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                },
+                "result": {
+                  "ticket": "mock-ticket",
+                  "kind": "support"
+                },
+                "duration_ms": 0.009099996532313526
+              }
+            ],
+            "duration_ms": 0.030499999411404133,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "ticket-2",
+            "title": "Send my invoice",
+            "category": "tool selection",
+            "input": "Send my invoice",
+            "context": {},
+            "expected_state": {
+              "ticket_created": true
+            },
+            "required_tools": [
+              {
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "invoice"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "escalate"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "tool selection"
+            ]
+          },
+          "execution": {
+            "response": "Support request recorded.",
+            "state": {
+              "ticket_created": true
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "48bf83394c8e4e4a8e5925fa00d11dca",
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "invoice"
+                },
+                "result": {
+                  "ticket": "mock-ticket",
+                  "kind": "invoice"
+                },
+                "duration_ms": 0.008800001523923129
+              }
+            ],
+            "duration_ms": 0.02939999831141904,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "ticket-3",
+            "title": "There is a missing item",
+            "category": "tool selection",
+            "input": "There is a missing item",
+            "context": {},
+            "expected_state": {
+              "ticket_created": true
+            },
+            "required_tools": [
+              {
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "escalate"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "tool selection"
+            ]
+          },
+          "execution": {
+            "response": "Support request recorded.",
+            "state": {
+              "ticket_created": true
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "64aad99304a749a08ccae566d977030a",
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                },
+                "result": {
+                  "ticket": "mock-ticket",
+                  "kind": "support"
+                },
+                "duration_ms": 0.008900002285372466
+              }
+            ],
+            "duration_ms": 0.03489999653538689,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "missing-0",
+            "title": "Where is my order?",
+            "category": "missing information",
+            "input": "Where is my order?",
+            "context": {},
+            "expected_state": {
+              "needs_order_id": true
+            },
+            "required_tools": [],
+            "forbidden_tools": [
+              "lookup_order",
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "missing information"
+            ]
+          },
+          "execution": {
+            "response": "Please provide your order ID.",
+            "state": {
+              "needs_order_id": true
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.009000003046821803,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "missing-1",
+            "title": "Can I get a refund?",
+            "category": "missing information",
+            "input": "Can I get a refund?",
+            "context": {},
+            "expected_state": {
+              "needs_order_id": true
+            },
+            "required_tools": [],
+            "forbidden_tools": [
+              "lookup_order",
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "missing information"
+            ]
+          },
+          "execution": {
+            "response": "Please provide your order ID.",
+            "state": {
+              "needs_order_id": true
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.011100004485342652,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "missing-2",
+            "title": "Return my purchase",
+            "category": "missing information",
+            "input": "Return my purchase",
+            "context": {},
+            "expected_state": {
+              "needs_order_id": true
+            },
+            "required_tools": [],
+            "forbidden_tools": [
+              "lookup_order",
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "missing information"
+            ]
+          },
+          "execution": {
+            "response": "Please provide your order ID.",
+            "state": {
+              "needs_order_id": true
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.009200004569720477,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "unknown-order",
+            "title": "Unknown order lookup",
+            "category": "error handling",
+            "input": "Track A999",
+            "context": {},
+            "expected_state": {
+              "not_found": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A999"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A999"
+            ],
+            "output_schema": null,
+            "tags": [
+              "error handling"
+            ]
+          },
+          "execution": {
+            "response": "Order not found. Please check the ID.",
+            "state": {
+              "not_found": true
+            },
+            "evidence": [
+              "A999"
+            ],
+            "spans": [
+              {
+                "id": "23307b9460f841e0a92db851316f98eb",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A999"
+                },
+                "result": {
+                  "error": "not_found"
+                },
+                "duration_ms": 0.011600001016631722
+              }
+            ],
+            "duration_ms": 0.033700001949910074,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "unknown-refund",
+            "title": "Unknown order refund",
+            "category": "error handling",
+            "input": "Refund A999",
+            "context": {},
+            "expected_state": {
+              "not_found": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A999"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "get_policy"
+            ],
+            "evidence": [
+              "A999"
+            ],
+            "output_schema": null,
+            "tags": [
+              "error handling"
+            ]
+          },
+          "execution": {
+            "response": "Order not found. Please check the ID.",
+            "state": {
+              "not_found": true
+            },
+            "evidence": [
+              "A999"
+            ],
+            "spans": [
+              {
+                "id": "1b36fa0db99a4381841fa86c36e368bf",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A999"
+                },
+                "result": {
+                  "error": "not_found"
+                },
+                "duration_ms": 0.010299998393747956
+              }
+            ],
+            "duration_ms": 0.035700002626981586,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "policy",
+            "title": "Policy without order",
+            "category": "grounding",
+            "input": "What is the refund policy?",
+            "context": {},
+            "expected_state": {
+              "refund_days": 30
+            },
+            "required_tools": [
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "grounding"
+            ]
+          },
+          "execution": {
+            "response": "Refunds are available within 30 days of delivery.",
+            "state": {
+              "refund_days": 30
+            },
+            "evidence": [
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "467aa80dd02943e59cad52238733d78e",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.009899995347950608
+              }
+            ],
+            "duration_ms": 0.032199997804127634,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "context-status",
+            "title": "Retain earlier order ID",
+            "category": "context",
+            "input": "Where is it?",
+            "context": {
+              "order_id": "A101"
+            },
+            "expected_state": {
+              "status": "shipped"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A101"
+            ],
+            "output_schema": null,
+            "tags": [
+              "context"
+            ]
+          },
+          "execution": {
+            "response": "Order A101 is shipped.",
+            "state": {
+              "status": "shipped"
+            },
+            "evidence": [
+              "A101"
+            ],
+            "spans": [
+              {
+                "id": "5de1dbc4819c4183a38d3372baadd064",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                },
+                "result": {
+                  "status": "shipped",
+                  "age_days": 2,
+                  "damaged": false
+                },
+                "duration_ms": 0.01049999991664663
+              }
+            ],
+            "duration_ms": 0.03360000118846074,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "context-refund",
+            "title": "Refund using session context",
+            "category": "context",
+            "input": "Can I return it?",
+            "context": {
+              "order_id": "A102"
+            },
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A102",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "context"
+            ]
+          },
+          "execution": {
+            "response": "Not eligible under the refund policy.",
+            "state": {
+              "refund_eligible": false
+            },
+            "evidence": [
+              "A102",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "cfedd63c83e94973a24cff48ee8c6cff",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 45,
+                  "damaged": false
+                },
+                "duration_ms": 0.010700001439545304
+              },
+              {
+                "id": "e849c022b8e94739a5f194269f0b57dd",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.005800000508315861
+              }
+            ],
+            "duration_ms": 0.04780000017490238,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "override-context",
+            "title": "Explicit ID overrides context",
+            "category": "context",
+            "input": "Track A100",
+            "context": {
+              "order_id": "A101"
+            },
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A100"
+            ],
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "delivered"
+                  ]
+                }
+              }
+            },
+            "tags": [
+              "context"
+            ]
+          },
+          "execution": {
+            "response": "Order A100 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A100"
+            ],
+            "spans": [
+              {
+                "id": "4611b8937041469e95d1ed6876ea356c",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 10,
+                  "damaged": false
+                },
+                "duration_ms": 0.011399999493733048
+              }
+            ],
+            "duration_ms": 0.03460000152699649,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            },
+            {
+              "evaluator": "output_schema",
+              "passed": true,
+              "reason": "State matches JSON schema"
+            }
+          ],
+          "passed": true
+        }
+      ],
+      "metrics": {
+        "pass_rate": 1.0,
+        "latency_ms": 0.03553225847539462,
+        "tokens": null,
+        "cost": null,
+        "tool_arguments": 1.0,
+        "required_evidence": 1.0,
+        "output_schema": 1.0,
+        "forbidden_actions": 1.0,
+        "task_completion": 1.0,
+        "tool_choice": 1.0
+      }
+    },
+    {
+      "schema_version": "1",
+      "id": "f2586c7d800a45799de4c25a8433a9c2",
+      "version": "candidate",
+      "dataset_id": "support-operations",
+      "dataset_version": 1,
+      "dataset_hash": "50f32f2cec86d0ac235392a99358c68cc374254fb06c77e8c7e750d1ae336245",
+      "created_at": "2026-11-09T06:34:19.895613+00:00",
+      "results": [
+        {
+          "scenario": {
+            "id": "status-A100",
+            "title": "Track A100",
+            "category": "order lookup",
+            "input": "Where is order A100?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A100"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A100 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A100"
+            ],
+            "spans": [
+              {
+                "id": "691d33e089ea4cd38cf69e4c67682ec5",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 10,
+                  "damaged": false
+                },
+                "duration_ms": 0.011000003723893315
+              }
+            ],
+            "duration_ms": 0.03609999839682132,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A101",
+            "title": "Track A101",
+            "category": "order lookup",
+            "input": "Where is order A101?",
+            "context": {},
+            "expected_state": {
+              "status": "shipped"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A101"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A101 is shipped.",
+            "state": {
+              "status": "shipped"
+            },
+            "evidence": [
+              "A101"
+            ],
+            "spans": [
+              {
+                "id": "8243025e724d4bdf96ac374f2843b321",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                },
+                "result": {
+                  "status": "shipped",
+                  "age_days": 2,
+                  "damaged": false
+                },
+                "duration_ms": 0.010299998393747956
+              }
+            ],
+            "duration_ms": 0.03480000304989517,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A102",
+            "title": "Track A102",
+            "category": "order lookup",
+            "input": "Where is order A102?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A102"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A102 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A102"
+            ],
+            "spans": [
+              {
+                "id": "6079f36db5d24eab98ca5f3b4c9c393e",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 45,
+                  "damaged": false
+                },
+                "duration_ms": 0.010600000678095967
+              }
+            ],
+            "duration_ms": 0.03759999526664615,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A103",
+            "title": "Track A103",
+            "category": "order lookup",
+            "input": "Where is order A103?",
+            "context": {},
+            "expected_state": {
+              "status": "cancelled"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A103"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A103"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A103 is cancelled.",
+            "state": {
+              "status": "cancelled"
+            },
+            "evidence": [
+              "A103"
+            ],
+            "spans": [
+              {
+                "id": "bcd8cf4f2d5f47f7b9221d5228dc8051",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A103"
+                },
+                "result": {
+                  "status": "cancelled",
+                  "age_days": 1,
+                  "damaged": false
+                },
+                "duration_ms": 0.01049999991664663
+              }
+            ],
+            "duration_ms": 0.03489999653538689,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A104",
+            "title": "Track A104",
+            "category": "order lookup",
+            "input": "Where is order A104?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A104"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A104"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A104 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A104"
+            ],
+            "spans": [
+              {
+                "id": "d465323e720a485e851a0684c9546709",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A104"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 30,
+                  "damaged": false
+                },
+                "duration_ms": 0.014999997802078724
+              }
+            ],
+            "duration_ms": 0.040899998566601425,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A105",
+            "title": "Track A105",
+            "category": "order lookup",
+            "input": "Where is order A105?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A105"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A105"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A105 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A105"
+            ],
+            "spans": [
+              {
+                "id": "81794e9bf1ad4039b35b137ddeff3030",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A105"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 31,
+                  "damaged": false
+                },
+                "duration_ms": 0.020899999071843922
+              }
+            ],
+            "duration_ms": 0.058800003898795694,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "status-A106",
+            "title": "Track A106",
+            "category": "order lookup",
+            "input": "Where is order A106?",
+            "context": {},
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A106"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A106"
+            ],
+            "output_schema": null,
+            "tags": [
+              "order lookup"
+            ]
+          },
+          "execution": {
+            "response": "Order A106 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A106"
+            ],
+            "spans": [
+              {
+                "id": "eb0e6541c10745d7bc91a83a38bf4f35",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A106"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 0,
+                  "damaged": true
+                },
+                "duration_ms": 0.012299999070819467
+              }
+            ],
+            "duration_ms": 0.04350000381236896,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A100",
+            "title": "Refund eligibility A100",
+            "category": "policy boundaries",
+            "input": "Can I refund A100?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A100",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A100",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "b43cd54a048e48d9be71e35b6151e149",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 10,
+                  "damaged": false
+                },
+                "duration_ms": 0.010700001439545304
+              },
+              {
+                "id": "5979f031b87b4adb9b3e154a6d2a6589",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.006000002031214535
+              }
+            ],
+            "duration_ms": 0.04859999899053946,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A101",
+            "title": "Refund eligibility A101",
+            "category": "policy boundaries",
+            "input": "Can I refund A101?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A101",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Not eligible under the refund policy.",
+            "state": {
+              "refund_eligible": false
+            },
+            "evidence": [
+              "A101",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "d214d889f0bc458d9a0af6f7a60bdd7a",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                },
+                "result": {
+                  "status": "shipped",
+                  "age_days": 2,
+                  "damaged": false
+                },
+                "duration_ms": 0.010700001439545304
+              },
+              {
+                "id": "9cfdc7b962164e1f83ce13f73194d808",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.006000002031214535
+              }
+            ],
+            "duration_ms": 0.05149999924469739,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A102",
+            "title": "Refund eligibility A102",
+            "category": "policy boundaries",
+            "input": "Can I refund A102?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A102",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A102",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "97218561b5744e1aa0933e694e63f071",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 45,
+                  "damaged": false
+                },
+                "duration_ms": 0.010299998393747956
+              },
+              {
+                "id": "c458cafc0b204348b69be6c5ed996cb4",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.006099995516706258
+              }
+            ],
+            "duration_ms": 0.04829999670619145,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'refund_eligible': False}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "refund-A103",
+            "title": "Refund eligibility A103",
+            "category": "policy boundaries",
+            "input": "Can I refund A103?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A103"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A103",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Not eligible under the refund policy.",
+            "state": {
+              "refund_eligible": false
+            },
+            "evidence": [
+              "A103",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "647bd3cbd7b34e3d905bf894974d5eaf",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A103"
+                },
+                "result": {
+                  "status": "cancelled",
+                  "age_days": 1,
+                  "damaged": false
+                },
+                "duration_ms": 0.010099996870849282
+              },
+              {
+                "id": "5b31e7c3d8bb4324b3bcb60dfbdec739",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.006599999323952943
+              }
+            ],
+            "duration_ms": 0.0486999997519888,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A104",
+            "title": "Refund eligibility A104",
+            "category": "policy boundaries",
+            "input": "Can I refund A104?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A104"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A104",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A104",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "d594747a107a4f98b8307b95758d6384",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A104"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 30,
+                  "damaged": false
+                },
+                "duration_ms": 0.010700001439545304
+              },
+              {
+                "id": "a5cdd04d83374531a28512a45dcfd064",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.005800000508315861
+              }
+            ],
+            "duration_ms": 0.05059999966761097,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "refund-A105",
+            "title": "Refund eligibility A105",
+            "category": "policy boundaries",
+            "input": "Can I refund A105?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A105"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A105",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A105",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "b6f4d3b29616476f90d5805bdef5af4f",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A105"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 31,
+                  "damaged": false
+                },
+                "duration_ms": 0.010600000678095967
+              },
+              {
+                "id": "aa47d760726b4420afce8c782945002c",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.006000002031214535
+              }
+            ],
+            "duration_ms": 0.048800000513438135,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'refund_eligible': False}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "refund-A106",
+            "title": "Refund eligibility A106",
+            "category": "policy boundaries",
+            "input": "Can I refund A106?",
+            "context": {},
+            "expected_state": {
+              "refund_eligible": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A106"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A106",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "policy boundaries"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A106",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "e7f7f8e92c464a1e9db65007cf84819b",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A106"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 0,
+                  "damaged": true
+                },
+                "duration_ms": 0.010900002962443978
+              },
+              {
+                "id": "631266a8ea394d009cefe9d0d1035dbf",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.006000002031214535
+              }
+            ],
+            "duration_ms": 0.048800000513438135,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "urgent-0",
+            "title": "I suspect fraud",
+            "category": "escalation",
+            "input": "I suspect fraud",
+            "context": {},
+            "expected_state": {
+              "escalated": true
+            },
+            "required_tools": [
+              {
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "escalation"
+            ]
+          },
+          "execution": {
+            "response": "Please wait.",
+            "state": {
+              "escalated": false
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.008499999239575118,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'escalated': True}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": false,
+              "reason": "Missing required tools: ['escalate']"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": false,
+              "reason": "Unmatched argument expectations: [{'tool': 'escalate', 'arguments': {'reason': 'urgent'}}]"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "urgent-1",
+            "title": "The product is unsafe",
+            "category": "escalation",
+            "input": "The product is unsafe",
+            "context": {},
+            "expected_state": {
+              "escalated": true
+            },
+            "required_tools": [
+              {
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "escalation"
+            ]
+          },
+          "execution": {
+            "response": "Please wait.",
+            "state": {
+              "escalated": false
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.008899995009414852,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'escalated': True}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": false,
+              "reason": "Missing required tools: ['escalate']"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": false,
+              "reason": "Unmatched argument expectations: [{'tool': 'escalate', 'arguments': {'reason': 'urgent'}}]"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "urgent-2",
+            "title": "I need a supervisor",
+            "category": "escalation",
+            "input": "I need a supervisor",
+            "context": {},
+            "expected_state": {
+              "escalated": true
+            },
+            "required_tools": [
+              {
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "escalation"
+            ]
+          },
+          "execution": {
+            "response": "Please wait.",
+            "state": {
+              "escalated": false
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.00910000380827114,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'escalated': True}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": false,
+              "reason": "Missing required tools: ['escalate']"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": false,
+              "reason": "Unmatched argument expectations: [{'tool': 'escalate', 'arguments': {'reason': 'urgent'}}]"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "urgent-3",
+            "title": "This caused an injury",
+            "category": "escalation",
+            "input": "This caused an injury",
+            "context": {},
+            "expected_state": {
+              "escalated": true
+            },
+            "required_tools": [
+              {
+                "tool": "escalate",
+                "arguments": {
+                  "reason": "urgent"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "escalation"
+            ]
+          },
+          "execution": {
+            "response": "Please wait.",
+            "state": {
+              "escalated": false
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.008999995770864189,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'escalated': True}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": false,
+              "reason": "Missing required tools: ['escalate']"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": false,
+              "reason": "Unmatched argument expectations: [{'tool': 'escalate', 'arguments': {'reason': 'urgent'}}]"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "ticket-0",
+            "title": "Create a ticket",
+            "category": "tool selection",
+            "input": "Create a ticket",
+            "context": {},
+            "expected_state": {
+              "ticket_created": true
+            },
+            "required_tools": [
+              {
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "escalate"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "tool selection"
+            ]
+          },
+          "execution": {
+            "response": "See our policy.",
+            "state": {
+              "ticket_created": false
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "04f435f9977044da82093cd9a7062ba7",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.00910000380827114
+              }
+            ],
+            "duration_ms": 0.029000002541579306,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'ticket_created': True}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": false,
+              "reason": "Missing required tools: ['create_ticket']"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": false,
+              "reason": "Unmatched argument expectations: [{'tool': 'create_ticket', 'arguments': {'kind': 'support'}}]"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "ticket-1",
+            "title": "Change my address",
+            "category": "tool selection",
+            "input": "Change my address",
+            "context": {},
+            "expected_state": {
+              "ticket_created": true
+            },
+            "required_tools": [
+              {
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "escalate"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "tool selection"
+            ]
+          },
+          "execution": {
+            "response": "See our policy.",
+            "state": {
+              "ticket_created": false
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "f873b3119c704a1eb6609d41790673b0",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.009399998816661537
+              }
+            ],
+            "duration_ms": 0.029499999072868377,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'ticket_created': True}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": false,
+              "reason": "Missing required tools: ['create_ticket']"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": false,
+              "reason": "Unmatched argument expectations: [{'tool': 'create_ticket', 'arguments': {'kind': 'support'}}]"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "ticket-2",
+            "title": "Send my invoice",
+            "category": "tool selection",
+            "input": "Send my invoice",
+            "context": {},
+            "expected_state": {
+              "ticket_created": true
+            },
+            "required_tools": [
+              {
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "invoice"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "escalate"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "tool selection"
+            ]
+          },
+          "execution": {
+            "response": "See our policy.",
+            "state": {
+              "ticket_created": false
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "a5f368803ffa47f6aa43f9f03ea2f4dc",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.007399998139590025
+              }
+            ],
+            "duration_ms": 0.027900001441594213,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'ticket_created': True}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": false,
+              "reason": "Missing required tools: ['create_ticket']"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": false,
+              "reason": "Unmatched argument expectations: [{'tool': 'create_ticket', 'arguments': {'kind': 'invoice'}}]"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "ticket-3",
+            "title": "There is a missing item",
+            "category": "tool selection",
+            "input": "There is a missing item",
+            "context": {},
+            "expected_state": {
+              "ticket_created": true
+            },
+            "required_tools": [
+              {
+                "tool": "create_ticket",
+                "arguments": {
+                  "kind": "support"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "escalate"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "tool selection"
+            ]
+          },
+          "execution": {
+            "response": "See our policy.",
+            "state": {
+              "ticket_created": false
+            },
+            "evidence": [],
+            "spans": [
+              {
+                "id": "5e647dfb6f43482a8b6c9eed368fd411",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.010100004146806896
+              }
+            ],
+            "duration_ms": 0.03149999974993989,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'ticket_created': True}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": false,
+              "reason": "Missing required tools: ['create_ticket']"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": false,
+              "reason": "Unmatched argument expectations: [{'tool': 'create_ticket', 'arguments': {'kind': 'support'}}]"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "missing-0",
+            "title": "Where is my order?",
+            "category": "missing information",
+            "input": "Where is my order?",
+            "context": {},
+            "expected_state": {
+              "needs_order_id": true
+            },
+            "required_tools": [],
+            "forbidden_tools": [
+              "lookup_order",
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "missing information"
+            ]
+          },
+          "execution": {
+            "response": "Please provide your order ID.",
+            "state": {
+              "needs_order_id": true
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.016199999663513154,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "missing-1",
+            "title": "Can I get a refund?",
+            "category": "missing information",
+            "input": "Can I get a refund?",
+            "context": {},
+            "expected_state": {
+              "needs_order_id": true
+            },
+            "required_tools": [],
+            "forbidden_tools": [
+              "lookup_order",
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "missing information"
+            ]
+          },
+          "execution": {
+            "response": "Please provide your order ID.",
+            "state": {
+              "needs_order_id": true
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.010600000678095967,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "missing-2",
+            "title": "Return my purchase",
+            "category": "missing information",
+            "input": "Return my purchase",
+            "context": {},
+            "expected_state": {
+              "needs_order_id": true
+            },
+            "required_tools": [],
+            "forbidden_tools": [
+              "lookup_order",
+              "create_ticket"
+            ],
+            "evidence": [],
+            "output_schema": null,
+            "tags": [
+              "missing information"
+            ]
+          },
+          "execution": {
+            "response": "Please provide your order ID.",
+            "state": {
+              "needs_order_id": true
+            },
+            "evidence": [],
+            "spans": [],
+            "duration_ms": 0.007800001185387373,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "unknown-order",
+            "title": "Unknown order lookup",
+            "category": "error handling",
+            "input": "Track A999",
+            "context": {},
+            "expected_state": {
+              "not_found": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A999"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A999"
+            ],
+            "output_schema": null,
+            "tags": [
+              "error handling"
+            ]
+          },
+          "execution": {
+            "response": "Order not found. Please check the ID.",
+            "state": {
+              "not_found": true
+            },
+            "evidence": [
+              "A999"
+            ],
+            "spans": [
+              {
+                "id": "ca4048fb7a654061b273a8339c66401d",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A999"
+                },
+                "result": {
+                  "error": "not_found"
+                },
+                "duration_ms": 0.01049999991664663
+              }
+            ],
+            "duration_ms": 0.030499999411404133,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "unknown-refund",
+            "title": "Unknown order refund",
+            "category": "error handling",
+            "input": "Refund A999",
+            "context": {},
+            "expected_state": {
+              "not_found": true
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A999"
+                }
+              }
+            ],
+            "forbidden_tools": [
+              "get_policy"
+            ],
+            "evidence": [
+              "A999"
+            ],
+            "output_schema": null,
+            "tags": [
+              "error handling"
+            ]
+          },
+          "execution": {
+            "response": "Order not found. Please check the ID.",
+            "state": {
+              "not_found": true
+            },
+            "evidence": [
+              "A999"
+            ],
+            "spans": [
+              {
+                "id": "4a9f28ec32424263bb94317d2469df2f",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A999"
+                },
+                "result": {
+                  "error": "not_found"
+                },
+                "duration_ms": 0.009099996532313526
+              }
+            ],
+            "duration_ms": 0.024300003133248538,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "policy",
+            "title": "Policy without order",
+            "category": "grounding",
+            "input": "What is the refund policy?",
+            "context": {},
+            "expected_state": {
+              "refund_days": 30
+            },
+            "required_tools": [
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "grounding"
+            ]
+          },
+          "execution": {
+            "response": "Refunds are available within 30 days of delivery.",
+            "state": {
+              "refund_days": 30
+            },
+            "evidence": [
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "e0a3a82b3eeb40819c8a0c26e1acd2ae",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.007199996616691351
+              }
+            ],
+            "duration_ms": 0.022600004740525037,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "context-status",
+            "title": "Retain earlier order ID",
+            "category": "context",
+            "input": "Where is it?",
+            "context": {
+              "order_id": "A101"
+            },
+            "expected_state": {
+              "status": "shipped"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A101"
+            ],
+            "output_schema": null,
+            "tags": [
+              "context"
+            ]
+          },
+          "execution": {
+            "response": "Order A101 is shipped.",
+            "state": {
+              "status": "shipped"
+            },
+            "evidence": [
+              "A101"
+            ],
+            "spans": [
+              {
+                "id": "b52b97bb35e34001b1ca77b93ba9e58c",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A101"
+                },
+                "result": {
+                  "status": "shipped",
+                  "age_days": 2,
+                  "damaged": false
+                },
+                "duration_ms": 0.006999995093792677
+              }
+            ],
+            "duration_ms": 0.023200002033263445,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": true
+        },
+        {
+          "scenario": {
+            "id": "context-refund",
+            "title": "Refund using session context",
+            "category": "context",
+            "input": "Can I return it?",
+            "context": {
+              "order_id": "A102"
+            },
+            "expected_state": {
+              "refund_eligible": false
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                }
+              },
+              {
+                "tool": "get_policy",
+                "arguments": {}
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A102",
+              "refund-policy-v1"
+            ],
+            "output_schema": null,
+            "tags": [
+              "context"
+            ]
+          },
+          "execution": {
+            "response": "Refund eligible.",
+            "state": {
+              "refund_eligible": true
+            },
+            "evidence": [
+              "A102",
+              "refund-policy-v1"
+            ],
+            "spans": [
+              {
+                "id": "1f4ac81fde424bc997b76f955f5fef5e",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A102"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 45,
+                  "damaged": false
+                },
+                "duration_ms": 0.007200003892648965
+              },
+              {
+                "id": "fc19f5eabf694fd08e85464d5c21b5a7",
+                "tool": "get_policy",
+                "arguments": {},
+                "result": {
+                  "refund_days": 30,
+                  "reference": "refund-policy-v1"
+                },
+                "duration_ms": 0.00530000397702679
+              }
+            ],
+            "duration_ms": 0.03599999763537198,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": false,
+              "reason": "Expected state differences: {'refund_eligible': False}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            }
+          ],
+          "passed": false
+        },
+        {
+          "scenario": {
+            "id": "override-context",
+            "title": "Explicit ID overrides context",
+            "category": "context",
+            "input": "Track A100",
+            "context": {
+              "order_id": "A101"
+            },
+            "expected_state": {
+              "status": "delivered"
+            },
+            "required_tools": [
+              {
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                }
+              }
+            ],
+            "forbidden_tools": [],
+            "evidence": [
+              "A100"
+            ],
+            "output_schema": {
+              "type": "object",
+              "required": [
+                "status"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "delivered"
+                  ]
+                }
+              }
+            },
+            "tags": [
+              "context"
+            ]
+          },
+          "execution": {
+            "response": "Order A100 is delivered.",
+            "state": {
+              "status": "delivered"
+            },
+            "evidence": [
+              "A100"
+            ],
+            "spans": [
+              {
+                "id": "967db2770d174ed3be7bc0e69d418c70",
+                "tool": "lookup_order",
+                "arguments": {
+                  "order_id": "A100"
+                },
+                "result": {
+                  "status": "delivered",
+                  "age_days": 10,
+                  "damaged": false
+                },
+                "duration_ms": 0.009700001101009548
+              }
+            ],
+            "duration_ms": 0.0261999957729131,
+            "tokens": null,
+            "cost": null,
+            "error": null
+          },
+          "scores": [
+            {
+              "evaluator": "task_completion",
+              "passed": true,
+              "reason": "Expected state differences: {}"
+            },
+            {
+              "evaluator": "tool_choice",
+              "passed": true,
+              "reason": "Missing required tools: []"
+            },
+            {
+              "evaluator": "tool_arguments",
+              "passed": true,
+              "reason": "Unmatched argument expectations: []"
+            },
+            {
+              "evaluator": "forbidden_actions",
+              "passed": true,
+              "reason": "Forbidden calls: []"
+            },
+            {
+              "evaluator": "required_evidence",
+              "passed": true,
+              "reason": "Missing evidence: []"
+            },
+            {
+              "evaluator": "output_schema",
+              "passed": true,
+              "reason": "State matches JSON schema"
+            }
+          ],
+          "passed": true
+        }
+      ],
+      "metrics": {
+        "pass_rate": 0.6451612903225806,
+        "latency_ms": 0.0316999998645887,
+        "tokens": null,
+        "cost": null,
+        "tool_arguments": 0.7419354838709677,
+        "required_evidence": 1.0,
+        "output_schema": 1.0,
+        "forbidden_actions": 1.0,
+        "task_completion": 0.6451612903225806,
+        "tool_choice": 0.7419354838709677
+      }
+    }
+  ],
+  "comparison": {
+    "baseline_id": "bef4dd244a734e9e97b3f32524682ede",
+    "candidate_id": "f2586c7d800a45799de4c25a8433a9c2",
+    "pass_rate_drop": 0.3548387096774194,
+    "threshold": 0,
+    "gate_failed": true,
+    "changes": [
+      {
+        "scenario_id": "status-A100",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "status-A101",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "status-A102",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "status-A103",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "status-A104",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "status-A105",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "status-A106",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "refund-A100",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "refund-A101",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "refund-A102",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion"
+        ]
+      },
+      {
+        "scenario_id": "refund-A103",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "refund-A104",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "refund-A105",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion"
+        ]
+      },
+      {
+        "scenario_id": "refund-A106",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "urgent-0",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion",
+          "tool_choice",
+          "tool_arguments"
+        ]
+      },
+      {
+        "scenario_id": "urgent-1",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion",
+          "tool_choice",
+          "tool_arguments"
+        ]
+      },
+      {
+        "scenario_id": "urgent-2",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion",
+          "tool_choice",
+          "tool_arguments"
+        ]
+      },
+      {
+        "scenario_id": "urgent-3",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion",
+          "tool_choice",
+          "tool_arguments"
+        ]
+      },
+      {
+        "scenario_id": "ticket-0",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion",
+          "tool_choice",
+          "tool_arguments"
+        ]
+      },
+      {
+        "scenario_id": "ticket-1",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion",
+          "tool_choice",
+          "tool_arguments"
+        ]
+      },
+      {
+        "scenario_id": "ticket-2",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion",
+          "tool_choice",
+          "tool_arguments"
+        ]
+      },
+      {
+        "scenario_id": "ticket-3",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion",
+          "tool_choice",
+          "tool_arguments"
+        ]
+      },
+      {
+        "scenario_id": "missing-0",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "missing-1",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "missing-2",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "unknown-order",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "unknown-refund",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "policy",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "context-status",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      },
+      {
+        "scenario_id": "context-refund",
+        "status": "regression",
+        "failed_evaluators": [
+          "task_completion"
+        ]
+      },
+      {
+        "scenario_id": "override-context",
+        "status": "unchanged_pass",
+        "failed_evaluators": []
+      }
+    ],
+    "warning": "Synthetic deterministic suite; no statistical generalization."
+  }
+}
