@@ -11,6 +11,7 @@ Open `http://127.0.0.1:8000/docs` for generated contracts. All routes are local-
 | Route | Behavior |
 | --- | --- |
 | GET /health | Local mode and readiness |
+| POST /playground | Fresh input, version and optional context; returns actual execution without asserting pass/fail |
 | GET /agents | Included agent and supported versions |
 | GET, POST /datasets | List / validate and import a versioned dataset; use a new ID to clone |
 | GET, POST /runs | List stored runs / queue evaluation; returns job_id with HTTP 202 |

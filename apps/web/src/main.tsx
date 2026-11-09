@@ -17,9 +17,14 @@ import {
   Terminal,
   Activity,
   X,
+  Home,
+  FlaskConical,
 } from "lucide-react";
 import { reportSchema, runSchema, type Report, type Result } from "./schema";
 import "./style.css";
+import "./welcome.css";
+import { Welcome } from "./Welcome";
+import { Playground } from "./Playground";
 
 function download(name: string, value: unknown) {
   const url = URL.createObjectURL(
@@ -34,6 +39,8 @@ function download(name: string, value: unknown) {
 const pct = (n: number | null | undefined) =>
   n == null ? "Unavailable" : `${(n * 100).toFixed(1)}%`;
 const pages = [
+  ["home", "Home", Home],
+  ["playground", "Try the agent", FlaskConical],
   ["overview", "Overview", LayoutDashboard],
   ["comparison", "Version comparison", GitCompareArrows],
   ["datasets", "Scenario library", Database],
@@ -46,12 +53,12 @@ function App() {
     [selectedRunId, setSelectedRunId] = useState("");
   const [report, setReport] = useState<Report | null>(null),
     [error, setError] = useState(""),
-    [page, setPage] = useState(location.hash.slice(1) || "overview"),
+    [page, setPage] = useState(location.hash.slice(1) || "home"),
     [version, setVersion] = useState("candidate"),
     [query, setQuery] = useState(""),
     [filter, setFilter] = useState("all"),
     [selected, setSelected] = useState<Result | null>(null),
-    [theme, setTheme] = useState(localStorage.getItem("theme") || "dark"),
+    [theme, setTheme] = useState(localStorage.getItem("theme") || "light"),
     [backend, setBackend] = useState(""),
     [apiInput, setApiInput] = useState("http://127.0.0.1:8000"),
     [notice, setNotice] = useState(""),
@@ -66,7 +73,7 @@ function App() {
       })
       .then((data) => setReport(reportSchema.parse(data)))
       .catch((e) => setError(String(e)));
-    const changed = () => setPage(location.hash.slice(1) || "overview");
+    const changed = () => setPage(location.hash.slice(1) || "home");
     addEventListener("hashchange", changed);
     return () => removeEventListener("hashchange", changed);
   }, []);
@@ -208,6 +215,14 @@ function App() {
         <h1>Loading evaluation evidence…</h1>
       </main>
     );
+  if (page === "home")
+    return (
+      <Welcome
+        report={report}
+        theme={theme}
+        toggleTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
+      />
+    );
   const run =
     (page === "overview" || page === "datasets"
       ? localRuns.find((r) => r.version === version)
@@ -245,7 +260,7 @@ function App() {
   return (
     <div className="shell">
       <aside>
-        <a className="brand" href="#overview">
+        <a className="brand" href="#home">
           <span className="brand-icon">
             <ShieldCheck size={24} />
           </span>
@@ -302,426 +317,457 @@ function App() {
           </span>
         </header>
         <main>
-          <div className="eyebrow">AGENT RELIABILITY / SUPPORT OPERATIONS</div>
-          <div className="title-row">
-            <div>
-              <h1>
-                {page === "comparison"
-                  ? "A small change. A visible regression."
-                  : page === "datasets"
-                    ? "Every expectation, versioned."
-                    : page === "reports"
-                      ? "Evidence you can reproduce."
-                      : "Catch regressions before they ship."}
-              </h1>
-              <p className="subtitle">
-                {page === "overview"
-                  ? "Follow the evidence from agent behavior to a failing assertion."
-                  : "Deterministic scenarios. Observed tool calls. Transparent results."}
-              </p>
-            </div>
-            <button onClick={() => download("agentguard-report.json", report)}>
-              <Download size={16} />
-              Export report
-            </button>
-          </div>
-          <div className="demo-banner">
-            <Activity size={18} />
-            <div>
-              <strong>
-                {backend
-                  ? "Local execution available"
-                  : "Interactive demo · real Python-generated results"}
-              </strong>
-              <span>
-                Synthetic records · Rule-driven LangGraph agent · No model API
-                calls
-              </span>
-            </div>
-            <a href="#reports">
-              View provenance <ArrowUpRight size={15} />
-            </a>
-          </div>
-          {localRuns.some((r) => r.id === run.id) &&
-            (page === "overview" || page === "datasets") && (
-              <div className="notice">
-                Showing a live local {version} execution. Version comparison and
-                provenance retain the published snapshot.
-              </div>
-            )}
-          {notice && (
-            <div role="status" className="notice">
-              {notice}
-            </div>
-          )}
-          {(page === "overview" || page === "comparison") && (
+          {page === "playground" ? (
+            <Playground report={report} />
+          ) : (
             <>
-              <div className="metrics">
-                <article>
-                  <span>Scenario pass rate</span>
-                  <strong>{pct(run.metrics.pass_rate)}</strong>
-                  <small
-                    className={
-                      version === "candidate" ? "negative" : "positive"
-                    }
-                  >
-                    {version === "candidate"
-                      ? `${regressions.length} regressions in published comparison`
-                      : "Baseline reference behavior"}
-                  </small>
-                </article>
-                <article>
-                  <span>Task completion</span>
-                  <strong>{pct(run.metrics.task_completion)}</strong>
-                  <small>
-                    {run.results.filter((r) => r.passed).length} /{" "}
-                    {run.results.length} scenarios pass all checks
-                  </small>
-                </article>
-                <article>
-                  <span>Tool-call accuracy</span>
-                  <strong>{pct(run.metrics.tool_choice)}</strong>
-                  <small>Required tools observed in trace</small>
-                </article>
-                <article>
-                  <span>Mean tool execution</span>
-                  <strong>
-                    {run.metrics.latency_ms?.toFixed(3)}
-                    <em> ms</em>
-                  </strong>
-                  <small>Measured locally · tokens & cost unavailable</small>
-                </article>
+              <div className="eyebrow">
+                AGENT RELIABILITY / SUPPORT OPERATIONS
               </div>
-              <div className="comparison-grid">
-                <section className="panel">
-                  <div className="panel-head">
-                    <div>
-                      <h2>Version health</h2>
-                      <p>Same dataset. Two implementations.</p>
-                    </div>
-                    <span className="pill">{run.results.length} scenarios</span>
-                  </div>
-                  <div className="bars">
-                    {report.runs.map((r) => (
-                      <div className="bar-row" key={r.id}>
-                        <span>
-                          <b>{r.version === "baseline" ? "v1.0" : "v1.1"}</b>{" "}
-                          {r.version}
-                          <small>
-                            {r.results.filter((s) => s.passed).length} passing
-                          </small>
-                        </span>
-                        <div className="track">
-                          <div
-                            style={{
-                              width: `${(r.metrics.pass_rate || 0) * 100}%`,
-                            }}
-                            className={r.version}
-                          />
-                        </div>
-                        <strong>{pct(r.metrics.pass_rate)}</strong>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="footnote">
-                    Pass rates describe this synthetic suite, not general agent
-                    reliability.
-                  </p>
-                </section>
-                <section className="panel regression-callout">
-                  <div className="callout-label">
-                    <AlertTriangle size={16} /> REGRESSION GATE FAILED
-                  </div>
-                  <h2>{regressions.length} scenarios lost correct behavior</h2>
-                  <p>
-                    The candidate widens the refund window, skips urgent
-                    escalation, and selects the wrong ticket tool.
-                  </p>
-                  <a href="#comparison">
-                    Inspect version differences <ArrowUpRight size={16} />
-                  </a>
-                </section>
-              </div>
-            </>
-          )}
-          {page === "comparison" && (
-            <section className="panel">
-              <div className="panel-head">
+              <div className="title-row">
                 <div>
-                  <h2>Published comparison</h2>
-                  <p>
-                    Baseline → candidate · allowed pass-rate drop:{" "}
-                    {pct(report.comparison.threshold)}
+                  <h1>
+                    {page === "comparison"
+                      ? "A small change. A visible regression."
+                      : page === "datasets"
+                        ? "Every expectation, versioned."
+                        : page === "reports"
+                          ? "Evidence you can reproduce."
+                          : "Catch regressions before they ship."}
+                  </h1>
+                  <p className="subtitle">
+                    {page === "overview"
+                      ? "Follow the evidence from agent behavior to a failing assertion."
+                      : "Deterministic scenarios. Observed tool calls. Transparent results."}
                   </p>
                 </div>
-                <span className="pill negative">
-                  −{pct(report.comparison.pass_rate_drop)}
-                </span>
-              </div>
-              <div className="changes">
-                {report.comparison.changes.map((c) => (
-                  <button
-                    key={c.scenario_id}
-                    onClick={() => {
-                      setVersion("candidate");
-                      inspect(
-                        report.runs
-                          .find((r) => r.version === "candidate")!
-                          .results.find(
-                            (r) => r.scenario.id === c.scenario_id,
-                          )!,
-                        report.runs.find((r) => r.version === "candidate")!.id,
-                      );
-                    }}
-                  >
-                    <span
-                      className={
-                        c.status === "regression" ? "negative" : "positive"
-                      }
-                    >
-                      {c.status === "regression" ? (
-                        <AlertTriangle size={16} />
-                      ) : (
-                        <Check size={16} />
-                      )}
-                    </span>
-                    <span>
-                      {c.scenario_id}
-                      <small>
-                        {c.failed_evaluators.join(" · ") ||
-                          "No failing assertions"}
-                      </small>
-                    </span>
-                    <span className="pill">
-                      {c.status.replaceAll("_", " ")}
-                    </span>
-                    <ChevronRight size={16} />
-                  </button>
-                ))}
-              </div>
-            </section>
-          )}
-          {(page === "overview" || page === "datasets") && (
-            <section className="panel results">
-              <div className="panel-head">
-                <div>
-                  <h2>
-                    {page === "datasets"
-                      ? "Scenario library"
-                      : "Evaluation explorer"}
-                  </h2>
-                  <p>
-                    {report.dataset.id} / version {report.dataset.version}{" "}
-                    <span className="separator">·</span> {run.results.length}{" "}
-                    synthetic scenarios
-                  </p>
-                </div>
-                <div className="segmented">
-                  {["baseline", "candidate"].map((v) => (
-                    <button
-                      key={v}
-                      className={version === v ? "selected" : ""}
-                      onClick={() => setVersion(v)}
-                    >
-                      {v === "baseline" ? "v1.0 Baseline" : "v1.1 Candidate"}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div className="toolbar">
-                <label className="search">
-                  <Search size={16} />
-                  <input
-                    aria-label="Search scenarios"
-                    placeholder="Search scenarios, categories, IDs…"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                  />
-                </label>
-                <select
-                  aria-label="Filter outcomes"
-                  value={filter}
-                  onChange={(e) => setFilter(e.target.value)}
-                >
-                  <option value="all">All outcomes</option>
-                  <option value="fail">Failed only</option>
-                  <option value="pass">Passed only</option>
-                </select>
-                <select
-                  aria-label="Sort scenarios"
-                  value={sort}
-                  onChange={(e) => setSort(e.target.value)}
-                >
-                  <option value="id">Title A?Z</option>
-                  <option value="outcome">Failures first</option>
-                  <option value="latency">Slowest first</option>
-                </select>
-                <span>{results.length} results</span>
-              </div>
-              <div className="table-scroll">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>SCENARIO</th>
-                      <th>CATEGORY</th>
-                      <th>OUTCOME</th>
-                      <th>TOOL STEPS</th>
-                      <th>EXECUTION</th>
-                      <th />
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {results.map((r) => (
-                      <tr key={r.scenario.id} onClick={() => inspect(r)}>
-                        <td>
-                          <button
-                            className="scenario-button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              inspect(r);
-                            }}
-                          >
-                            {r.scenario.title}
-                          </button>
-                          <small>{r.scenario.id}</small>
-                        </td>
-                        <td>
-                          <span className="category">
-                            {r.scenario.category}
-                          </span>
-                        </td>
-                        <td>
-                          <span
-                            className={`outcome ${r.passed ? "pass" : "fail"}`}
-                          >
-                            {r.passed ? <Check size={13} /> : <X size={13} />}{" "}
-                            {r.passed ? "Passed" : "Failed"}
-                          </span>
-                        </td>
-                        <td className="mono">
-                          {r.execution.spans?.length ?? "—"}
-                        </td>
-                        <td className="mono">
-                          {r.execution.duration_ms.toFixed(3)} ms
-                        </td>
-                        <td>
-                          <ChevronRight size={15} />
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                {!results.length && (
-                  <p className="empty">No scenarios match these filters.</p>
-                )}
-              </div>
-              <div className="table-footer">
-                Assertions are calculated from state changes, tool calls,
-                arguments, and cited evidence.
-                <button
-                  className="text-button"
-                  onClick={() => download("support-v1.json", report.dataset)}
-                >
-                  Download dataset <Download size={14} />
-                </button>
-              </div>
-            </section>
-          )}
-          {page === "reports" && (
-            <div className="report-grid">
-              <section className="panel">
-                <div className="panel-head">
-                  <div>
-                    <h2>Reproduce this benchmark</h2>
-                    <p>
-                      Run from the repository root. No credentials required.
-                    </p>
-                  </div>
-                  <Terminal size={20} />
-                </div>
-                <pre>
-                  uv sync --frozen --python 3.12{"\n"}uv run python
-                  scripts/generate_demo.py{"\n"}uv run pytest
-                </pre>
-                <dl>
-                  {Object.entries(report.provenance).map(([k, v]) => (
-                    <div key={k}>
-                      <dt>{k.replaceAll("_", " ")}</dt>
-                      <dd>{v}</dd>
-                    </div>
-                  ))}
-                </dl>
-                <p className="footnote">
-                  Generated{" "}
-                  {new Date(report.runs[0].created_at).toLocaleString()}.
-                  Outcome assertions are repeatable; run IDs, timestamps, and
-                  measured latency vary.
-                </p>
                 <button
                   onClick={() => download("agentguard-report.json", report)}
                 >
                   <Download size={16} />
-                  Download full evidence
+                  Export report
                 </button>
-              </section>
-              <section className="panel">
-                <div className="panel-head">
-                  <div>
-                    <h2>Local live mode</h2>
-                    <p>New evaluations require executable Python.</p>
-                  </div>
+              </div>
+              <div className="demo-banner">
+                <Activity size={18} />
+                <div>
+                  <strong>
+                    {backend
+                      ? "Local execution available"
+                      : "Interactive demo · real Python-generated results"}
+                  </strong>
+                  <span>
+                    Synthetic records · Rule-driven LangGraph agent · No model
+                    API calls
+                  </span>
                 </div>
-                <p>
-                  Start the API, then connect from the local frontend. GitHub
-                  Pages serves saved results and cannot execute an agent.
-                </p>
-                <pre>
-                  uv run uvicorn agentguard.api:create_app --factory --app-dir
-                  backend/src --host 127.0.0.1
-                </pre>
-                <label className="field">
-                  Backend URL
-                  <input
-                    value={apiInput}
-                    onChange={(e) => setApiInput(e.target.value)}
-                  />
-                </label>
-                <button onClick={connect}>Connect local backend</button>
-                {backend && (
-                  <div className="live-controls">
-                    <label className="field">
-                      Agent version
-                      <select
-                        value={version}
-                        onChange={(e) => setVersion(e.target.value)}
-                      >
-                        <option>baseline</option>
-                        <option>candidate</option>
-                      </select>
-                    </label>
-                    <button onClick={liveRun} disabled={busy}>
-                      {busy ? "Running…" : "Run real evaluation"}
-                    </button>
+                <a href="#reports">
+                  View provenance <ArrowUpRight size={15} />
+                </a>
+              </div>
+              {localRuns.some((r) => r.id === run.id) &&
+                (page === "overview" || page === "datasets") && (
+                  <div className="notice">
+                    Showing a live local {version} execution. Version comparison
+                    and provenance retain the published snapshot.
                   </div>
                 )}
-                <h3>Metric boundaries</h3>
-                <p>
-                  Tokens and cost are unavailable: this reference agent uses
-                  local rules and tools. Latency measures the support handler,
-                  excluding graph orchestration. The comparison gate uses
-                  scenario pass rate; it makes no statistical claim.
-                </p>
-              </section>
-            </div>
+              {notice && (
+                <div role="status" className="notice">
+                  {notice}
+                </div>
+              )}
+              {(page === "overview" || page === "comparison") && (
+                <>
+                  <div className="metrics">
+                    <article>
+                      <span>Scenario pass rate</span>
+                      <strong>{pct(run.metrics.pass_rate)}</strong>
+                      <small
+                        className={
+                          version === "candidate" ? "negative" : "positive"
+                        }
+                      >
+                        {version === "candidate"
+                          ? `${regressions.length} regressions in published comparison`
+                          : "Baseline reference behavior"}
+                      </small>
+                    </article>
+                    <article>
+                      <span>Task completion</span>
+                      <strong>{pct(run.metrics.task_completion)}</strong>
+                      <small>
+                        {run.results.filter((r) => r.passed).length} /{" "}
+                        {run.results.length} scenarios pass all checks
+                      </small>
+                    </article>
+                    <article>
+                      <span>Tool-call accuracy</span>
+                      <strong>{pct(run.metrics.tool_choice)}</strong>
+                      <small>Required tools observed in trace</small>
+                    </article>
+                    <article>
+                      <span>Mean tool execution</span>
+                      <strong>
+                        {run.metrics.latency_ms?.toFixed(3)}
+                        <em> ms</em>
+                      </strong>
+                      <small>
+                        Measured locally · tokens & cost unavailable
+                      </small>
+                    </article>
+                  </div>
+                  <div className="comparison-grid">
+                    <section className="panel">
+                      <div className="panel-head">
+                        <div>
+                          <h2>Version health</h2>
+                          <p>Same dataset. Two implementations.</p>
+                        </div>
+                        <span className="pill">
+                          {run.results.length} scenarios
+                        </span>
+                      </div>
+                      <div className="bars">
+                        {report.runs.map((r) => (
+                          <div className="bar-row" key={r.id}>
+                            <span>
+                              <b>
+                                {r.version === "baseline" ? "v1.0" : "v1.1"}
+                              </b>{" "}
+                              {r.version}
+                              <small>
+                                {r.results.filter((s) => s.passed).length}{" "}
+                                passing
+                              </small>
+                            </span>
+                            <div className="track">
+                              <div
+                                style={{
+                                  width: `${(r.metrics.pass_rate || 0) * 100}%`,
+                                }}
+                                className={r.version}
+                              />
+                            </div>
+                            <strong>{pct(r.metrics.pass_rate)}</strong>
+                          </div>
+                        ))}
+                      </div>
+                      <p className="footnote">
+                        Pass rates describe this synthetic suite, not general
+                        agent reliability.
+                      </p>
+                    </section>
+                    <section className="panel regression-callout">
+                      <div className="callout-label">
+                        <AlertTriangle size={16} /> REGRESSION GATE FAILED
+                      </div>
+                      <h2>
+                        {regressions.length} scenarios lost correct behavior
+                      </h2>
+                      <p>
+                        The candidate widens the refund window, skips urgent
+                        escalation, and selects the wrong ticket tool.
+                      </p>
+                      <a href="#comparison">
+                        Inspect version differences <ArrowUpRight size={16} />
+                      </a>
+                    </section>
+                  </div>
+                </>
+              )}
+              {page === "comparison" && (
+                <section className="panel">
+                  <div className="panel-head">
+                    <div>
+                      <h2>Published comparison</h2>
+                      <p>
+                        Baseline → candidate · allowed pass-rate drop:{" "}
+                        {pct(report.comparison.threshold)}
+                      </p>
+                    </div>
+                    <span className="pill negative">
+                      −{pct(report.comparison.pass_rate_drop)}
+                    </span>
+                  </div>
+                  <div className="changes">
+                    {report.comparison.changes.map((c) => (
+                      <button
+                        key={c.scenario_id}
+                        onClick={() => {
+                          setVersion("candidate");
+                          inspect(
+                            report.runs
+                              .find((r) => r.version === "candidate")!
+                              .results.find(
+                                (r) => r.scenario.id === c.scenario_id,
+                              )!,
+                            report.runs.find((r) => r.version === "candidate")!
+                              .id,
+                          );
+                        }}
+                      >
+                        <span
+                          className={
+                            c.status === "regression" ? "negative" : "positive"
+                          }
+                        >
+                          {c.status === "regression" ? (
+                            <AlertTriangle size={16} />
+                          ) : (
+                            <Check size={16} />
+                          )}
+                        </span>
+                        <span>
+                          {c.scenario_id}
+                          <small>
+                            {c.failed_evaluators.join(" · ") ||
+                              "No failing assertions"}
+                          </small>
+                        </span>
+                        <span className="pill">
+                          {c.status.replaceAll("_", " ")}
+                        </span>
+                        <ChevronRight size={16} />
+                      </button>
+                    ))}
+                  </div>
+                </section>
+              )}
+              {(page === "overview" || page === "datasets") && (
+                <section className="panel results">
+                  <div className="panel-head">
+                    <div>
+                      <h2>
+                        {page === "datasets"
+                          ? "Scenario library"
+                          : "Evaluation explorer"}
+                      </h2>
+                      <p>
+                        {report.dataset.id} / version {report.dataset.version}{" "}
+                        <span className="separator">·</span>{" "}
+                        {run.results.length} synthetic scenarios
+                      </p>
+                    </div>
+                    <div className="segmented">
+                      {["baseline", "candidate"].map((v) => (
+                        <button
+                          key={v}
+                          className={version === v ? "selected" : ""}
+                          onClick={() => setVersion(v)}
+                        >
+                          {v === "baseline"
+                            ? "v1.0 Baseline"
+                            : "v1.1 Candidate"}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="toolbar">
+                    <label className="search">
+                      <Search size={16} />
+                      <input
+                        aria-label="Search scenarios"
+                        placeholder="Search scenarios, categories, IDs…"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                      />
+                    </label>
+                    <select
+                      aria-label="Filter outcomes"
+                      value={filter}
+                      onChange={(e) => setFilter(e.target.value)}
+                    >
+                      <option value="all">All outcomes</option>
+                      <option value="fail">Failed only</option>
+                      <option value="pass">Passed only</option>
+                    </select>
+                    <select
+                      aria-label="Sort scenarios"
+                      value={sort}
+                      onChange={(e) => setSort(e.target.value)}
+                    >
+                      <option value="id">Title A?Z</option>
+                      <option value="outcome">Failures first</option>
+                      <option value="latency">Slowest first</option>
+                    </select>
+                    <span>{results.length} results</span>
+                  </div>
+                  <div className="table-scroll">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>SCENARIO</th>
+                          <th>CATEGORY</th>
+                          <th>OUTCOME</th>
+                          <th>TOOL STEPS</th>
+                          <th>EXECUTION</th>
+                          <th />
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {results.map((r) => (
+                          <tr key={r.scenario.id} onClick={() => inspect(r)}>
+                            <td>
+                              <button
+                                className="scenario-button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  inspect(r);
+                                }}
+                              >
+                                {r.scenario.title}
+                              </button>
+                              <small>{r.scenario.id}</small>
+                            </td>
+                            <td>
+                              <span className="category">
+                                {r.scenario.category}
+                              </span>
+                            </td>
+                            <td>
+                              <span
+                                className={`outcome ${r.passed ? "pass" : "fail"}`}
+                              >
+                                {r.passed ? (
+                                  <Check size={13} />
+                                ) : (
+                                  <X size={13} />
+                                )}{" "}
+                                {r.passed ? "Passed" : "Failed"}
+                              </span>
+                            </td>
+                            <td className="mono">
+                              {r.execution.spans?.length ?? "—"}
+                            </td>
+                            <td className="mono">
+                              {r.execution.duration_ms.toFixed(3)} ms
+                            </td>
+                            <td>
+                              <ChevronRight size={15} />
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    {!results.length && (
+                      <p className="empty">No scenarios match these filters.</p>
+                    )}
+                  </div>
+                  <div className="table-footer">
+                    Assertions are calculated from state changes, tool calls,
+                    arguments, and cited evidence.
+                    <button
+                      className="text-button"
+                      onClick={() =>
+                        download("support-v1.json", report.dataset)
+                      }
+                    >
+                      Download dataset <Download size={14} />
+                    </button>
+                  </div>
+                </section>
+              )}
+              {page === "reports" && (
+                <div className="report-grid">
+                  <section className="panel">
+                    <div className="panel-head">
+                      <div>
+                        <h2>Reproduce this benchmark</h2>
+                        <p>
+                          Run from the repository root. No credentials required.
+                        </p>
+                      </div>
+                      <Terminal size={20} />
+                    </div>
+                    <pre>
+                      uv sync --frozen --python 3.12{"\n"}uv run python
+                      scripts/generate_demo.py{"\n"}uv run pytest
+                    </pre>
+                    <dl>
+                      {Object.entries(report.provenance).map(([k, v]) => (
+                        <div key={k}>
+                          <dt>{k.replaceAll("_", " ")}</dt>
+                          <dd>{v}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                    <p className="footnote">
+                      Generated{" "}
+                      {new Date(report.runs[0].created_at).toLocaleString()}.
+                      Outcome assertions are repeatable; run IDs, timestamps,
+                      and measured latency vary.
+                    </p>
+                    <button
+                      onClick={() => download("agentguard-report.json", report)}
+                    >
+                      <Download size={16} />
+                      Download full evidence
+                    </button>
+                  </section>
+                  <section className="panel">
+                    <div className="panel-head">
+                      <div>
+                        <h2>Local live mode</h2>
+                        <p>New evaluations require executable Python.</p>
+                      </div>
+                    </div>
+                    <p>
+                      Start the API, then connect from the local frontend.
+                      GitHub Pages serves saved results and cannot execute an
+                      agent.
+                    </p>
+                    <pre>
+                      uv run uvicorn agentguard.api:create_app --factory
+                      --app-dir backend/src --host 127.0.0.1
+                    </pre>
+                    <label className="field">
+                      Backend URL
+                      <input
+                        value={apiInput}
+                        onChange={(e) => setApiInput(e.target.value)}
+                      />
+                    </label>
+                    <button onClick={connect}>Connect local backend</button>
+                    {backend && (
+                      <div className="live-controls">
+                        <label className="field">
+                          Agent version
+                          <select
+                            value={version}
+                            onChange={(e) => setVersion(e.target.value)}
+                          >
+                            <option>baseline</option>
+                            <option>candidate</option>
+                          </select>
+                        </label>
+                        <button onClick={liveRun} disabled={busy}>
+                          {busy ? "Running…" : "Run real evaluation"}
+                        </button>
+                      </div>
+                    )}
+                    <h3>Metric boundaries</h3>
+                    <p>
+                      Tokens and cost are unavailable: this reference agent uses
+                      local rules and tools. Latency measures the support
+                      handler, excluding graph orchestration. The comparison
+                      gate uses scenario pass rate; it makes no statistical
+                      claim.
+                    </p>
+                  </section>
+                </div>
+              )}
+              <footer>
+                <span>
+                  <ShieldCheck size={14} /> AgentGuard · Evidence before
+                  deployment.
+                </span>
+                <span>
+                  Dataset v{report.dataset.version} · Schema v1 · No paid APIs
+                </span>
+              </footer>
+            </>
           )}
-          <footer>
-            <span>
-              <ShieldCheck size={14} /> AgentGuard · Evidence before deployment.
-            </span>
-            <span>
-              Dataset v{report.dataset.version} · Schema v1 · No paid APIs
-            </span>
-          </footer>
         </main>
       </div>
       {selected && (

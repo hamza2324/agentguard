@@ -6,7 +6,7 @@
 
 A reproducible evaluation lab for tool-using agents. Execute a real reference agent, score observed behavior, compare versions, inspect the evidence, and turn a reviewed failure into a regression test. The core benchmark runs locally without API keys, hosted services, or a paid LLM.
 
-**Publication status:** implemented and verified locally. GitHub repository creation, hosted CI and Pages deployment require GitHub authentication; no public URL is claimed yet. See [deployment instructions](docs/DEPLOYMENT.md).
+**Source:** [hamza2324/agentguard](https://github.com/hamza2324/agentguard). The public site includes a product introduction, a real before/after example, a support-agent playground and an explanatory product guide. Hosted workflow status is recorded in [verification status](docs/STATUS.md).
 
 ## See the regression
 
@@ -31,6 +31,10 @@ uv run python -m agentguard --candidate baseline --output artifacts/control.json
 ```
 
 ## Interactive dashboard
+
+![AgentGuard introduction and interactive regression example](assets/screenshots/home-chromium.png)
+
+Start at the homepage to learn what AgentGuard does and how the workflow fits together. **Try the agent** offers saved scenario replays on Pages and fresh typed requests when the local FastAPI backend is reachable. **Ask AgentGuard** is a transparent product guide for workflow, results, setup and cost questions; it does not call an LLM.
 
 ![Evaluation overview](assets/screenshots/overview-chromium.png)
 
@@ -167,7 +171,7 @@ npm.cmd test
 npm.cmd audit --audit-level=moderate
 ```
 
-Verified locally: **18 Python tests; 8 browser tests passed, 2 duplicate mobile integrations intentionally skipped**. Browser checks include the real backend and a repository-subpath server. TypeScript build, ESLint, Ruff and snapshot integrity validation pass. npm audit reported zero vulnerabilities after updating development tooling and overriding the affected minimatch dependency to its patched release; pip-audit reported no known Python vulnerabilities. See [validation status](docs/STATUS.md). These checks do not establish that hosted CI has run.
+Verified locally: **19 Python tests; 14 browser tests passed, 2 duplicate mobile integrations intentionally skipped**. Browser checks include the real backend and a repository-subpath server. TypeScript build, ESLint, Ruff and snapshot integrity validation pass. npm audit reported zero vulnerabilities after updating development tooling and overriding the affected minimatch dependency to its patched release; pip-audit reported no known Python vulnerabilities. See [validation status](docs/STATUS.md). These checks do not establish that hosted CI has run.
 
 ## Deployment
 
@@ -187,4 +191,4 @@ Use the [60–90 second demo script](docs/DEMO_SCRIPT.md). A supported resume de
 
 > Built an API-key-free agent regression testing platform with a LangGraph reference agent, 31 versioned scenarios, deterministic evaluators, structured tool traces, and a human-reviewed failure-to-test workflow; detected all 11 deliberately seeded scenario regressions.
 
-Maintainer identity and public repository links will be added from the authenticated GitHub account. No author contact or deployment URL has been invented.
+Maintainer: [Hamza Jadoon / hamza2324](https://github.com/hamza2324), verified through the authenticated GitHub account. New commits use the GitHub noreply identity.

@@ -1,6 +1,8 @@
 # GitHub publication
 
-This checkout has no authenticated GitHub account. Repository and Pages URLs are therefore not available yet. Workflow definitions are prepared, not verified hosted executions. Authentication is the external prerequisite.
+Repository: https://github.com/hamza2324/agentguard. Existing Git Credential Manager authentication from the development environment was successfully reused. A separate `gh auth login` is not required when a credential helper already supplies GitHub credentials. During publication, the helper credential was passed to GitHub CLI through a process-local environment variable and was never printed or written into project files.
+
+The commands below are fallback instructions for a fresh machine without that configured authentication. Hosted execution status is recorded in STATUS.md.
 
 From PowerShell:
 

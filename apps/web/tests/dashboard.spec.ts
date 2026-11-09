@@ -4,7 +4,7 @@ test("explores actual results, failed trace, comparison and themes", async ({
 }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/");
+  await page.goto("/#overview");
   await expect(
     page.getByRole("heading", { name: "Catch regressions before they ship." }),
   ).toBeVisible();
@@ -51,8 +51,8 @@ test("explores actual results, failed trace, comparison and themes", async ({
   await page.getByRole("button", { name: "Download full evidence" }).click();
   expect((await download).suggestedFilename()).toBe("agentguard-report.json");
   if (test.info().project.name !== "mobile") {
-    await page.getByRole("button", { name: "Switch to light theme" }).click();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+    await page.getByRole("button", { name: "Switch to dark theme" }).click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   }
   expect(
     await page.evaluate(
@@ -62,7 +62,7 @@ test("explores actual results, failed trace, comparison and themes", async ({
   expect(errors).toEqual([]);
 });
 test("filters outcomes and switches versions", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/#overview");
   await page.getByLabel("Filter outcomes").selectOption("fail");
   await expect(page.locator("tbody tr")).toHaveCount(11);
   await page.getByRole("button", { name: "v1.0 Baseline" }).click();
@@ -74,7 +74,7 @@ test("data failure is visible and offers retry", async ({ page }) => {
   await page.route("**/data/report.json", (route) =>
     route.fulfill({ status: 500, body: "error" }),
   );
-  await page.goto("/");
+  await page.goto("/#overview");
   await expect(
     page.getByRole("heading", { name: "Snapshot could not be loaded" }),
   ).toBeVisible();

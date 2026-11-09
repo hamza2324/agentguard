@@ -12,7 +12,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import Field
 
 from agentguard.engine import compare, load_dataset, run
-from agentguard.models import Dataset, Model, Run, Scenario
+from agentguard.agent import build_agent
+from agentguard.models import Dataset, Execution, Model, Run, Scenario
 from agentguard.storage import database, listing, save
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -21,6 +22,12 @@ ROOT = Path(__file__).resolve().parents[3]
 class RunRequest(Model):
     version: Literal["baseline", "candidate"]
     dataset_id: str = "support-operations"
+
+
+class PlaygroundRequest(Model):
+    input: str = Field(min_length=1, max_length=10000)
+    version: Literal["baseline", "candidate"]
+    context: dict[str, str] = Field(default_factory=dict)
 
 
 class ComparisonRequest(Model):
@@ -83,6 +90,16 @@ def create_app(url=None):
                 "execution": "local deterministic LangGraph",
             }
         ]
+
+    @app.post("/playground", response_model=Execution)
+    def playground(request: PlaygroundRequest):
+        if not capacity.acquire(blocking=False):
+            raise HTTPException(429, "Agent execution capacity is full")
+        try:
+            agent = build_agent(request.version)
+            return agent.invoke({"message": request.input, "context": request.context})["execution"]
+        finally:
+            capacity.release()
 
     @app.get("/datasets")
     def datasets():
