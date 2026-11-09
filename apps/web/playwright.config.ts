@@ -4,6 +4,12 @@ export default defineConfig({
   use: { baseURL: "http://127.0.0.1:4173" },
   webServer: [
     {
+      command: "uv run python scripts/preview_subpath.py",
+      cwd: "../..",
+      url: "http://127.0.0.1:4174/agentguard/",
+      reuseExistingServer: !process.env.CI,
+    },
+    {
       command: "npm run preview -- --port 4173",
       url: "http://127.0.0.1:4173",
       reuseExistingServer: !process.env.CI,

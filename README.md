@@ -167,7 +167,7 @@ npm.cmd test
 npm.cmd audit --audit-level=moderate
 ```
 
-Verified locally: **18 Python tests**; browser results are recorded in [validation status](docs/STATUS.md). TypeScript build and ESLint pass. npm audit reported zero vulnerabilities after updating development tooling and overriding the affected minimatch dependency to its patched release. These checks do not establish that hosted CI has run.
+Verified locally: **18 Python tests; 8 browser tests passed, 2 duplicate mobile integrations intentionally skipped**. Browser checks include the real backend and a repository-subpath server. TypeScript build, ESLint, Ruff and snapshot integrity validation pass. npm audit reported zero vulnerabilities after updating development tooling and overriding the affected minimatch dependency to its patched release; pip-audit reported no known Python vulnerabilities. See [validation status](docs/STATUS.md). These checks do not establish that hosted CI has run.
 
 ## Deployment
 
